@@ -1,0 +1,17 @@
+.App {
+  min-height: 100vh;
+  background-color: hsl(220, 31%, 40%);
+  color: rgb(240, 231, 231);
+  padding: 20px;
+
+}
+
+.post_line{
+  overflow: visible; /* For IE */
+    padding: 0;
+    border: none;
+    border-top: medium double white;
+    color: white;
+    text-align: center;
+     
+}
