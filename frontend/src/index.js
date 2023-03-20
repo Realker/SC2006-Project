@@ -12,7 +12,7 @@ function Router(){
 <BrowserRouter>
     <Routes>
       <Route exact path="/" element={<LoginRegister />} />
-      <Route exact path= "/" element ={ <Homepage />}/>
+      <Route exact path= "/Homepage" element ={ <Homepage />}/>
       <Route exact path="/test" element={<App />} />
     </Routes>
 </BrowserRouter>

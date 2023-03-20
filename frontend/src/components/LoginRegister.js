@@ -6,9 +6,7 @@ import "../css/LoginRegister.css";
 import btoBuilding from "../images/Housingbuilding.jpg";
 
 
-
 function Login() {
-  
   
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

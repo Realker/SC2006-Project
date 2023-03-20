@@ -4,9 +4,15 @@ Django admin customization.
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import gettext_lazy as _
+#Added
+from .models import Article
 
 from core import models
 
+#Added
+class ArticleModel(admin.ModelAdmin):
+    list_filter = ('title', 'description')
+    list_display = ('title', 'description')
 
 class UserAdmin(BaseUserAdmin):
     """"Define the admin pages for users."""

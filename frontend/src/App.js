@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
-import LoginRegisterPage from './components/LoginRegister';
+import LoginRegister from './components/LoginRegister';
 //import RegisterPage from './pages/RegisterPage';
 import Homepage from './components/Homepage';
 
@@ -15,8 +15,8 @@ const App = () => {
         <BrowserRouter>
           {/* TODO: add router guards based on user authentication */}
           <Routes>
-            <Route path='/' element={<LoginRegisterPage />} />
-            <Route path='/Homepage/' element={<Homepage />} />
+            <Route path='/' element={<LoginRegister />} />
+            <Route path='/' element={<Homepage />} />
            
           </Routes>
         </BrowserRouter>

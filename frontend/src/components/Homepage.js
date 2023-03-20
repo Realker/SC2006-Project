@@ -17,18 +17,16 @@ import NavBar from './NavBar';
 
 // Replace the navigation items comment in the Homepage.js file
 
-
-
 function Homepage() {
     return (
 
-        
       <div className="App">
-        
+      
         <header className="header">
           <nav className="navbar">
-          <h1>Fk this</h1>
+          <NavBar /> 
           </nav>
+      
         </header>
         <main className="main">
         <h1> Fk you </h1>
