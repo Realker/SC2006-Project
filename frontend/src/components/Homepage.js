@@ -7,7 +7,7 @@ import '../css/HomePage.css'
 import NavBar from './NavBar';
 import Search from './Search';
 
-import HDB from "../images/HDBMainpage.jpg"
+import HDB from "../images/HDBMainpage.png"
 
 // Add this import statement at the top of the Homepage.js file
 //import Search from './Search';
