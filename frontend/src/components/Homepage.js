@@ -3,8 +3,10 @@ import {useNavigate} from 'react-router-dom'
 import {useCookies} from 'react-cookie'
 import APIService from './APIService'
 import '../css/App.css';
+import '../css/HomePage.css'
 import NavBar from './NavBar';
 import Search from './Search';
+import HDB from "../images/HDBMainpage.jpg"
 
 // Add this import statement at the top of the Homepage.js file
 //import Search from './Search';

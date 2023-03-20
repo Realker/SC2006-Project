@@ -31,18 +31,18 @@ export default function NavBar() {
               <ul id="menu" className="gap-2 nav d-flex flex-column align-items-stretch text-light">
                   <NavLink to="/my_groups" className={currentTab}>
                       
-                      <li className="d-sm-inline d-none">My Groups</li>
+                      <li className="d-sm-inline d-none">Explore</li>
                   </NavLink>
                   <NavLink to="/find_groups" className={currentTab}>
                       
-                      <li className="d-sm-inline d-none">Find Groups</li>
+                      <li className="d-sm-inline d-none">FAQ</li>
                   </NavLink>
                   <NavLink to="/study_areas" className={currentTab}>
                      
-                      <li className="d-sm-inline d-none">Study Areas</li></NavLink>
+                      <li className="d-sm-inline d-none">My Activities</li></NavLink>
                   <NavLink to={`/user`} className={currentTab}>
 
-                      <li className="d-sm-inline d-none">Profile</li></NavLink>
+                      <li className="d-sm-inline d-none">My Account</li></NavLink>
               </ul>
 
               {/* TODO : handle log out */}

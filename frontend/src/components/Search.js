@@ -5,11 +5,11 @@ import '../css/Search.css';
 
 const Search = () => {
   return (
-    <div>
-      { <div>
+    <div class = 'container'>
+      { <div class = 'searchContainer'>
         {/* <SearchOutlinedIcon fontSize="large" /> */}
-        <input placeholder="Search for Houses" />
-        <button>Search</button>
+        <input class = 'searchInput' placeholder="Search for Houses" />
+        <button class = 'button'> Search</button>
       </div> }
     </div>
   );
