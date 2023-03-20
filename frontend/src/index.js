@@ -4,13 +4,15 @@ import './css/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Route, BrowserRouter,Routes} from 'react-router-dom';
-import Login from './components/Login';
+import LoginRegister from './components/LoginRegister';
+import Homepage from './components/Homepage';
 
 function Router(){
   return(
 <BrowserRouter>
     <Routes>
-      <Route exact path="/" element={<Login />} />
+      <Route exact path="/" element={<LoginRegister />} />
+      <Route exact path= "/" element ={ <Homepage />}/>
       <Route exact path="/test" element={<App />} />
     </Routes>
 </BrowserRouter>

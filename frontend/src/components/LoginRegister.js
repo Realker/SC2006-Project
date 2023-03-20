@@ -5,7 +5,11 @@ import APIService from './APIService'
 import "../css/LoginRegister.css";
 import btoBuilding from "../images/Housingbuilding.jpg";
 
+
+
 function Login() {
+  
+  
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLogin, setLogin] = useState(true);
@@ -27,10 +31,12 @@ function Login() {
   };
 
   return (
+    
     <div className="LoginRegister-container">
+      
       <div className="LoginRegister__content">
         <h1>{isLogin ? "Login" : "Register"}</h1>
-
+        
         <div>
           <form>
             <input
