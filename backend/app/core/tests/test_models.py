@@ -57,7 +57,7 @@ class ModelTests(TestCase):
         #     'test@example.com',
         #     'testpass123',
         # )
-        stock = models.StockStock.objects.create(
+        stock = models.Stock.objects.create(
             # user=user,
             securityname='Sample stock name',
             stocksymbol='SAMPLESYMBOL123',
