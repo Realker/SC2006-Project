@@ -1,0 +1,27 @@
+.NavBar{
+    display: flex;
+    background-color: white;
+    color: black;
+    justify-content: space-evenly;
+}
+
+nav.ul{
+color: black;
+
+}
+
+.NavBarLink{
+
+    color: black;
+
+    display: flex;
+    gap: 2.5rem;
+
+}
+
+.Logout{
+
+    background-color: white;
+    color: black;
+    
+}

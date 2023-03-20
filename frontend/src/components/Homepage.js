@@ -6,6 +6,7 @@ import '../css/App.css';
 import '../css/HomePage.css'
 import NavBar from './NavBar';
 import Search from './Search';
+
 import HDB from "../images/HDBMainpage.jpg"
 
 // Add this import statement at the top of the Homepage.js file
@@ -28,7 +29,8 @@ const Homepage = () => {
     return (
       <>
         
-          <div>
+          <div class = "HomePageBackground">
+            
             <NavBar / > 
             <Search></Search>
 

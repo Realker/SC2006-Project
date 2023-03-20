@@ -1,9 +1,11 @@
 import React, {useState,useEffect} from 'react'
 import {useCookies} from 'react-cookie';
 import { NavLink, Link } from 'react-router-dom'
-
-
-
+import ExploreHouses from './ExploreHouses';
+import FAQ from './FAQ';
+import MyAccount from './MyAccount';
+import MyActivities from './MyActivities';
+import '../css/NavBar.css';
 const currentTab = ({ isActive }) => {
   return isActive
       ? "p-3 btn btn-light text-danger gap-3 d-flex align-items-center"
@@ -17,32 +19,33 @@ export default function NavBar() {
  
 
   return (
-      <div className="col-auto bg-primary">
-          <nav className="px-sm-auto vh-100 sticky-top d-flex flex-column align-items-center">
+
+      <div>
+          <nav class = "NavBar">
               {/* Logo */}
               <Link to="/">
-                  <span className="my-5 d-flex align-items-center gap-3 text-light">
+                  <span>
                       
-                      <span className="fs-3 d-sm-inline d-none"><strong>HDB</strong>Finder</span>
+                      <span><strong>HDB</strong>Finder</span>
                   </span>
               </Link>
 
               {/* Menu links */}
-              <ul id="menu" className="gap-2 nav d-flex flex-column align-items-stretch text-light">
-                  <NavLink to="/my_groups" className={currentTab}>
+              <ul class = "NavBarLink">
+                  <NavLink to="/ExploreHouses" className={currentTab}>
                       
-                      <li className="d-sm-inline d-none">Explore</li>
+                      <li class = "NavBarLink">Explore</li>
                   </NavLink>
-                  <NavLink to="/find_groups" className={currentTab}>
+                  <NavLink to="/FAQ" className={currentTab}>
                       
-                      <li className="d-sm-inline d-none">FAQ</li>
+                      <li class = "NavBarLink">FAQ</li>
                   </NavLink>
-                  <NavLink to="/study_areas" className={currentTab}>
+                  <NavLink to="/MyActivities" className={currentTab}>
                      
-                      <li className="d-sm-inline d-none">My Activities</li></NavLink>
+                      <li class = "NavBarLink">My Activities</li></NavLink>
                   <NavLink to={`/user`} className={currentTab}>
 
-                      <li className="d-sm-inline d-none">My Account</li></NavLink>
+                      <li class = "NavBarLink">My Account</li></NavLink>
               </ul>
 
               {/* TODO : handle log out */}
@@ -52,7 +55,7 @@ export default function NavBar() {
                       <path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z" />
                       <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z" />
                   </svg>
-                  <span className="d-sm-inline d-none">Log Out</span>
+                  <span class = "Logout">Log Out</span>
               </NavLink>
           </nav>
       </div>

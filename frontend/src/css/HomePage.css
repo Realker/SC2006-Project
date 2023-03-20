@@ -1,3 +1,9 @@
-body {
-    background-image:url("../images/HDBMainpage.jpg")
+.HomePageBackground {
+    background-image:url("../images/HDBMainpage.jpg");
+    min-height: 100vh;
+    
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
