@@ -18,10 +18,12 @@ color: black;
     gap: 2.5rem;
 
 }
-
+.navButton{
+    --color-btn-primary: white;
+}
 .Logout{
 
     background-color: white;
     color: black;
-    
+
 }
