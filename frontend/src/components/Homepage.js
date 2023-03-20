@@ -4,6 +4,7 @@ import {useCookies} from 'react-cookie'
 import APIService from './APIService'
 import '../css/App.css';
 import NavBar from './NavBar';
+import Search from './Search';
 
 // Add this import statement at the top of the Homepage.js file
 //import Search from './Search';
@@ -17,38 +18,25 @@ import NavBar from './NavBar';
 
 // Replace the navigation items comment in the Homepage.js file
 
-function Homepage() {
-    return (
 
-      <div className="App">
-      
-        <header className="header">
-          <nav className="navbar">
-          <NavBar /> 
-          </nav>
-      
-        </header>
-        <main className="main">
-        <h1> Fk you </h1>
-          <section className="search">
-            {/* Insert your search component here */}
-          </section>
-          <section className="explore-recent">
-            {/* Insert your explore recent component here */}
-          </section>
-          <section className="faq">
-            {/* Insert your FAQ component here */}
-          </section>
-        </main>
-        <footer className="footer">
-          {/* Insert your footer content here */}
-        </footer>
-      </div>
+
+const Homepage = () => {
+    
+  
+    return (
+      <>
+        
+          <div>
+            <NavBar / > 
+            <Search></Search>
+
+          </div>
+        
+      </>
     );
-  }
+  };
   
   export default Homepage;
-
 
 
 

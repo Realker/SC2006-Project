@@ -4,7 +4,7 @@ import {useCookies} from 'react-cookie'
 import APIService from './APIService'
 import './Search.css';
 
-function Search() {
+function SearchHouses() {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (e) => {
@@ -25,4 +25,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default SearchHouses;

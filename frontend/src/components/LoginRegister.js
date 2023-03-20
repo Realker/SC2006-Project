@@ -4,7 +4,7 @@ import {useCookies} from 'react-cookie'
 import APIService from './APIService'
 import "../css/LoginRegister.css";
 import btoBuilding from "../images/Housingbuilding.jpg";
-
+import NavBar from './NavBar';
 
 function Login() {
   
@@ -31,7 +31,7 @@ function Login() {
   return (
     
     <div className="LoginRegister-container">
-      
+     
       <div className="LoginRegister__content">
         <h1>{isLogin ? "Login" : "Register"}</h1>
         
