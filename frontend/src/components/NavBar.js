@@ -1,10 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import {useCookies} from 'react-cookie';
 import { NavLink, Link } from 'react-router-dom'
-import ExploreHouses from './ExploreHouses';
-import FAQ from './FAQ';
-import MyAccount from './MyAccount';
-import MyActivities from './MyActivities';
+
 import '../css/NavBar.css';
 const currentTab = ({ isActive }) => {
   return isActive
@@ -15,19 +12,13 @@ const currentTab = ({ isActive }) => {
 export default function NavBar() {
   // TODO : replace with currently authenticated user context
  
-
- 
-
   return (
 
       <div>
           <nav class = "NavBar">
               {/* Logo */}
               <Link to="/">
-                  <span>
-                      
-                      <span><strong>HDB</strong>Finder</span>
-                  </span>
+                  <p className='Logo'>HDB Finder</p>
               </Link>
 
               {/* Menu links */}
@@ -43,7 +34,7 @@ export default function NavBar() {
                   <NavLink to="/MyActivities" className={currentTab}>
                      
                       <li class = "NavBarLink">My Activities</li></NavLink>
-                  <NavLink to={`/user`} className={currentTab}>
+                  <NavLink to={`/myaccount`} className={currentTab}>
 
                       <li class = "NavBarLink">My Account</li></NavLink>
               </ul>

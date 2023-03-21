@@ -4,7 +4,6 @@ import {useCookies} from 'react-cookie'
 import APIService from './APIService'
 import "../css/LoginRegister.css";
 import btoBuilding from "../images/Housingbuilding.jpg";
-import NavBar from './NavBar';
 
 function Login() {
 
@@ -98,7 +97,7 @@ function Login() {
               <div>
                 <button
                   onClick={loginBtn}
-                  className="btn btn-primary btn-loginRegister-primary"
+                  className="btn btn-loginRegister-primary"
                 >
                   Login
                 </button>
@@ -121,7 +120,7 @@ function Login() {
               <div>
                 <button
                   onClick={RegisterBtn}
-                  className="btn btn-primary btn-loginRegister-primary"
+                  className="btn btn-loginRegister-primary"
                 >
                   Register
                 </button>

@@ -3,6 +3,13 @@
     background-color: white;
     color: black;
     justify-content: space-evenly;
+    height: 10vh;
+    align-items: center;
+}
+
+.Logo {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 nav.ul{

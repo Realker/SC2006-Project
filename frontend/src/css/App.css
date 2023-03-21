@@ -1,3 +1,6 @@
+:root {
+  --color-btn-primary:green;
+}
 
 *,
 *::after,
@@ -6,20 +9,4 @@ input {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-.btn {
-  border: none;
-  cursor: pointer;
-}
-
-.btn-primary {
-  background-color: var(--color-btn-primary);
-  font-weight: bold;
-  font-size: large;
-  color: white;
-}
-
-h1 {
-  font-size: 3rem;
 }
