@@ -17,7 +17,7 @@ export default function NavBar() {
       <div>
           <nav class = "NavBar">
               {/* Logo */}
-              <Link to="/">
+              <Link to="/Homepage" className={currentTab}>
                   <p className='Logo'>HDB Finder</p>
               </Link>
 
