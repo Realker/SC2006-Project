@@ -6,6 +6,12 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.FAQ__bg h1{
+    font-size: 2rem;
+    text-align: center;
+    padding: 1.5rem 0rem;
+}
+
 .FAQCard{
     display: flex;
     flex-direction: column;

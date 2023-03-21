@@ -5,9 +5,11 @@ import '../css/FAQ.css'
 const FAQ = () => {
   return (
     <div class = "FAQBackground">
-      <NavBar/>
-      <h1>FAQ</h1>
       
+      <NavBar/>
+      <div className='FAQ__bg h1'>
+      <h1>Frequently Asked Questions (FAQs):</h1>
+      </div>
     </div>
   )
 }
