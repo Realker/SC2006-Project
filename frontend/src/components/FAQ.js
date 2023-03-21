@@ -7,6 +7,7 @@ const FAQ = () => {
     <div class = "FAQBackground">
       <NavBar/>
       <h1>FAQ</h1>
+      
     </div>
   )
 }
