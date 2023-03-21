@@ -9,6 +9,7 @@ const FAQ = () => {
       <NavBar/>
       <div className='FAQ__bg h1'>
       <h1>Frequently Asked Questions (FAQs):</h1>
+      
       </div>
     </div>
   )
