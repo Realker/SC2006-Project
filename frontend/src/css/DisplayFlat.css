@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 }
 
 .flat-inner {
@@ -19,7 +20,7 @@
     background-color: #FFF;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    
+    border-radius: 10px;
 }
 
 .flat-inner .close-flat {
