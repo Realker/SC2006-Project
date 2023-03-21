@@ -9,14 +9,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 }
 
 .flat-inner {
     position: relative;
     padding: 32px;
-    width: 100%;
-    max-width: 640%;
+    width: 90vh;
+    max-width: 100vh;
     background-color: #FFF;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
 }
 
 .flat-inner .close-flat {
@@ -29,6 +33,6 @@
 .DisplayFlat{
     padding-bottom: 2rem;
     background-color: #9DC0DE;
-    height: max-content;
+    height: 100vh;
 }
 
