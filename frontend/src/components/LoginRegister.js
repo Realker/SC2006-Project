@@ -4,6 +4,10 @@ import {useCookies} from 'react-cookie'
 import APIService from './APIService'
 import "../css/LoginRegister.css";
 import btoBuilding from "../images/Housingbuilding.jpg";
+import ResetPassword from './ResetPassword';
+import { Link } from 'react-router-dom';
+
+
 
 function Login() {
 
@@ -112,7 +116,7 @@ function Login() {
                     onClick={() => setLogin(false)}
                     className="btn btn-forgetpass"
                   >
-                    Forget Password?
+                    <Link to ="/ResetPassword">Forget Password?</Link>
                   </button>
                 </div>
               </div>
@@ -133,9 +137,8 @@ function Login() {
                   </button>
                   <button
                     onClick={() => setLogin(false)}
-                    className="btn btn-forgetpass"
-                  >
-                    Forget Password?
+                    className="btn btn-forgetpass">
+                    <Link to ="/ResetPassword">Forget Password?</Link>
                   </button>
                 </div>
               </div>

@@ -1,0 +1,34 @@
+.flat {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flat-inner {
+    position: relative;
+    padding: 32px;
+    width: 100%;
+    max-width: 640%;
+    background-color: #FFF;
+}
+
+.flat-inner .close-flat {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+}
+
+.DisplayFlat{
+    padding-bottom: 2rem;
+    background-color: #9DC0DE;
+    height: max-content;
+}
+

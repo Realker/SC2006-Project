@@ -21,21 +21,13 @@ import HDB from "../images/HDBMainpage.png"
 
 // Replace the navigation items comment in the Homepage.js file
 
-
-
 const Homepage = () => {
-    
-  
     return (
       <>
-        
           <div class = "HomePageBackground">
-            
             <NavBar / > 
             <Search></Search>
-
           </div>
-        
       </>
     );
   };

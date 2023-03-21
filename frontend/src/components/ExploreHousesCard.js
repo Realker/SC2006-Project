@@ -7,9 +7,7 @@ import { NavLink } from 'react-router-dom';
 import SaveHousesToFavourites from './SaveHousesToFavourites';
 
 export default function ExploreHousesCard() {
-
-
-
+  
   return (
     <>
           <div className='Housecard'>

@@ -11,7 +11,9 @@ import FAQ from './components/FAQ'
 import MyActivities from './components/MyActivities'
 import MyAccount from './components/MyAccount'
 import SaveHousesToFavourites from './components/SaveHousesToFavourites';
-
+import ResetPassword from './components/ResetPassword';
+import DisplayFlat from './components/DisplayFlat';
+import Flat from './components/Flat';
 
 function Router(){
   return(
@@ -26,8 +28,9 @@ function Router(){
       <Route path='/MyActivities' element = {<MyActivities/>} />
       <Route path='/MyAccount' element = {<MyAccount/>} />
       <Route path='/SaveHousesToFavourites' element = {<SaveHousesToFavourites/>} />
-
-
+      <Route path='/ResetPassword' element = {<ResetPassword/>} />
+      <Route path='/DisplayFlat' element = {<DisplayFlat/>} />
+      <Route path='/Flat' element = {<Flat/>} />
 
     </Routes>
 </BrowserRouter>
