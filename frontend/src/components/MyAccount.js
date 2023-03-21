@@ -6,7 +6,8 @@ const MyAccount = () => {
     <div>
       <NavBar/>
       <h1>My Account</h1>
-      
+      <h1>Profile Username: </h1>
+      <h1>Profile Email: </h1>
       </div>
   )
 }

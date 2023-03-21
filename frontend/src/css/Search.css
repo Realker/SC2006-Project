@@ -20,15 +20,15 @@
 
 .searchContainer{
   border: none;
-
-
-  display: flex;
+  display:flex;
   justify-content: center;
   align-items: center;
   background-color: white;
   padding-left: 1rem;
   padding: 1rem;
   border-radius: 10px;
+  width: 45vw;
+  
 }
 
 .searchInput{
