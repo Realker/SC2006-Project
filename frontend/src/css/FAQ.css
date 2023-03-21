@@ -1,0 +1,21 @@
+.FAQBackground {
+    background-image:url("../images/HDBFAQ.jpg");
+    min-height: 100vh;
+    
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.FAQ__bg h1{
+    font-size: 2rem;
+    text-align: center;
+    padding: 1.5rem 0rem;
+}
+
+.FAQCard{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
