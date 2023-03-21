@@ -7,39 +7,79 @@ import btoBuilding from "../images/Housingbuilding.jpg";
 import NavBar from './NavBar';
 
 function Login() {
-  
-  const [username, setUsername] = useState("");
+
+  const [email, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLogin, setLogin] = useState(true);
+  const [error, setError] = useState(null);
+
+  const [cookies, setCookie] = useCookies(['auth_token']);
+  const navigate = useNavigate();
 
   const loginBtn = () => {
-    if (username.trim().length !== 0 && password.trim().length) {
-      console.log("Username And Password Are Set");
+    if (email.trim().length !== 0 && password.trim().length) {
+      APIService.LoginUser(email, password)
+        .then((response) => {
+          if (response.non_field_errors) {
+            console.log("Unable to authenticate with provided credentials.");
+          }
+          if (response.email == "Enter a valid email address.") {
+            console.log("Enter a valid email address.");
+          }
+          if (response.token) {
+            setCookie('token', response.token); // Save token in cookie
+            console.log("Login successfully, created token.");
+            //console.log(response.token); //For debugging
+            navigate('homepage'); // Redirect to homepage
+          }
+          //console.log(response); //For debugging
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     } else {
-      console.log("Username And Password Are Not Set");
+      console.log('Email And Password Are Not Set');
     }
   };
 
   const RegisterBtn = () => {
-    if (username.trim().length !== 0 && password.trim().length !== 0) {
-      console.log("Username and password are set");
+    if (email.trim().length !== 0 && password.trim().length) {
+      APIService.RegisterUser(email, password)
+        .then((response) => {
+          if (response.email == "Enter a valid email address.") {
+            console.log("Enter a valid email address.");
+          }
+          if (response.email == "user with this email already exists.") {
+            console.log("User with this email already exists.");
+          }
+          if (response.password == "Ensure this field has at least 5 characters.") {
+            console.log("Ensure password field has at least 5 characters.");
+          }
+          if (response.name) {
+            console.log("Account created successfully. You may try logging in.");
+            setLogin(true); //Directs user to login
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     } else {
-      console.log("Username and password are not set");
+      console.log('Email And Password Are Not Set');
     }
   };
 
   return (
-    
+
     <div className="LoginRegister-container">
-     
+
       <div className="LoginRegister__content">
         <h1>{isLogin ? "Login" : "Register"}</h1>
-        
+
         <div>
           <form>
             <input
               type="text"
-              value={username}
+              value={email}
               className=""
               placeholder="Username"
               onChange={(e) => setUsername(e.target.value)}
