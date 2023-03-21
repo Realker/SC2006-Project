@@ -1,0 +1,21 @@
+:root {
+  --color-btn-primary:green;
+}
+
+*,
+*::after,
+*::before,
+input {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.searchInput{
+  border: none;
+  height: 4rem;
+  width: 50vw;
+  outline: none;
+  
+  font-size: 1.5rem;
+}
