@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 
         <div className="ResetPassword__content">
         <h1>HDB Finder</h1>
-        <p> Enter the email address associated with your account and we'll send you a link to reset your password.</p>
+        <p class="short-text"> Enter the email address associated with your account and we'll send you a link to reset your password.</p>
         <br></br>
 
         <div>
@@ -38,7 +38,7 @@ import { Link } from 'react-router-dom';
           </div>
 
           <br></br><br></br><br></br>
-          <p> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          <p class="short-text"> 
              Don't have an account? <Link to="/">Sign up</Link></p>
         </div>
       </div>
