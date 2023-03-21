@@ -5,6 +5,7 @@
     justify-content: space-evenly;
     height: 10vh;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .Logo {
