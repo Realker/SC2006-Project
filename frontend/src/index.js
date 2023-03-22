@@ -16,7 +16,7 @@ import DisplayFlat from './components/DisplayFlat';
 import Flat from './components/Flat';
 import Search from './components/Search';
 //import FilterByParameters from './components/FilterByParameters';
-
+import SearchHouses from './components/SearchHouses';
 function Router(){
   return(
     
@@ -34,7 +34,8 @@ function Router(){
       <Route path='/DisplayFlat' element = {<DisplayFlat/>} />
       <Route path='/Flat' element = {<Flat/>} />
       <Route path='/Search' element = {<Search/>} />
-
+      <Route path='/SearchHouses' element = {<SearchHouses />}/>
+      
 
     </Routes>
 </BrowserRouter>

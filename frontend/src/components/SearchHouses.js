@@ -1,28 +1,19 @@
-import React, {useState,useEffect} from 'react'
+import React from 'react'
 import {useNavigate} from 'react-router-dom'
 import {useCookies} from 'react-cookie'
 import APIService from './APIService'
-import './Search.css';
-
-function SearchHouses() {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    console.log('Search term:', searchTerm);
-  };
-
+import '../css/App.css';
+import SearchHousesPageBG from "../images/SearchHousesPage.jpg"
+import NavBar from './NavBar';
+import Search from '../css/SearchHouses.css';
+const SearchHouses = () => {
   return (
-    <form className="search" onSubmit={handleSearch}>
-      <input
-        type="text"
-        placeholder="Search"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <button type="submit">Search</button>
-    </form>
-  );
+   
+    <div className = 'SearchHousesPageBg'>
+       <NavBar/> 
+       <h1> Search Houses results</h1>
+       </div>
+  )
 }
 
-export default SearchHouses;
+export default SearchHouses

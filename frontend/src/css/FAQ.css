@@ -2,7 +2,7 @@
     background-image:url("../images/HDBFAQ.jpg");
     min-height: 100vh;
     
-    height: 100vh;
+    height: fill;
     background-repeat: no-repeat;
     background-size: cover;
 }
