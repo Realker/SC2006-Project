@@ -15,7 +15,7 @@ import ResetPassword from './components/ResetPassword';
 import DisplayFlat from './components/DisplayFlat';
 import Flat from './components/Flat';
 //import FilterByParameters from './components/FilterByParameters';
-
+import SearchHouses from './components/SearchHouses';
 function Router(){
   return(
     
@@ -32,7 +32,8 @@ function Router(){
       <Route path='/ResetPassword' element = {<ResetPassword/>} />
       <Route path='/DisplayFlat' element = {<DisplayFlat/>} />
       <Route path='/Flat' element = {<Flat/>} />
-     
+      <Route path='/SearchHouses' element = {<SearchHouses />}/>
+      
 
     </Routes>
 </BrowserRouter>

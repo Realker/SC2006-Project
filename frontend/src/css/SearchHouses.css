@@ -1,0 +1,6 @@
+.SearchHousesPageBg {
+    background-image:url("../images/SearchHousesPage.jpg");
+    min-height: 100vh;
+    font-size: 2rem;
+    text-align: center;
+}
