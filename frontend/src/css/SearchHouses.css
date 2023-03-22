@@ -1,6 +1,26 @@
 .SearchHousesPageBg {
     background-image:url("../images/SearchHousesPage.jpg");
     min-height: 100vh;
-    font-size: 2rem;
     text-align: center;
+    height: fill;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
 }
+
+.SearchHousesCard{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: rgba(164, 30, 30, 0.35) 0px 5px 15px;
+    border-radius: 100px;
+    width: 60vw;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 5rem;
+    gap: 2.5rem;
+
+}
+
