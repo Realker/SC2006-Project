@@ -14,6 +14,7 @@ import SaveHousesToFavourites from './components/SaveHousesToFavourites';
 import ResetPassword from './components/ResetPassword';
 import DisplayFlat from './components/DisplayFlat';
 import Flat from './components/Flat';
+//import FilterByParameters from './components/FilterByParameters';
 
 function Router(){
   return(
@@ -31,6 +32,7 @@ function Router(){
       <Route path='/ResetPassword' element = {<ResetPassword/>} />
       <Route path='/DisplayFlat' element = {<DisplayFlat/>} />
       <Route path='/Flat' element = {<Flat/>} />
+     
 
     </Routes>
 </BrowserRouter>
