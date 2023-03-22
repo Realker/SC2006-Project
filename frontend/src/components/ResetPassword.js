@@ -14,11 +14,20 @@ import { Link } from 'react-router-dom';
 
         <div className="ResetPassword__content">
         <h1>HDB Finder</h1>
-        <p class="short-text"> Enter the email address associated with your account and we'll send you a link to reset your password.</p>
+        <p class="short-text"> Enter your username and email address and we'll send you a link to reset your password.</p>
         <br></br>
 
         <div>
-        <form> Email
+        <form> 
+          Username
+          <input
+            type="text" 
+            //value={email}
+            className=""
+            placeholder=""
+            //onChange={(e) => setUsername(e.target.value)}
+          />
+          Email
           <input
             type="text" 
             //value={email}

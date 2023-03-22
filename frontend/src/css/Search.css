@@ -1,42 +1,78 @@
+.Search {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-.container {
+.search-container {
+  background-color: #999999;
+  height: 18em;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(248, 3, 3, 0.35) 0px 5px 15px;
+  position: absolute;
+  top: 43%;
+  
+
+}
+
+.dropdown {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+}
+
+.dropdown:empty {
+  border: none;
+  
+}
+
+.dropdown-row {
+  cursor: pointer;
+  text-align: start;
+  margin: 2px 0;
+}
+
+input {
+  width: 220px;
+}
+
+.search-inner {
   display: flex;
   justify-content: center;
-  align-items: center;
-  border: none;
-  flex: 1 1 auto;
-  height: 100%;
+  padding: 1rem 4rem;
+  height: 7em; 
+  width: 700px;
+  position: absolute;
+  top: 30%;
+
+  
 }
 
-.button {
-  background-color: #344ae2;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 1rem 2rem;
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 1px 0;
+  box-sizing: border-box;
+  
+}
+
+.Search button {
+  font-size:25px;
+  background-color: rgb(230, 80, 80);
+  
+}
+
+.Search h3 {
   color: white;
-  border-radius: 5px;
+  font-size: 34px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  position: relative;
+  top: 40px;
 }
 
-.searchContainer{
-  border: none;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  padding-left: 1rem;
-  padding: 1rem;
-  border-radius: 10px;
-  width: 45vw;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  
-}
 
-.searchInput{
-  border: none;
-  height: 4rem;
-  width: 50vw;
-  outline: none;
-  
-  font-size: 1.5rem;
-}
