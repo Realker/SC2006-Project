@@ -19,7 +19,7 @@ export default function Search() {
     <div className="Search">
       
       <div className="search-container">
-      <h3>Search for houses...</h3>
+      <h3>Search for houses...  </h3>
         <div className="search-inner">
           
         <input type="text" value={value} onChange={onChange}/>
