@@ -19,9 +19,11 @@ export default function Search() {
     <div className="Search">
       
       <div className="search-container">
-      <h3>Find Houses</h3>
+      <h3>Search for houses...</h3>
         <div className="search-inner">
+          
         <input type="text" value={value} onChange={onChange}/>
+          
         <button onClick={() => onSearch(value)}>Search</button>
       </div>
       <div className="dropdown">
