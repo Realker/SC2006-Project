@@ -11,12 +11,16 @@ const SearchHouses = () => {
    
     <div className = 'SearchHousesPageBg'>
        <NavBar/>
-       
        <h1> Search Houses results</h1>
-
-       <div class = 'SearchHousesCard'> </div>
+       
+       <div class = 'SearchHousesCard'><h2> Location | Month | Block |Price | Floor area| ............................... </h2>
+       <h3> *insert database for Datagov api here into a table*</h3>
+ </div>
       
-       <div class = 'SearchHousesCardContent'></div>
+       <div class = 'SearchHousesCardContent'>
+       
+
+       </div>
        </div>
   )
 }
