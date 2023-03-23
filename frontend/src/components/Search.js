@@ -24,7 +24,10 @@ export default function Search() {
           
         <input type="text" value={value} onChange={onChange}/>
           
-        <button onClick={() => onSearch(value)}>Search</button>
+        <button onClick={() => onSearch(value)}>Search
+       </button>
+       
+
       </div>
       <div className="dropdown">
         {data.filter(item => {
