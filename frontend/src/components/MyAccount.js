@@ -9,9 +9,9 @@ const MyAccount = () => {
       <NavBar/>
       <div className='FAQ__bg h1'>
       <h1>Account Details</h1>
+      <div className = 'FAQCard'><h3>My Username:</h3>
+      <h3>My Email:</h3></div>
       
-      <h2>My Username:</h2>
-      <h2>My Email:</h2>
       </div>
     </div>)
 }
