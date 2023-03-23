@@ -1,7 +1,7 @@
 .NavBar{
     display: flex;
-    background-color: #273c52;
-    color:#273c52;
+    background-color: #31526b;
+    color:#31526b;
     justify-content: space-evenly;
     height: 10vh;
     align-items: center;
@@ -34,7 +34,7 @@ color: white;
 }
 .Logout{
 
-    background-color: #273c52;
+    background-color: #31526b;
     color: white;
 
 }

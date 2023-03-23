@@ -1,8 +1,11 @@
 
 .Explorehouses__bg{
-    padding-bottom: 2rem;
-    background-color: #9DC0DE;
-    height:100vh;
+    background-image:url("../images/HDBExploreHouses.jpg");
+    min-height: 100vh;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #273c52;
 }
 .Explorehouses__bg h1{
     font-size: 2rem;
