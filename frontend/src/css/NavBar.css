@@ -1,27 +1,29 @@
 .NavBar{
     display: flex;
-    background-color: white;
-    color: black;
+    background-color: #273c52;
+    color:#273c52;
     justify-content: space-evenly;
     height: 10vh;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-size: 1.5rem;
+    
 }
 
 .Logo {
+    color: white;
     font-size: 1.8rem;
     font-weight: bold;
 }
 
 nav.ul{
-color: black;
+color: white;
 
 }
 
 .NavBarLink{
 
-    color: black;
+    color: white;
 
     display: flex;
     gap: 2.5rem;
@@ -32,7 +34,7 @@ color: black;
 }
 .Logout{
 
-    background-color: white;
-    color: black;
+    background-color: #273c52;
+    color: white;
 
 }
