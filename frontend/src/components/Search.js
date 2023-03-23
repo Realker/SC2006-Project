@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../css/Search.css';
-var data = require("./TOWN_DATA.json");
+var data = require("./Data/TOWN_DATA.json");
 
 export default function Search() {
   const [value, setValue] = useState("");

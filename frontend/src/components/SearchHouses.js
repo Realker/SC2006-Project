@@ -5,6 +5,8 @@ import APIService from './APIService'
 import SearchHousesPageBG from "../images/SearchHousesPage.jpg"
 import NavBar from './NavBar'
 import '../css/SearchHouses.css';
+//import Homepage from './components/Homepage';
+//import Search from './components/Search';
 
 const SearchHouses = () => {
   return (

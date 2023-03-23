@@ -6,6 +6,7 @@ import "../css/LoginRegister.css";
 import btoBuilding from "../images/Housingbuilding.jpg";
 import ResetPassword from './ResetPassword';
 import { Link } from 'react-router-dom';
+import TNC from './TNC';
 
 
 
@@ -15,9 +16,17 @@ function Login() {
   const [password, setPassword] = useState("");
   const [isLogin, setLogin] = useState(true);
   const [error, setError] = useState(null);
-
+  const [agree, setAgree] = useState(false);
   const [cookies, setCookie] = useCookies(['auth_token']);
   const navigate = useNavigate();
+  const [linkTNC, setLinkTNC] = useState(false);
+
+  //Terms & Conditions checkbox
+  const checkboxHandler = () => {
+    // if agree === true, it will be set to false
+    // if agree === false, it will be set to true
+    setAgree(!agree);
+  }
 
   const loginBtn = () => {
     if (email.trim().length !== 0 && password.trim().length) {
@@ -46,6 +55,7 @@ function Login() {
   };
 
   const RegisterBtn = () => {
+  
     if (email.trim().length !== 0 && password.trim().length) {
       APIService.RegisterUser(email, password)
         .then((response) => {
@@ -71,15 +81,18 @@ function Login() {
     }
   };
 
+
   return (
 
     <div className="LoginRegister-container">
 
       <div className="LoginRegister__content">
+
         <h1>{isLogin ? "Login" : "Register"}</h1>
 
         <div>
           <form>
+            <b>Username</b>
             <input
               type="text"
               value={email}
@@ -87,6 +100,8 @@ function Login() {
               placeholder="Username"
               onChange={(e) => setUsername(e.target.value)}
             />
+            <br></br>
+            <b>Password</b>
             <input
               type="password"
               value={password}
@@ -94,51 +109,58 @@ function Login() {
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
             />
-           
           </form>
 
           <div>
             {isLogin ? (
               <div>
                 <button
-                  onClick={loginBtn}
                   className="btn btn-loginRegister-primary"
+                  onClick={loginBtn}
                 >
                   Login
                 </button>
                 <div className="LoginRegister__content__secondary-btns">
-                  <button
-                    onClick={() => setLogin(false)}
+                  <button 
                     className="btn btn-loginRegister-secondary"
+                    onClick={() => setLogin(false)}
                   >
                     Register
                   </button>
-                  <button
-                    onClick={() => setLogin(false)}
+                  <button 
                     className="btn btn-forgetpass"
+                    onClick={() => setLogin(false)}
                   >
                     <Link to ="/ResetPassword">Forget Password?</Link>
                   </button>
                 </div>
               </div>
             ) : (
+
               <div>
-                <button
+          
+                <div>
+                  I accept the <label htmlFor="agree"><b><u><a href="#" onClick={() => setLinkTNC(true)}>Terms and Conditions</a></u></b></label>
+                  <input type="checkbox" id="agree" onChange={checkboxHandler} />
+                    <TNC trigger={linkTNC} setTrigger={setLinkTNC}>
+                      <p><b>Terms & Conditions</b></p>
+                    </TNC>
+                </div>
+
+                <button disabled={!agree}
+                  className="btn1"
                   onClick={RegisterBtn}
-                  className="btn btn-loginRegister-primary"
-                >
-                  Register
-                </button>
-                <div className="LoginRegister__content__secondary-btns">
+                    >Register</button>
+              
+                <div className="LoginRegister__content__secondary-btns"> 
                   <button
-                    className="btn btn-loginRegister-secondary"
+                    className="btn btn-loginRegister-secondary"  
                     onClick={() => setLogin(true)}
-                  >
-                    Login
-                  </button>
-                  <button
-                    onClick={() => setLogin(false)}
-                    className="btn btn-forgetpass">
+                    >Sign in instead</button>
+
+                  <button 
+                    className="btn btn-forgetpass" 
+                    onClick={() => setLogin(false)}>
                     <Link to ="/ResetPassword">Forget Password?</Link>
                   </button>
                 </div>

@@ -51,8 +51,20 @@
   margin-top: 2rem;
   display: flex;
   justify-content: space-between;
-  color: green
+  color: rgb(0, 9, 0)
 }
+
+
+/*.btn-loginRegister-third {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: underline;
+  position:relative; 
+  right: 212px;
+  font-size: 0.9rem;
+  height: 1.5rem;
+} */
 
 /* Buttons */
 
@@ -92,3 +104,26 @@ font-size: 3rem;
 .btn-forgetpass {
   color: grey;
 }
+
+/* this styling is for register button */
+.btn1 {
+  margin-top: 20px;
+  padding: 10px 30px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: large;
+  width: 100%;
+  height: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}
+
+/* this styling is for T&C checkbox */
+input[type='checkbox'] {
+  position: relative;
+  cursor: pointer;
+  width: 40px;
+  height: 1.2rem;
+  top: 5px;
+} 
+

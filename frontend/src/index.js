@@ -17,6 +17,8 @@ import Flat from './components/Flat';
 import Search from './components/Search';
 //import FilterByParameters from './components/FilterByParameters';
 import SearchHouses from './components/SearchHouses';
+import TNC from './components/TNC';
+
 function Router(){
   return(
     
@@ -35,6 +37,7 @@ function Router(){
       <Route path='/Flat' element = {<Flat/>} />
       <Route path='/Search' element = {<Search/>} />
       <Route path='/SearchHouses' element = {<SearchHouses />}/>
+      <Route path='/TNC' element = {<TNC />}/>
       
 
     </Routes>

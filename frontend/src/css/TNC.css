@@ -1,0 +1,31 @@
+.tnc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.tnc-inner {
+    position: relative;
+    padding: 32px;
+    width: 90vh;
+    max-width: 100vh;
+    background-color: #FFF;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+}
+
+.tnc-inner .close-tnc {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+}
