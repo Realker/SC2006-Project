@@ -12,7 +12,8 @@ import TNC from './TNC';
 
 function Login() {
 
-  const [email, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [isLogin, setLogin] = useState(true);
   const [error, setError] = useState(null);
@@ -55,9 +56,9 @@ function Login() {
   };
 
   const RegisterBtn = () => {
-  
+
     if (email.trim().length !== 0 && password.trim().length) {
-      APIService.RegisterUser(email, password)
+      APIService.RegisterUser(email, password, name)
         .then((response) => {
           if (response.email == "Enter a valid email address.") {
             console.log("Enter a valid email address.");
@@ -92,14 +93,25 @@ function Login() {
 
         <div>
           <form>
-            <b>Username</b>
+            <b>Email</b>
             <input
               type="text"
               value={email}
               className=""
-              placeholder="Username"
-              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
             />
+            <br></br>
+            {isLogin ?
+            ""
+              :
+              <><b>Username</b><input
+              type="text"
+              value={name}
+              className=""
+              placeholder="Username"
+              onChange={(e) => setName(e.target.value)} /></>
+            }
             <br></br>
             <b>Password</b>
             <input
@@ -121,13 +133,13 @@ function Login() {
                   Login
                 </button>
                 <div className="LoginRegister__content__secondary-btns">
-                  <button 
+                  <button
                     className="btn btn-loginRegister-secondary"
                     onClick={() => setLogin(false)}
                   >
                     Register
                   </button>
-                  <button 
+                  <button
                     className="btn btn-forgetpass"
                     onClick={() => setLogin(false)}
                   >
@@ -138,7 +150,7 @@ function Login() {
             ) : (
 
               <div>
-          
+
                 <div>
                   I accept the <label htmlFor="agree"><b><u><a href="#" onClick={() => setLinkTNC(true)}>Terms and Conditions</a></u></b></label>
                   <input type="checkbox" id="agree" onChange={checkboxHandler} />
@@ -151,15 +163,15 @@ function Login() {
                   className="btn1"
                   onClick={RegisterBtn}
                     >Register</button>
-              
-                <div className="LoginRegister__content__secondary-btns"> 
+
+                <div className="LoginRegister__content__secondary-btns">
                   <button
-                    className="btn btn-loginRegister-secondary"  
+                    className="btn btn-loginRegister-secondary"
                     onClick={() => setLogin(true)}
                     >Sign in instead</button>
 
-                  <button 
-                    className="btn btn-forgetpass" 
+                  <button
+                    className="btn btn-forgetpass"
                     onClick={() => setLogin(false)}>
                     <Link to ="/ResetPassword">Forget Password?</Link>
                   </button>

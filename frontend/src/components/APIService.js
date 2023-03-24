@@ -14,7 +14,7 @@ export default class APIService {
     }
 
 
-    static RegisterUser(email, password){
+    static RegisterUser(email, password, name){
         return fetch(`http://127.0.0.1:8000/api/user/register/`, {
             method: 'POST',
             headers: {
@@ -23,7 +23,7 @@ export default class APIService {
             body: JSON.stringify({
               "email": email,
               "password": password,
-              "name": "default-name"
+              "name": name
             })
           }).then(response => response.json());
     }
