@@ -69,7 +69,7 @@ function Login() {
           if (response.password == "Ensure this field has at least 5 characters.") {
             console.log("Ensure password field has at least 5 characters.");
           }
-          if (response.name) {
+          if (response.name == name) {
             console.log("Account created successfully. You may try logging in.");
             setLogin(true); //Directs user to login
           }
