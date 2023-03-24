@@ -8,7 +8,7 @@ function TNC(props) {
     <div className="tnc">
         <div className="tnc-inner">
             <button className="close-tnc" onClick={() => props.setTrigger(false)}
-            >close</button>
+            >X</button>
             { props.children }
         </div>
     </div>
