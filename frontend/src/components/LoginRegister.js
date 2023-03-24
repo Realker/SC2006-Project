@@ -7,7 +7,7 @@ import btoBuilding from "../images/Housingbuilding.jpg";
 import ResetPassword from './ResetPassword';
 import { Link } from 'react-router-dom';
 import TNC from './TNC';
-
+import TNCWriteup from './TNCWriteup';
 
 
 function Login() {
@@ -155,7 +155,7 @@ function Login() {
                   I accept the <label htmlFor="agree"><b><u><a href="#" onClick={() => setLinkTNC(true)}>Terms and Conditions</a></u></b></label>
                   <input type="checkbox" id="agree" onChange={checkboxHandler} />
                     <TNC trigger={linkTNC} setTrigger={setLinkTNC}>
-                      <p><b>Terms & Conditions</b></p>
+                      <TNCWriteup/>
                     </TNC>
                 </div>
 

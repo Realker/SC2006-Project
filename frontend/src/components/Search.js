@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import '../css/Search.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 var data = require("./Data/TOWN_DATA.json");
 
 export default function Search() {
@@ -19,12 +21,14 @@ export default function Search() {
     <div className="Search">
       
       <div className="search-container">
-      <h3>Search for houses...  </h3>
+      <h3>Search for houses... 
+      </h3>
         <div className="search-inner">
-          
-        <input type="text" value={value} onChange={onChange}/>
-          
-        <button onClick={() => onSearch(value)}>Search
+
+        <span class="icon1"><FontAwesomeIcon icon={faMapMarkerAlt}/></span>
+
+        <input type="text" placeholder="Search location" className="location-input" value={value} onChange={onChange}/>
+        <button onClick={() => onSearch(value)}><FontAwesomeIcon icon={faSearch} size="2x"/>
        </button>
        
 

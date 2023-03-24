@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 
         <div className="ResetPassword__content">
         <h1>Reset Password</h1>
-        <p class="short-text"> Enter your username and email address and to verify your credentials</p>
+        <p class="short-text"> Enter your username and email address to verify your credentials</p>
         <br></br>
 
         <div>
@@ -48,7 +48,10 @@ import { Link } from 'react-router-dom';
 
           <br></br><br></br><br></br>
           <p class="short-text"> 
-             Don't have an account? <Link to="/">Sign up</Link></p>
+             Don't have an account? &nbsp; 
+             <Link to="/">Sign up</Link></p>
+
+
         </div>
       </div>
      // </div>
