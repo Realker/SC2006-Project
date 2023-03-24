@@ -13,8 +13,8 @@ import { Link } from 'react-router-dom';
       <div className="ResetPassword-container">
 
         <div className="ResetPassword__content">
-        <h1>HDB Finder</h1>
-        <p class="short-text"> Enter your username and email address and we'll send you a link to reset your password.</p>
+        <h1>Reset Password</h1>
+        <p class="short-text"> Enter your username and email address and to verify your credentials</p>
         <br></br>
 
         <div>
