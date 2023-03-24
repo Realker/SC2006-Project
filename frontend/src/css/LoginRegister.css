@@ -116,6 +116,8 @@ font-size: 3rem;
   height: 3rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
+  background-color: green;
+  color: white;
 }
 
 /* this styling is for T&C checkbox */
