@@ -27,5 +27,12 @@
     position: absolute;
     top: 16px;
     right: 16px;
+    background-color: #b53369;
+    color:white;
+    border:#b53369;
+    height: 2vh;
+    width: 5vh;
+    cursor: pointer;
+    border-radius: 10px;
 
 }
