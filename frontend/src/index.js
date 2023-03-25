@@ -19,6 +19,8 @@ import Search from './components/Search';
 import SearchHouses from './components/SearchHouses';
 import TNC from './components/TNC';
 import TNCWriteup from './components/TNCWriteup';
+import Testt from './components/Testt';
+import FilterByParameters from './components/FilterByParameters';
 
 function Router(){
   return(
@@ -40,6 +42,9 @@ function Router(){
       <Route path='/SearchHouses' element = {<SearchHouses />}/>
       <Route path='/TNC' element = {<TNC />}/>
       <Route path='/TNCWriteup' element = {<TNCWriteup />} />
+      <Route path='/FilterByParameters' element = {<FilterByParameters />} />
+      <Route path='/Testt' element = {<Testt />} />
+      
 
     </Routes>
 </BrowserRouter>

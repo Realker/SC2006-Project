@@ -110,4 +110,8 @@ input {
   left: 90px;
   top: 42px;
   font-size: 25px;
-;}
+}
+
+.multiselect {
+  width: 200%;
+}

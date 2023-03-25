@@ -1,21 +1,71 @@
-:root {
-  --color-btn-primary:green;
+.FBPBackground {
+  background-image:url("../images/HDBMainpage.png");
+  min-height: 100vh;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-*,
-*::after,
-*::before,
-input {
+.notification-box {
+  position: fixed;
+  top: 50px;
+  right: -300px; /* start off-screen */
+  background-color: #ffffcc;
+  border: 1px solid #999;
+  padding: 10px;
+  font-size: 16px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  animation-name: slide-in;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px; /* set the width of the notification box */
+}
+
+.notification-box p {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-weight: bold;
+  margin-right: 10px;
+  color: hsl(0, 0%, 4%); /* change the word color */
 }
 
-.searchInput{
+.notification-box button {
+  background-color: #f73905;
+  color: white;
   border: none;
-  height: 4rem;
-  width: 50vw;
-  outline: none;
-  
-  font-size: 1.5rem;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.notification-box button:hover {
+  background-color: #8e6a3e;
+}
+
+@keyframes slide-in {
+  0% {
+    right: -300px;
+  }
+  100% {
+    right: 50px; /* final position */
+  }
+}
+.notification-click {
+  background-color: grey;
+  color: white;
+  border: none;
+  padding: 10px 13px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin-top: 12px;
+  cursor: pointer;
+  border-radius: 10px;
 }

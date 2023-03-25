@@ -2,6 +2,9 @@ import React, {useState,useEffect} from 'react'
 import {useCookies} from 'react-cookie';
 import { NavLink, Link } from 'react-router-dom'
 import '../css/NavBar.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell } from '@fortawesome/free-solid-svg-icons';
+import '../css/FilterByParameters.css'
 const currentTab = ({ isActive }) => {
   return isActive
       ? "p-3 btn btn-light text-danger gap-3 d-flex align-items-center"
@@ -10,6 +13,18 @@ const currentTab = ({ isActive }) => {
 
 export default function NavBar() {
   // TODO : replace with currently authenticated user context
+
+  //Notification Bar
+  const [isShowing, setIsShowing] = useState(false);
+
+  const handleClick = () => {
+    setIsShowing(true);
+  };
+
+  const handleClose = () => {
+    setIsShowing(false);
+  };
+  //
  
   return (
 
@@ -37,6 +52,15 @@ export default function NavBar() {
 
                       <li class = "NavBarLink">My Account</li></NavLink>
               </ul>
+            
+              <button className="btn notification-click" onClick={handleClick}><FontAwesomeIcon icon={faBell} size="2x"/></button>
+                {isShowing && (
+                <div className="notification-box">
+                 <p>Notifications</p>
+                <button onClick={handleClose}>Close</button>
+                </div>
+                )}
+
 
               {/* TODO : handle log out */}
               {/* Log Out */}
