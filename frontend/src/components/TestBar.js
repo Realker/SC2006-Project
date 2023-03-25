@@ -1,24 +1,25 @@
 import React, {useState,useEffect} from 'react'
 import {useCookies} from 'react-cookie';
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom';
 import { NavDropdown } from 'react-bootstrap';
-import '../css/NavBar.css';
+import '../css/Testt.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell, faUser} from '@fortawesome/free-solid-svg-icons';
-import '../css/Testt.css'; //For styling of MyAccount DropDown Menu
+import { faBell, faUser } from '@fortawesome/free-solid-svg-icons';
 import '../css/FilterByParameters.css'
 
+
+//CurrentTab
 const currentTab = ({ isActive }) => {
   return isActive
       ? "p-3 btn btn-light text-danger gap-3 d-flex align-items-center"
       : "p-3 btn btn-primary gap-3 d-flex align-items-center"
 }
 
-export default function NavBar() {
+export default function TestBar() {
   // TODO : replace with currently authenticated user context
-
+  
   //MyAccount Bar
-
+ 
   //Notification Bar
   const [isShowing, setIsShowing] = useState(false);
 
@@ -34,29 +35,28 @@ export default function NavBar() {
   return (
 
       <div>
-          <nav class = "NavBar">
+          <nav class = "TestBar">
               {/* Logo */}
               <Link to="/Homepage" className= "Logo">
                   <p className='Logo'>HDBFinder</p>
               </Link>
 
               {/* Menu links */}
-              <ul class = "NavBarLink">
-                  <NavLink to="/ExploreHouses" className="NavBarLink">
+              <ul class = "TestBarLink">
+                  <NavLink to="/ExploreHouses" className="TestBarLink">
                       
                       <li class = "NavBarLink">Explore</li>
                   </NavLink>
-                  <NavLink to="/FAQ" className="NavBarLink">
+                  <NavLink to="/FAQ" className="TestBarLink">
                       
-                      <li class = "NavBarLink">FAQ</li>
+                      <li class = "TestBarLink">FAQ</li>
                   </NavLink>
-                  <NavLink to="/MyActivities" className="NavBarLink">
+                  <NavLink to="/MyActivities" className="TestBarLink">
                      
-                      <li class = "NavBarLink">My Activities</li></NavLink>
-
+                      <li class = "TestBarLink">My Activities</li></NavLink>
+                 
               </ul>
             
-              {/*TODO: Handle Notification PopUp */}
               <button className="btn notification-click" onClick={handleClick}><FontAwesomeIcon icon={faBell} size="2x"/></button>
                 {isShowing && (
                 <div className="notification-box">
@@ -67,10 +67,10 @@ export default function NavBar() {
                 )}
 
 
-              {/* TODO : handle MyAccount Bar */}
-              {/* Include DropDown Menu*/}
-
-               <NavDropdown title={<span><FontAwesomeIcon icon={faUser} size="1x"></FontAwesomeIcon>&nbsp;&nbsp;My Account</span>} 
+              {/* TODO : handle log out */}
+              {/* Log Out */}
+             
+            <NavDropdown title={<span><FontAwesomeIcon icon={faUser} size="1x"></FontAwesomeIcon>&nbsp;&nbsp;My Account</span>} 
             className="dropdown-main" id="basic-nav-dropdown" >
                 <NavDropdown.Item className="dropdown-item" as={NavLink} to="/MyAccount">Profile</NavDropdown.Item>
             <NavDropdown.Divider />
@@ -80,7 +80,10 @@ export default function NavBar() {
             <NavDropdown.Divider />
                 <NavDropdown.Item className="dropdown-item" as={NavLink} to="/">Logout</NavDropdown.Item>
             </NavDropdown>
+
           </nav>
+
+        
       </div>
   )
 }

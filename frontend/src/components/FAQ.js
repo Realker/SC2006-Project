@@ -2,11 +2,19 @@ import React from 'react'
 import NavBar from './NavBar'
 import HDB from '../images/HDBFAQ.jpg'
 import '../css/FAQ.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 const FAQ = () => {
   return (
     <div class = "FAQBackground">
-      
       <NavBar/>
+      
+      <div className="second-nav">
+        <a href="/Homepage"><FontAwesomeIcon icon={faHome} className="homeicon"/></a>&nbsp;&nbsp;
+        <FontAwesomeIcon icon={faChevronRight} className="arrow-right"/>&nbsp;&nbsp; FAQ
+      </div>
+
       <div className='FAQ__bg h1'>
       <h1>Frequently Asked Questions (FAQs):</h1>
       <div class = 'FAQCard'>

@@ -1,0 +1,51 @@
+.NavBar{
+    display: flex;
+    background-color: #31526b;
+    color:#31526b;
+    justify-content: space-evenly;
+    height: 10vh;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 1.5rem;
+    
+}
+
+.Logo {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration-color: #31526b;
+    
+}
+
+nav.ul{
+color: white;
+text-decoration-color: #31526b;
+
+}
+
+.NavBarLink{
+
+    color: white;
+    font-weight: bold;
+    display: flex;
+    gap: 2.5rem;
+    text-decoration-color: #31526b;
+    text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+.navButton{
+    --color-btn-primary: white;
+    text-decoration-color: #31526b;
+}
+.Logout{
+
+    background-color: #31526b;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    gap: 2.5rem;
+    text-align: right;
+    text-decoration-color: #31526b;
+    border-radius: 8px;
+}
