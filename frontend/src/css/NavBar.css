@@ -82,11 +82,7 @@ text-decoration-color: #31526b;
     align-items: center;
     font-size: 3rem;
     position: relative;
-<<<<<<< HEAD
-   
-=======
     border-radius: 8px;
->>>>>>> a7aff3762e54959a0a027be983bd89f860daf2bf
   }
 
 .dropdown-item:hover {
