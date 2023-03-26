@@ -5,7 +5,6 @@ import { NavDropdown } from 'react-bootstrap';
 import '../css/NavBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faUser} from '@fortawesome/free-solid-svg-icons';
-import '../css/Testt.css'; //For styling of MyAccount DropDown Menu
 import '../css/FilterByParameters.css'
 
 const currentTab = ({ isActive }) => {

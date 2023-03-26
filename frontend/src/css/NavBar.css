@@ -60,7 +60,6 @@ text-decoration-color: #31526b;
     font-size: 24px;
     font-weight: bold;
 
-   
 }
 
 .nav-link {
@@ -70,6 +69,7 @@ text-decoration-color: #31526b;
 
 .nav-link:hover {
   background-color: #080808;
+  border-radius: 8px;
 }
 
 .dropdown-item {
