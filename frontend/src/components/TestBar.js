@@ -71,14 +71,14 @@ export default function TestBar() {
               {/* Log Out */}
              
             <NavDropdown title={<span><FontAwesomeIcon icon={faUser} size="1x"></FontAwesomeIcon>&nbsp;&nbsp;My Account</span>} 
-            className="dropdown-main" id="basic-nav-dropdown" >
-                <NavDropdown.Item className="dropdown-item" as={NavLink} to="/MyAccount">Profile</NavDropdown.Item>
+            className="dropdown-mainn" id="basic-nav-dropdown" >
+                <NavDropdown.Item className="dropdown-items" as={NavLink} to="/MyAccount">Profile</NavDropdown.Item>
             <NavDropdown.Divider />
-                <NavDropdown.Item className="dropdown-item" as={NavLink} to="/ChangePassword">Change Password</NavDropdown.Item>
+                <NavDropdown.Item className="dropdown-items" as={NavLink} to="/ChangePassword">Change Password</NavDropdown.Item>
             <NavDropdown.Divider />
-                <NavDropdown.Item className="dropdown-item" as={NavLink} to="/Articles">Articles</NavDropdown.Item>
+                <NavDropdown.Item className="dropdown-items" as={NavLink} to="/Articles">Articles</NavDropdown.Item>
             <NavDropdown.Divider />
-                <NavDropdown.Item className="dropdown-item" as={NavLink} to="/">Logout</NavDropdown.Item>
+                <NavDropdown.Item className="dropdown-items" as={NavLink} to="/">Logout</NavDropdown.Item>
             </NavDropdown>
 
           </nav>

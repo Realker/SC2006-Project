@@ -52,7 +52,7 @@
 }
 
 /*My Account Bar CSS*/
-.dropdown-main {
+.dropdown-mainn {
     background-color: transparent;
     border: 3px solid black;
     min-width: 230px;
@@ -74,7 +74,7 @@
   background-color: #080808;
 }
 
-.dropdown-item {
+.dropdown-items {
     background-color: #656464; /* Set background color */
     border: none; /* Remove border */
     box-shadow: 0px 2px 10px rgba(207, 23, 23, 0.1); /* Add box shadow */
@@ -87,11 +87,11 @@
     position: relative;
   }
 
-.dropdown-item:hover {
+.dropdown-items:hover {
   background-color: #cfc8c8;
 }
 
-.dropdown-item {
+.dropdown-items {
     color: #f5f6f8;
     font-size: 20px;
     padding: 8px 30px;
