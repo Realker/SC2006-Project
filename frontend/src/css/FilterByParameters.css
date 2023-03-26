@@ -46,7 +46,9 @@
   display: inline-block;
   font-size: 20px;
   cursor: pointer;
+  align-items:justify;
 }
+
 
 .notification-box button:hover {
   background-color: #8e6a3e;
@@ -77,6 +79,7 @@
   position: relative;
   left: 280px;
   height: 4.2vh;
+ align-items:right;
 }
 
 .notification-click:hover {
