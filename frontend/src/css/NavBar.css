@@ -76,13 +76,14 @@ text-decoration-color: #31526b;
     background-color: #656464; /* Set background color */
     border: none; /* Remove border */
     box-shadow: 0px 2px 10px rgba(207, 23, 23, 0.1); /* Add box shadow */
-    min-width: 200px; /* Set minimum width */
+    min-width: 225px; /* Set minimum width */
     justify-content: space-evenly;
     height: 5vh;
     align-items: center;
     font-size: 3rem;
     text-align: left;
     position: relative;
+   
   }
 
 .dropdown-item:hover {

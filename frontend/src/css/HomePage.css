@@ -5,3 +5,11 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.DivisionBackGround {
+    background-image:url("../images/DivisionBackGround.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 2vh;
+    height: 5vh;
+}

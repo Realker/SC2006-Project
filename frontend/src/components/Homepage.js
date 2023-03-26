@@ -5,6 +5,7 @@ import APIService from './APIService'
 import '../css/App.css';
 import '../css/HomePage.css'
 import NavBar from './NavBar';
+import DivisionNavBar from './DivisionNavBar';
 import Search from './Search';
 import HDB from "../images/HDBMainpage.png"
 
@@ -27,6 +28,11 @@ const Homepage = () => {
             <NavBar / > 
             <Search></Search>
            
+          </div>
+
+          <div class= "DivisionBackGround">
+           <DivisionNavBar />
+         
           </div>
       </>
     );

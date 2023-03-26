@@ -1,4 +1,4 @@
-.NavBar{
+.DivisonNavBar{
     display: flex;
     background-color: #31526b;
     color:#31526b;
@@ -10,42 +10,29 @@
     
 }
 
-.Logo {
-    color: white;
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-decoration-color: #31526b;
-    
-}
-
 nav.ul{
 color: white;
 text-decoration-color: #31526b;
 
 }
 
-.NavBarLink{
-
+.DivisionNavBarLink{
     color: white;
     font-weight: bold;
     display: flex;
     gap: 2.5rem;
     text-decoration-color: #31526b;
     text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    
+    align-items: center;
+    font-size: 20px;  
 }
+
+.divisonLink {
+    color: white;
+    font-size: 20px; 
+}
+
 .navButton{
     --color-btn-primary: white;
     text-decoration-color: #31526b;
-}
-.Logout{
-
-    background-color: #31526b;
-    color: white;
-    font-weight: bold;
-    display: flex;
-    gap: 2.5rem;
-    text-align: right;
-    text-decoration-color: #31526b;
-    border-radius: 8px;
 }
