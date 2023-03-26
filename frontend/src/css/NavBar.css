@@ -3,7 +3,7 @@
     background-color: #31526b;
     color:#31526b;
     justify-content: space-evenly;
-    height: 10vh;
+;    height: 10vh;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-size: 1.5rem;
@@ -56,7 +56,7 @@ text-decoration-color: #31526b;
     min-width: 230px;
     height: 3.5vh;
     border-radius: 10px;
-    text-align: left;
+    text-align: center;
     font-size: 24px;
     font-weight: bold;
   
