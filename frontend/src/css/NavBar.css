@@ -113,12 +113,13 @@ text-decoration-color: #31526b;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 13px;
-  margin-top: 2px;
+  font-size: 11px;
+  margin-top: 1px;
   cursor: pointer;
   border-radius: 10px;
   position: relative;
   left: 430px;
+  
   height: 4.2vh;
   align-items:right;
 }
