@@ -52,10 +52,10 @@ render() {
   return (
       <div className="ProfilePicChanger">
       <Button type="primary" onClick={this.showModal}>
-        Open Modal
+        Choose Profile Picture
       </Button>
     <Modal
-      title="Profile Picture Changer Modal"
+      title="Profile Picture Avatars"
       visible={this.state.visible}
       onOk={this.handleOk}
       onCancel={this.handleCancel}
