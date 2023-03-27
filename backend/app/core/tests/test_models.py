@@ -51,18 +51,26 @@ class ModelTests(TestCase):
         self.assertTrue(user.is_superuser)
         self.assertTrue(user.is_staff)
 
-    def test_create_stocks(self):
-        """Test creating a favourite stock is successful."""
-        # user = get_user_model().objects.create_user(
-        #     'test@example.com',
-        #     'testpass123',
-        # )
-        stock = models.Stock.objects.create(
-            # user=user,
-            securityname='Sample stock name',
-            stocksymbol='SAMPLESYMBOL123',
-            sellprice=Decimal('0.00'),
-            buyprice=Decimal('0.00'),
+    def test_create_hdbflat(self):
+        """Test creating a HDBFlat is successful."""
+        user = get_user_model().objects.create_user(
+            'test@example.com',
+            'testpass123',
+        )
+        hdbflat = models.HDBFlat.objects.create(
+            user=user,
+            town="ANG MO KIO",
+            flat_type="2 ROOM",
+            flat_model="Improved",
+            floor_area_sqm=Decimal('44'),
+            street_name="ANG MO KIO AVE 10",
+            resale_price=Decimal('232000'),
+            month="2017-01",
+            remaining_lease="61 years 04 months",
+            lease_commence_date="1979",
+            storey_range="10 TO 12",
+            id_str="1",
+            block="406"
         )
 
-        self.assertEqual(str(stock), stock.securityname)
+        self.assertEqual(str(hdbflat), hdbflat.id_num)
