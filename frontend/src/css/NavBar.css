@@ -1,3 +1,15 @@
+/*
+.Logo {
+  background-image:url("../images/hdbFinal.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  height: 100px;
+  width: 230px;
+  vertical-align: middle;
+}
+*/
+
 .NavBar{
     display: flex;
     background-color: #31526b;
@@ -10,12 +22,12 @@
     
 }
 
+
 .Logo {
     color: white;
     font-size: 1.8rem;
     font-weight: bold;
-    text-decoration-color: #31526b;
-    
+    text-decoration-color: #31526b; 
 }
 
 nav.ul{
@@ -25,7 +37,6 @@ text-decoration-color: #31526b;
 }
 
 .NavBarLink{
-
     color: white;
     font-weight: bold;
     display: flex;
@@ -52,10 +63,11 @@ text-decoration-color: #31526b;
 /*My Account Bar CSS*/
 .dropdown-main {  
     background-color: transparent !important;
+    background-size: cover;
     border-color: #31526b;
     min-width: 230px;
     height: 4.5vh;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
@@ -69,7 +81,7 @@ text-decoration-color: #31526b;
 
 .nav-link:hover {
   background-color: #080808;
-  border-radius: 8px;
+  border-radius: 15px;
   border:  none;
 }
 
@@ -91,6 +103,7 @@ text-decoration-color: #31526b;
 
 .dropdown-item:hover {
   background-color: #cfc8c8;
+
 }
 
 .dropdown-item {
