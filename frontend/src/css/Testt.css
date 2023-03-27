@@ -47,7 +47,6 @@
     gap: 2.5rem;
     text-align: right;
     text-decoration-color: #31526b;
-   
     border-radius: 8px;
 }
 
@@ -61,8 +60,8 @@
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-
-   
+    position: relative;
+    
 }
 
 .nav-link {
@@ -84,18 +83,29 @@
     align-items: center;
     font-size: 3rem;
     text-align: left;
-    position: relative;
+    position: absolute;
+    z-index: 1000;
+
   }
 
 .dropdown-items:hover {
   background-color: #cfc8c8;
 }
 
+/* This one */
 .dropdown-items {
     color: #f5f6f8;
     font-size: 20px;
     padding: 8px 30px;
     text-decoration: none;
     display: block;
+    position: relative;
+    z-index: 1000;
   }
-
+  .dataTable {
+    position: relative;
+    z-index: 1;
+    float: center;
+    margin-top: 100px;
+   
+  }

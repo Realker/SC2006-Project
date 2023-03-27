@@ -1,11 +1,13 @@
 .FBPBackground {
   background-image:url("../images/HDBMainpage.png");
+  background-size: cover;
   min-height: 100vh;
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+/* for bell notification */
 .notification-box {
   position: absolute;
   top: 0px;
@@ -49,7 +51,6 @@
   align-items:justify;
 }
 
-
 .notification-box button:hover {
   background-color: #8e6a3e;
 }
@@ -79,4 +80,15 @@
 }
 .arrow-right {
   color: grey;
+}
+
+.filter-parameters{
+  text-align: center;
+  margin-top: 40px;
+}
+
+
+.filter-parameters select {
+  width: 150px;
+  height: 50px;
 }

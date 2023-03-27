@@ -22,11 +22,14 @@ text-decoration-color: #31526b;
 
 .divisonLink {
     color: white;
-    font-size: 20px; 
+    font-size: 10px; 
     text-decoration: none;
-    position: relative;
-    left: 450px;
+    position:left;
+    left: 400px;
     padding: 5px 6px;
+    justify-content: space-evenly;
+    text-align: center;
+    
     
 }
 

@@ -25,7 +25,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 10px;
     width: 60vw;
-    justify-content: keft;
+    justify-content: left;
     align-items: center;
     height: 80%;
     padding: 5rem;
@@ -47,4 +47,75 @@
     color: grey;
     font-size: 1.5rem;
 
+}
+
+/* Formatting for Save & Changes button for ProfilePicture */
+.profileCancel {
+    width: 70px;
+    background-color: rgb(206, 206, 206);
+    height: 4vh;
+}
+
+.profileSave {
+    width: 70px;
+    background-color: rgb(20, 255, 71);
+    height: 4vh;
+}
+
+
+/* Formatting for Contents inside Card */
+.uName {
+    font-size: 20px;
+    text-align: left;
+    position: relative;
+    right: 300px;
+}
+
+.uEmail {
+ font-size: 20px;
+ text-align: left;
+ position: relative;
+ right: 300px;
+}
+
+.shortBio {
+    font-size: 20px;
+    text-align: left;
+    position: relative;
+    right: 300px;
+}
+
+.displayName {
+    width: 250px;
+    border-color: grey;
+    height: 5vh;
+
+}
+
+.displayEmail {
+    width: 250px;
+    border-color: grey;
+    height: 5vh;
+}
+
+.displayBio {
+    width: 250px;
+    border-color: grey;
+}
+
+/* CSS for Bio button */
+.saveEdit {
+    width: 70px;
+    background-color: rgb(20, 255, 71);
+    height: 4vh;
+    position: relative;
+    right: 300px;
+}
+
+.cancelEdit {
+    width: 70px;
+    background-color: rgb(206, 206, 206);
+    height: 4vh;
+    position: relative;
+    right: 300px;
 }

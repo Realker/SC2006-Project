@@ -68,7 +68,6 @@ export default function NavBar() {
 
               {/* TODO : handle MyAccount Bar */}
               {/* Include DropDown Menu*/}
-
                <NavDropdown title={<span><FontAwesomeIcon icon={faUser} size="1x"></FontAwesomeIcon>&nbsp;&nbsp;My Account</span>} 
             className="dropdown-main" id="basic-nav-dropdown" >
                 <NavDropdown.Item className="dropdown-item" as={NavLink} to="/MyAccount">Profile</NavDropdown.Item>

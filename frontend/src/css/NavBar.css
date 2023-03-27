@@ -1,3 +1,15 @@
+/*
+.Logo {
+  background-image:url("../images/hdbFinal.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  height: 100px;
+  width: 230px;
+  vertical-align: middle;
+}
+*/
+
 .NavBar{
     display: flex;
     background-color: #31526b;
@@ -10,12 +22,12 @@
     
 }
 
+
 .Logo {
     color: white;
     font-size: 1.8rem;
     font-weight: bold;
-    text-decoration-color: #31526b;
-    
+    text-decoration-color: #31526b; 
 }
 
 nav.ul{
@@ -25,7 +37,6 @@ text-decoration-color: #31526b;
 }
 
 .NavBarLink{
-
     color: white;
     font-weight: bold;
     display: flex;
@@ -50,26 +61,28 @@ text-decoration-color: #31526b;
 }
 
 /*My Account Bar CSS*/
-.dropdown-main {
+.dropdown-main {  
     background-color: transparent !important;
-    border: 3px solid black;
+    background-size: cover;
+    border-color: #31526b;
     min-width: 230px;
-    height: 3.5vh;
-    border-radius: 10px;
+    height: 4.5vh;
+    border-radius: 15px;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-
 }
 
 .nav-link {
   color: #ffffff;
   text-decoration: none;
+ 
 }
 
 .nav-link:hover {
   background-color: #080808;
-  border-radius: 8px;
+  border-radius: 15px;
+  border:  none;
 }
 
 .dropdown-item {
@@ -84,19 +97,25 @@ text-decoration-color: #31526b;
     text-align: left;
     position: relative;
     border-radius: 8px;
+    
 
   }
 
 .dropdown-item:hover {
   background-color: #cfc8c8;
+
 }
 
 .dropdown-item {
     color: #f5f6f8;
     font-size: 20px;
-    padding: 10px 30px;
+    padding: 10px 32px;
     text-decoration: none;
     display: block;
+    padding-top: 10px;
+    margin-bottom: -5px;
+    height: 50px;
+
   }
 
 /*Bell Notification*/
@@ -108,12 +127,13 @@ text-decoration-color: #31526b;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 13px;
-  margin-top: 2px;
+  font-size: 11px;
+  margin-top: 1px;
   cursor: pointer;
   border-radius: 10px;
   position: relative;
   left: 430px;
+  
   height: 4.2vh;
   align-items:right;
 }

@@ -46,7 +46,7 @@ handleImageChange = (profileImage) => {
       <h1>My Personal Profile</h1>
 
       {/* Allows user to choose profile picture */}
-      <Avatar size={200} icon="user" className="avatar-pop-up" src={this.state.profileImage}></Avatar> 
+      <Avatar size={150} icon="user" className="avatar-pop-up" src={this.state.profileImage}></Avatar> 
       <ProfilePicChanger handleImageChange={this.handleImageChange} pic1={Pic1} pic2={Pic2} pic3={Pic3}
       pic4={Pic4} pic5={Pic5} pic6={Pic6} pic7={Pic7} pic8={Pic8}/>
 
@@ -61,14 +61,36 @@ handleImageChange = (profileImage) => {
 
       <div className = 'MyAccountCard'>
 
-        
-        <h3 class = 'uName'>Username:</h3>
-        <h3 class = 'uEmail'>Email address:</h3> <h3 class = 'ShortBio'>Short Bio</h3>
-        <h3 class = 'uPhoto'>Update Photo</h3>
-      </div>
-       
-  `</div>  
+        <h3 class = 'uName'>Username: <br></br>
+        <input
+              type="text" className="displayName" placeholder="Your Username"  
+              //value={email}
+              //onChange={(e) => displayName(e.target.value)}
+        /></h3>
 
+        <h3 class = 'uEmail'>Email address: <br></br>
+        <input
+              type="email" className="displayEmail" placeholder="Your Email"  
+              //value={email}
+              //onChange={(e) => displayName(e.target.value)}
+        /></h3> 
+        
+        <h3 class = 'shortBio'>Short Bio <br></br>
+        <textarea rows="8" cols="50" className="displayBio" placeholder="Add a short bio..."
+              //value={email}
+              //onChange={(e) => displayName(e.target.value)}
+        ></textarea></h3> 
+
+      <h2>
+      <button className="saveEdit"
+          //onClick={() => saveEdit(true)}
+            >Save</button> &nbsp;
+      <button className="cancelEdit"
+          //onClick={() => cancelEdit(true)}
+            >Cancel</button> 
+      </h2>         
+          </div>
+        </div>  
       </div>
     );
   }

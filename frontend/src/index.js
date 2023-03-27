@@ -22,6 +22,7 @@ import TNCWriteup from './components/TNCWriteup';
 import Testt from './components/Testt';
 import FilterByParameters from './components/FilterByParameters';
 import ProfilePicChanger from './components/ProfilePicChanger';
+import ChangePassword from './components/ChangePassword';
 
 function Router(){
   return(
@@ -46,7 +47,7 @@ function Router(){
       <Route path='/FilterByParameters' element = {<FilterByParameters />} />
       <Route path='/Testt' element = {<Testt />} />
       <Route path='/ProfilePicChanger' element = {<ProfilePicChanger />} />
-      
+      <Route path='/ChangePassword' element = {<ChangePassword />}/>
 
     </Routes>
 </BrowserRouter>
