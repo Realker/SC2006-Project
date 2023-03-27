@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import '../css/Search.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
@@ -32,8 +33,9 @@ export default function Search() {
         <label htmlFor="search"></label>
         <input type="text" id="searchL" list="searchLocation" 
         placeholder="Search location" className="location-input" value={value} onChange={onChange}/>
+        <Link to="/SearchHouses">
         <button onClick={() => onSearch(value)}><FontAwesomeIcon icon={faSearch} size="2x"/>
-       </button>
+       </button></Link>
        
       </div>
 

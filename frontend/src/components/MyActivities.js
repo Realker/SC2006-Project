@@ -22,7 +22,10 @@ const MyActivities = () => {
             <ExploreHousesCard/>
             <ExploreHousesCard/>
           </div>
-    </div>
+
+          
+</div>
+    
   )
 }
 

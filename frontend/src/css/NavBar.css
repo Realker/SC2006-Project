@@ -3,7 +3,7 @@
     background-color: #31526b;
     color:#31526b;
     justify-content: space-evenly;
-;    height: 10vh;
+    height: 10vh;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-size: 1.5rem;
@@ -59,7 +59,7 @@ text-decoration-color: #31526b;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-  
+
 }
 
 .nav-link {
@@ -73,7 +73,7 @@ text-decoration-color: #31526b;
 }
 
 .dropdown-item {
-    background-color: #302d45; /* Set background color */
+    background-color: #656464; /* Set background color */
     border: none; /* Remove border */
     box-shadow: 0px 2px 10px rgba(207, 23, 23, 0.1); /* Add box shadow */
     min-width: 225px; /* Set minimum width */
@@ -81,12 +81,14 @@ text-decoration-color: #31526b;
     height: 5vh;
     align-items: center;
     font-size: 3rem;
+    text-align: left;
     position: relative;
     border-radius: 8px;
+
   }
 
 .dropdown-item:hover {
-  background-color: #4f4a6f;
+  background-color: #cfc8c8;
 }
 
 .dropdown-item {

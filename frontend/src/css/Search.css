@@ -93,10 +93,13 @@ input {
   font-weight: bold;
   font-size: large;
   color: white;
-  width: 34%;
+  height: 7vh;
+  width: 200%;
   border-radius: 10px;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 1px 0;
+  box-sizing: border-box;
   
 }
 

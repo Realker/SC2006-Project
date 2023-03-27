@@ -21,6 +21,7 @@ import TNC from './components/TNC';
 import TNCWriteup from './components/TNCWriteup';
 import Testt from './components/Testt';
 import FilterByParameters from './components/FilterByParameters';
+import ProfilePicChanger from './components/ProfilePicChanger';
 
 function Router(){
   return(
@@ -44,6 +45,7 @@ function Router(){
       <Route path='/TNCWriteup' element = {<TNCWriteup />} />
       <Route path='/FilterByParameters' element = {<FilterByParameters />} />
       <Route path='/Testt' element = {<Testt />} />
+      <Route path='/ProfilePicChanger' element = {<ProfilePicChanger />} />
       
 
     </Routes>

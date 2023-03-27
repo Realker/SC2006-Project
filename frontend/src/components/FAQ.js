@@ -4,12 +4,14 @@ import HDB from '../images/HDBFAQ.jpg'
 import '../css/FAQ.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import DivisionNavBar from './DivisionNavBar';
 
 const FAQ = () => {
   return (
     <div class = "FAQBackground">
       <NavBar/>
       
+       {/* These code are for Home Icon > FAQ */}
       <div className="second-nav">
         <a href="/Homepage"><FontAwesomeIcon icon={faHome} className="homeicon"/></a>&nbsp;&nbsp;
         <FontAwesomeIcon icon={faChevronRight} className="arrow-right"/>&nbsp;&nbsp; FAQ
@@ -45,8 +47,15 @@ Does this website show prices of new HDB flats and/or private housing units?</h1
         </div>
       </div>
       </div>
+      <div class= "DivisionBackGround">
+           <DivisionNavBar />
+         
+          </div>
     </div>
+
+    
   )
+  
 }
 
 export default FAQ
