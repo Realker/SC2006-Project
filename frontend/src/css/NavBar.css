@@ -99,3 +99,25 @@ text-decoration-color: #31526b;
     display: block;
   }
 
+/*Bell Notification*/
+.notification-click {
+  background-color: transparent;
+  color: white;
+
+  padding: 10px 13px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin-top: 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  position: relative;
+  left: 430px;
+  height: 4.2vh;
+  align-items:right;
+}
+
+.notification-click:hover {
+  color: black;
+}
