@@ -77,9 +77,9 @@
   cursor: pointer;
   border-radius: 10px;
   position: relative;
-  left: 700px;
+  left: 600px;
   height: 4.2vh;
- align-items:right;
+  align-items:right;
 }
 
 .notification-click:hover {
