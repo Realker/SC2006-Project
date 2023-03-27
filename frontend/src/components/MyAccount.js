@@ -6,6 +6,13 @@ import 'antd/dist/antd.css';
 import { Avatar }  from 'antd';
 import ProfilePicChanger from './ProfilePicChanger';
 import Pic1 from './pics/avatar1.png';
+import Pic2 from './pics/avatar2.png';
+import Pic3 from './pics/avatar3.png';
+import Pic4 from './pics/avatar4.png';
+import Pic5 from './pics/avatar5.png';
+import Pic6 from './pics/avatar6.png';
+import Pic7 from './pics/avatar7.png';
+import Pic8 from './pics/avatar8.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Nav } from 'react-bootstrap';
@@ -42,8 +49,9 @@ handleImageChange = (profileImage) => {
       <div className='MyAccount__bg'>
       <h1>My Personal Profile</h1>
 
-      <Avatar size={80} icon="user" className="avatar-pop-up" src={this.state.profileImage}></Avatar> 
-      <ProfilePicChanger handleImageChange={this.handleImageChange} pic1={Pic1} />
+      <Avatar size={200} icon="user" className="avatar-pop-up" src={this.state.profileImage}></Avatar> 
+      <ProfilePicChanger handleImageChange={this.handleImageChange} pic1={Pic1} pic2={Pic2} pic3={Pic3}
+      pic4={Pic4} pic5={Pic5} pic6={Pic6} pic7={Pic7} pic8={Pic8}/>
 
       <h2>
       <button className="profileCancel"
