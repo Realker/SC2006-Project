@@ -51,25 +51,29 @@ text-decoration-color: #31526b;
 
 /*My Account Bar CSS*/
 .dropdown-main {
+    
     background-color: transparent !important;
-    border: 3px solid black;
+    border-color: #31526b;
     min-width: 230px;
-    height: 3.5vh;
+    height: 4.5vh;
     border-radius: 10px;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
+    
 
 }
 
 .nav-link {
   color: #ffffff;
   text-decoration: none;
+ 
 }
 
 .nav-link:hover {
   background-color: #080808;
   border-radius: 8px;
+  border:  none;
 }
 
 .dropdown-item {
@@ -84,6 +88,7 @@ text-decoration-color: #31526b;
     text-align: left;
     position: relative;
     border-radius: 8px;
+    
 
   }
 
@@ -108,12 +113,13 @@ text-decoration-color: #31526b;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 13px;
-  margin-top: 2px;
+  font-size: 11px;
+  margin-top: 1px;
   cursor: pointer;
   border-radius: 10px;
   position: relative;
   left: 430px;
+  
   height: 4.2vh;
   align-items:right;
 }
