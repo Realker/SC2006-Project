@@ -26,8 +26,9 @@ const Homepage = () => {
       <>
           <div class = "HomePageBackground">
             <NavBar / > 
-            <Search></Search>
-           
+            <Search>
+            </Search>
+           123
           </div>
 
           <div class= "DivisionBackGround">
