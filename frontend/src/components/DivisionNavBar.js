@@ -30,10 +30,12 @@ export default function DivisonNavBar() {
                   <NavLink to="/PrivacyPolicy" className="divisonLink">
                      
                       <li class = "divisonLink">Privacy Policy</li></NavLink>
+                      
+                      <p>@ 2023 HDBFinder</p>
 
               </ul>
-             
           </nav>
+          
       </div>
   )
 }

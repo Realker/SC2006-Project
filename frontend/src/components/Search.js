@@ -56,29 +56,24 @@ export default function Search() {
         <option value="hdb">HDB</option>
       </select>
       <select className="pricing" value={pricing} onChange={(e) => setPricing(e.target.value)}>
-        <option className='searchPropertyType' value="">Any Price</option>
+        <option className='searchPricingType' value="">Any Price</option>
         <option value="range1">0 - 500,000</option>
         <option value="range2">500,000 - 1,000,000</option>
         <option value="range3">1,000,000 - 2,000,000</option>
       </select>
       <select className="bedroomCount" value={noofbedroom} onChange={(e) => setNoofBedroom(e.target.value)}>
-        <option className='searchPropertyType' value="">Bedroom</option>
+        <option className='searchBedRoomType' value="">Bedroom</option>
         <option value="roomw1">1</option>
         <option value="roomw2">2</option>
         <option value="roomw3">3</option>
         <option value="roomw4">4</option>
         <option value="roomw5">5</option>
       </select>
-
-     
       </div>
-
-
-
 
       </div>
 
-      <div className="dropdown">
+      <div className="searchbox-dropdown">
         {data.filter(item => {
           const searchTerm = value.toLowerCase();
           const town_name = item.town_name.toLowerCase();
@@ -92,7 +87,7 @@ export default function Search() {
         .map((item) => (
           <div 
            onClick={()=>onSearch(item.town_name)}
-           className="dropdown-row"
+           className="searchbox-dropdownRow"
            key={item.town_name}
            >
             {item.town_name}   
