@@ -127,9 +127,11 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
 
         # EXAMPLE OF JSON REQUEST
         # {
-        #     "town": "ANG MO KIO",
-        #     "flat_type": "4 ROOM",
-        #     "filter_param": "block",
+        #     "town": "JURONG EAST",
+        #     "flat_type": "5 ROOM",
+        #     "flat_model": "Improved",
+        #     "block": "103",
+        #     "filter_param": "-month",
         #     "list_size": 10
         # }
 
