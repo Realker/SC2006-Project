@@ -4,9 +4,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  
-  
 }
 
 .search-container {
@@ -19,9 +16,7 @@
   position: absolute;
   top: 43%;
   border-radius: 10px;
-  
-  
-
+  z-index: 1;
 }
 
 .dropdown {
@@ -49,11 +44,10 @@
 }
 
 input {
-  width: 220px;
+  width: 230px;
   border-radius: 10px;
   border: 1px solid white;
   text-indent: 50px;
-
 }
 
 .search-inner {
@@ -69,8 +63,8 @@ input {
   
 }
 
-.Search input[type=text] {
-  width: 200%;
+.location-input {
+  width: 300%;
   padding: 12px 20px;
   margin: 1px 0;
   box-sizing: border-box;
@@ -83,13 +77,13 @@ input {
   left: 55px;
   top: 25px;
   font-size: 23px;
-
+  z-index: 1;
 }
 
-.Search button {
+.exploreSearch {
   font-size:25px;
   background-color:rgb(237, 58, 58);
-  border: 1px solid rgb(237, 58, 58);
+  border: none;
   font-weight: bold;
   font-size: large;
   color: white;
@@ -100,7 +94,10 @@ input {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin: 1px 0;
   box-sizing: border-box;
-  
+}
+
+.Search button:hover {
+  background-color: grey;
 }
 
 .Search h3 {
@@ -122,3 +119,90 @@ input {
 .multiselect {
   width: 200%;
 }
+
+/* Search Filter dropdown Styling */
+.ddown-parameters {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  }
+
+.proCount{
+  position: absolute;
+  text-align: center;
+  border: none; 
+  outline: none; 
+  background-color: transparent;
+  color: white;
+  z-index: 1000;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-top: 110px;    
+  left: 150px;
+  }
+
+  .pricing {
+    position: absolute;
+    text-align: center;
+    border: none; 
+    outline: none; 
+    background-color: transparent;
+    color: white;
+    z-index: 1000;
+    font-size: 15px;
+    width: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 110px;    
+    left: 300px;
+  }
+
+  .bedroomCount{
+    position: absolute;
+    text-align: center;
+    border: none; 
+    outline: none; 
+    background-color: transparent;
+    color: white;
+    z-index: 1000;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 110px;    
+    left: 450px;
+  }
+
+  .ddown-parameters select:hover {
+    cursor: pointer;
+  }
+
+  .ddown-parameters option {
+    color: black;
+    
+  }
+
+
+  /*
+  top: 100px;
+    right: 380px;
+    width: 30%;
+    height: 30px;
+    text-align: center;
+    border: none; Remove the border 
+    outline: none;  Remove the outline 
+    background-color: transparent;
+    z-index: 1000;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+/*
+
+ 
+  /*
+.searchPropertyType {
+  width: 100px;
+}
+*/
