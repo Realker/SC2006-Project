@@ -28,7 +28,7 @@ const Homepage = () => {
             <NavBar / > 
             <Search>
             </Search>
-           123
+          
           </div>
 
           <div class= "DivisionBackGround">
