@@ -18,17 +18,17 @@ export default function ExploreHouses() {
 
           <h1> Explore Top 3 Houses</h1>
           <div className='Housecards'>
-            <ExploreHousesCard/>
-            <ExploreHousesCard/>
-            <ExploreHousesCard/>
+            <ExploreHousesCard page="1"/>
+            <ExploreHousesCard page="2"/>
+            <ExploreHousesCard page="3"/>
           </div>
-         
+
         </div>
         <div class= "DivisionBackGround">
            <DivisionNavBar />
-         
+
           </div>
-      
+
     </>
   );
 }

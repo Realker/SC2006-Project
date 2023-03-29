@@ -43,4 +43,17 @@ export default class APIService {
         }).then(response => response.json());
   }*/
 
+  static RetrieveLatestHDB(list_size, page_num){
+    return fetch(`http://127.0.0.1:8000/api/hdbflat/filter_using_post/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          "page_num": page_num,
+          "list_size": list_size
+        })
+      }).then(response => response.json());
+  }
+
 }
