@@ -82,6 +82,12 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
             # Update offset for next request
             offset += limit
 
+    def retrieve_hdb_by_id(self, request, id_str):
+        """Retrieve HDBFlats by id."""
+        queryset = self.get_queryset().filter(id_str=id_str).order_by('-id')[:10]
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
+
     def filter_by_town(self, request, town):
         """Filter HDBFlats by town and return the latest 10 results."""
         queryset = self.get_queryset().filter(town=town).order_by('-id')[:10]
@@ -145,6 +151,7 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
         remaining_lease = request.data.get('remaining_lease')
         lease_commence_date = request.data.get('lease_commence_date')
         storey_range = request.data.get('storey_range')
+        id_str = request.data.get('id_str')
         block = request.data.get('block')
         filter_param = request.data.get('filter_param')
         list_size = request.data.get('list_size')
@@ -176,6 +183,8 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(lease_commence_date=lease_commence_date)
         if storey_range:
             queryset = queryset.filter(storey_range=storey_range)
+        if id_str:
+            queryset = queryset.filter(id_str=id_str)
         if block:
             queryset = queryset.filter(block=block)
 
