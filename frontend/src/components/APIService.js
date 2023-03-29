@@ -28,4 +28,19 @@ export default class APIService {
           }).then(response => response.json());
     }
 
+    /* Need to create schema for this before authenticating
+    static changePassword(password, newpassword, confirmpassword){
+      return fetch(`http://127.0.0.1:8000/api/user/changepassword/`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            "oldpassword": password,
+            "newpassword": newpassword,
+            "confirmpassword": confirmpassword
+          })
+        }).then(response => response.json());
+  }*/
+
 }

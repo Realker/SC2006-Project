@@ -126,6 +126,11 @@ font-size: 3rem;
   font-weight: bold;
 }
 
+/*
+.LoginErrorMsg1 {
+  top: 50px;
+}*/
+
 /* this styling is for T&C checkbox */
 input[type='checkbox'] {
   position: relative;

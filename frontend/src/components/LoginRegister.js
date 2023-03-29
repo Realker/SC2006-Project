@@ -355,7 +355,7 @@ function Login() {
                   <div className = "errorMessage">
                     {isUnfilled ?
                       (
-                        <div>
+                        <div className="LoginErrorMsg1">
                           - Ensure all fields are filled.
                         </div>
                       )

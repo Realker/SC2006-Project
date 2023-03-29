@@ -3,7 +3,6 @@ import NavBar from './NavBar'
 import HDB from '../images/HDBFAQ.jpg'
 import '../css/ChangePassword.css';
 import 'antd/dist/antd.css';
-import { Avatar }  from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Nav } from 'react-bootstrap';
@@ -56,11 +55,12 @@ const ChangePassword = () => {
                 </div>
 
                 <div>
-                <button
+                {/* Once user successfully changed password, Reroute back to homepage */}
+                <Link to="/Homepage"><button
                     //onClick={loginBtn}
                     className="btn btn-CP-primary"
                     > Confirm Change Password
-                </button>
+                </button></Link>
                 </div>
                 </div>
                 </div>
