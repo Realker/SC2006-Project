@@ -11,7 +11,6 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-from django.http import JsonResponse
 from django.db.models import Q
 from core.models import HDBFlat
 from hdbflat import serializers
@@ -130,6 +129,7 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
         """Filter HDBFlats by passing parameters in a JSON format via POST."""
         default_filter = '-id'
         default_list = 3
+        default_page_num = 1
 
         # EXAMPLE OF JSON REQUEST
         # {
@@ -155,12 +155,16 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
         block = request.data.get('block')
         filter_param = request.data.get('filter_param')
         list_size = request.data.get('list_size')
+        page_num = request.data.get('page_num')
 
         if filter_param:
             default_filter = filter_param
 
         if list_size:
-            default_list = list_size
+            default_list = int(list_size)
+
+        if page_num:
+            default_page_num = int(page_num)
 
         queryset = HDBFlat.objects.all()
         if town:
@@ -188,6 +192,8 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
         if block:
             queryset = queryset.filter(block=block)
 
-        queryset = queryset.order_by(default_filter)[:default_list]
+        #total_count = queryset.count()
+
+        queryset = queryset.order_by(default_filter)[default_list*(default_page_num-1):default_list*default_page_num]
         serializer = HDBFlatSerializer(queryset, many=True)
         return Response(serializer.data)
