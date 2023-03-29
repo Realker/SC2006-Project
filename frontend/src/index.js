@@ -25,6 +25,9 @@ import Testing from './components/Testing';
 import FilterByParameters from './components/FilterByParameters';
 import ProfilePicChanger from './components/ProfilePicChanger';
 import ChangePassword from './components/ChangePassword';
+import AUP from './components/AUP';
+import TOS from './components/TOS';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 function Router(){
   return(
@@ -51,7 +54,9 @@ function Router(){
       <Route path='/Testing' element = {<Testing />} />
       <Route path='/ProfilePicChanger' element = {<ProfilePicChanger />} />
       <Route path='/ChangePassword' element = {<ChangePassword />}/>
-
+      <Route path='/AUP' element = {<AUP />}/>
+      <Route path='/TOS' element = {<TOS />}/>
+      <Route path='/PrivacyPolicy' element = {<PrivacyPolicy />}/>
     </Routes>
 </BrowserRouter>
   );
