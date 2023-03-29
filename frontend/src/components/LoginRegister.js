@@ -8,7 +8,7 @@ import ResetPassword from './ResetPassword';
 import { Link } from 'react-router-dom';
 import TNC from './TNC';
 import TNCWriteup from './TNCWriteup';
-
+//import ErrorMessage from './LoginErrorMsg';
 
 function Login() {
 
@@ -22,6 +22,13 @@ function Login() {
   const navigate = useNavigate();
   const [linkTNC, setLinkTNC] = useState(false);
 
+  //Login or Register Error Messages
+  const [isBadEmail, setIsBadEmail] = useState(false);
+  const [isNoCred, setIsNoCred] = useState(false);
+  const [isExistEmail, setIsExistEmail] = useState(false);
+  const [isBadPass, setBadPass] = useState(false);
+  const [isUnfilled, setUnfilled] = useState(false);
+
   //Terms & Conditions checkbox
   const checkboxHandler = () => {
     // if agree === true, it will be set to false
@@ -30,14 +37,20 @@ function Login() {
   }
 
   const loginBtn = () => {
+    setIsBadEmail(false);
+    setIsNoCred(false);
+    setIsExistEmail(false);
+    setBadPass(false);
     if (email.trim().length !== 0 && password.trim().length) {
       APIService.LoginUser(email, password)
         .then((response) => {
           if (response.non_field_errors) {
             console.log("Unable to authenticate with provided credentials.");
+            setIsNoCred(true);
           }
           if (response.email == "Enter a valid email address.") {
             console.log("Enter a valid email address.");
+            setIsBadEmail(true);
           }
           if (response.token) {
             setCookie('token', response.token); // Save token in cookie
@@ -51,26 +64,43 @@ function Login() {
           console.log(error);
         });
     } else {
-      console.log('Email And Password Are Not Set');
+      console.log('Email and/or Password Are Not Set');
+      setUnfilled(true);
     }
   };
 
   const RegisterBtn = () => {
-
-    if (email.trim().length !== 0 && password.trim().length) {
+    setIsBadEmail(false);
+    setIsNoCred(false);
+    setIsExistEmail(false);
+    setBadPass(false);
+    if (email.trim().length !== 0 && password.trim().length && name.trim().length !== 0) {
       APIService.RegisterUser(email, password, name)
         .then((response) => {
+          console.log(response);
           if (response.email == "Enter a valid email address.") {
             console.log("Enter a valid email address.");
+            setIsBadEmail(true);
           }
           if (response.email == "user with this email already exists.") {
             console.log("User with this email already exists.");
+            setIsExistEmail(true);
           }
           if (response.password == "Ensure this field has at least 5 characters.") {
             console.log("Ensure password field has at least 5 characters.");
+            setBadPass(true);
+          }
+          if (response.name == "Ensure this field has at least 5 characters.") {
+            console.log("Ensure password field has at least 5 characters.");
+            setBadPass(true);
           }
           if (response.name == name) {
             console.log("Account created successfully. You may try logging in.");
+            setIsBadEmail(false);
+            setIsNoCred(false);
+            setIsExistEmail(false);
+            setBadPass(false);
+            setUnfilled(false);
             setLogin(true); //Directs user to login
           }
         })
@@ -78,7 +108,8 @@ function Login() {
           console.log(error);
         });
     } else {
-      console.log('Email And Password Are Not Set');
+      console.log('Email, Username and/or Password Are Not Set');
+      setUnfilled(true);
     }
   };
 
@@ -135,17 +166,99 @@ function Login() {
                 <div className="LoginRegister__content__secondary-btns">
                   <button
                     className="btn btn-loginRegister-secondary"
-                    onClick={() => setLogin(false)}
+                    onClick={() => (  setLogin(false),
+                                      setIsBadEmail(false),
+                                      setIsNoCred(false),
+                                      setIsExistEmail(false),
+                                      setBadPass(false),
+                                      setUnfilled(false))}
                   >
                     Register
                   </button>
                   <button
                     className="btn btn-forgetpass"
-                    onClick={() => setLogin(false)}
+                    onClick={() => (  setLogin(false),
+                                      setIsBadEmail(false),
+                                      setIsNoCred(false),
+                                      setIsExistEmail(false),
+                                      setBadPass(false),
+                                      setUnfilled(false))}
                   >
                     <Link to ="/ResetPassword">Forget Password?</Link>
                   </button>
                 </div>
+                <>
+                  <div className = "errorMessage">
+                    {isBadEmail ?
+                      (
+                        <div>
+                          - Email format is invalid. Enter a valid email address.
+                        </div>
+                      )
+                      :
+                      (
+                        <div>
+
+                        </div>
+                      )}
+                  </div>
+                  <div className = "errorMessage">
+                    {isNoCred ?
+                      (
+                        <div>
+                        - Unable to authenticate with provided credentials.
+                        </div>
+                      )
+                      :
+                      (
+                        <div>
+
+                        </div>
+                      )}
+                  </div>
+                  <div className = "errorMessage">
+                    {isExistEmail ?
+                      (
+                        <div>
+                          - User with this email already exists.
+                        </div>
+                      )
+                      :
+                      (
+                        <div>
+
+                        </div>
+                      )}
+                  </div>
+                  <div className = "errorMessage">
+                    {isBadPass ?
+                      (
+                        <div>
+                          - Ensure password field has at least 5 characters.
+                        </div>
+                      )
+                      :
+                      (
+                        <div>
+
+                        </div>
+                      )}
+                  </div>
+                  <div className = "errorMessage">
+                    {isUnfilled ?
+                      (
+                        <div>
+                          - Ensure all fields are filled.
+                        </div>
+                      )
+                      :
+                      (
+                        <div>
+
+                        </div>
+                      )}
+                  </div>
+                </>
               </div>
             ) : (
 
@@ -167,7 +280,12 @@ function Login() {
                 <div className="LoginRegister__content__secondary-btns">
                   <button
                     className="btn btn-loginRegister-secondary"
-                    onClick={() => setLogin(true)}
+                    onClick={() => (  setLogin(true),
+                                      setIsBadEmail(false),
+                                      setIsNoCred(false),
+                                      setIsExistEmail(false),
+                                      setBadPass(false),
+                                      setUnfilled(false))}
                     >Sign in instead</button>
 
                   <button
@@ -176,6 +294,79 @@ function Login() {
                     <Link to ="/ResetPassword">Forget Password?</Link>
                   </button>
                 </div>
+                <>
+                  <div className = "errorMessage">
+                    {isBadEmail ?
+                      (
+                        <div>
+                          - Email format is invalid. Enter a valid email address.
+                        </div>
+                      )
+                      :
+                      (
+                        <div>
+
+                        </div>
+                      )}
+                  </div>
+                  <div className = "errorMessage">
+                    {isNoCred ?
+                      (
+                        <div>
+                          - Unable to authenticate with provided credentials.
+                        </div>
+                      )
+                      :
+                      (
+                        <div>
+
+                        </div>
+                      )}
+                  </div>
+                  <div className = "errorMessage">
+                    {isExistEmail ?
+                      (
+                        <div>
+                          - User with this email already exists.
+                        </div>
+                      )
+                      :
+                      (
+                        <div>
+
+                        </div>
+                      )}
+                  </div>
+                  <div className = "errorMessage">
+                    {isBadPass ?
+                      (
+                        <div>
+                          - Ensure password field has at least 5 characters.
+                        </div>
+                      )
+                      :
+                      (
+                        <div>
+
+                        </div>
+                      )}
+                  </div>
+                  <div className = "errorMessage">
+                    {isUnfilled ?
+                      (
+                        <div>
+                          - Ensure all fields are filled.
+                        </div>
+                      )
+                      :
+                      (
+                        <div>
+
+                        </div>
+                      )}
+                  </div>
+                </>
+
               </div>
             )}
           </div>
@@ -184,6 +375,7 @@ function Login() {
       <div className="LoginRegister__image">
         <img src={btoBuilding} alt="HDB Buildings" />
       </div>
+
     </div>
   );
 }

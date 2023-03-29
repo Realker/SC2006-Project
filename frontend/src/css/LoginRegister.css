@@ -9,7 +9,7 @@
   grid-auto-columns: minmax(0, 1fr);
   grid-auto-flow: column;
   margin-top: 2rem;
-  
+
 }
 
 .LoginRegister__image {
@@ -24,19 +24,19 @@
 
 .LoginRegister__content {
   padding: 4rem 5rem;
-  
+
 }
 
 .LoginRegister__content h1 {
   margin-bottom: 2rem;
   text-align: center;
-  
+
 }
 
 .LoginRegister__content form {
   display: flex;
   flex-direction: column;
-  
+
 }
 
 .LoginRegister__content input {
@@ -60,7 +60,7 @@
   cursor: pointer;
   background-color: transparent;
   text-decoration: underline;
-  position:relative; 
+  position:relative;
   right: 212px;
   font-size: 0.9rem;
   height: 1.5rem;
@@ -94,7 +94,7 @@ font-size: 3rem;
   background-color: transparent;
   text-decoration: underline;
   font-size: 0.9rem;
-  
+
 }
 
 .btn-loginRegister-secondary {
@@ -120,6 +120,12 @@ font-size: 3rem;
   color: white;
 }
 
+/* this is styling for error messages*/
+.errorMessage {
+  color: red;
+  font-weight: bold;
+}
+
 /* this styling is for T&C checkbox */
 input[type='checkbox'] {
   position: relative;
@@ -127,5 +133,5 @@ input[type='checkbox'] {
   width: 40px;
   height: 1.2rem;
   top: 5px;
-} 
+}
 
