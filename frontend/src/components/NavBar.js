@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import {useCookies} from 'react-cookie';
 import { NavLink, Link } from 'react-router-dom'
 import { NavDropdown } from 'react-bootstrap';
