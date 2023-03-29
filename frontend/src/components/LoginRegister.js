@@ -41,6 +41,7 @@ function Login() {
     setIsNoCred(false);
     setIsExistEmail(false);
     setBadPass(false);
+    setUnfilled(false);
     if (email.trim().length !== 0 && password.trim().length) {
       APIService.LoginUser(email, password)
         .then((response) => {
