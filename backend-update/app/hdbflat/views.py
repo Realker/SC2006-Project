@@ -22,7 +22,7 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
     """View for manage hdbflat APIs."""
     serializer_class = serializers.HDBFlatSerializer
     queryset = HDBFlat.objects.all()
-    authetication_classes = [TokenAuthentication]
+    authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
