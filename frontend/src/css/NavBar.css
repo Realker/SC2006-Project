@@ -132,7 +132,7 @@ text-decoration-color: #31526b;
   border-radius: 10px;
   position: relative;
   left: 430px;
-  
+  align-items: flex-end;
   height: 4.2vh;
   align-items:right;
 }

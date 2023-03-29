@@ -31,7 +31,7 @@ export default function DivisonNavBar() {
                      
                       <li class = "divisonLink">Privacy Policy</li></NavLink>
                       
-                      <p>@ 2023 HDBFinder</p>
+                      <p>© 2023 HDBFinder</p>
 
               </ul>
           </nav>
