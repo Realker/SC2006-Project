@@ -156,6 +156,8 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
         filter_param = request.data.get('filter_param')
         list_size = request.data.get('list_size')
         page_num = request.data.get('page_num')
+        min_resale_price = request.data.get('min_resale_price')
+        max_resale_price = request.data.get('max_resale_price')
 
         if filter_param:
             default_filter = filter_param
@@ -179,6 +181,14 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(street_name=street_name)
         if resale_price:
             queryset = queryset.filter(resale_price=resale_price)
+        if resale_price:
+            queryset = queryset.filter(resale_price=resale_price)
+        if min_resale_price and max_resale_price:
+            queryset = queryset.filter(resale_price__range=(min_resale_price, max_resale_price))
+        elif min_resale_price:
+            queryset = queryset.filter(resale_price__gte=min_resale_price)
+        elif max_resale_price:
+            queryset = queryset.filter(resale_price__lte=max_resale_price)
         if month:
             queryset = queryset.filter(month=month)
         if remaining_lease:
