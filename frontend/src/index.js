@@ -25,6 +25,7 @@ import ChangePassword from './components/ChangePassword';
 import AUP from './components/AUP';
 import TOS from './components/TOS';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import DeleteFromFavourites from './components/DeleteFromFavourites';
 
 function Router(){
   return(
@@ -52,6 +53,7 @@ function Router(){
       <Route path='/AUP' element = {<AUP />}/>
       <Route path='/TOS' element = {<TOS />}/>
       <Route path='/PrivacyPolicy' element = {<PrivacyPolicy />}/>
+      <Route path= '/DeleteFromFavourites' element = {<DeleteFromFavourites />}/>
     </Routes>
 </BrowserRouter>
   );

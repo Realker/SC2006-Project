@@ -10,13 +10,13 @@ import {useState} from 'react'
 
 export default function ExploreHousesCard(page) {
   var pageNum = page.page;
-  const [streetName, setstreetName] = useState("NO STREET");
-  const [flatModel, setflatModel] = useState("NO MODEL");
-  const [flatType, setflatType] = useState("NO TYPE");
-  const [floorArea, setfloorArea] = useState("NO AREA");
-  const [remainingLease, setremainingLease] = useState("NO LEASE");
-  const [block, setblock] = useState("NO BLOCK");
-  const [price, setPrice] = useState("NO PRICE");
+  const [streetName, setstreetName] = useState("LOADING...");
+  const [flatModel, setflatModel] = useState("LOADING...");
+  const [flatType, setflatType] = useState("LOADING...");
+  const [floorArea, setfloorArea] = useState("LOADING...");
+  const [remainingLease, setremainingLease] = useState("LOADING...");
+  const [block, setblock] = useState("LOADING...");
+  const [price, setPrice] = useState("LOADING...");
 
 
   APIService.RetrieveLatestHDB("1", pageNum)

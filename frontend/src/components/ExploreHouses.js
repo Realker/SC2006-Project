@@ -18,9 +18,17 @@ export default function ExploreHouses() {
 
           <h1> Explore Top 3 Houses</h1>
           <div className='Housecards'>
-            <ExploreHousesCard page="1"/>
-            <ExploreHousesCard page="2"/>
-            <ExploreHousesCard page="3"/>
+            {
+              // Generate ExploreHousesCard components dynamically using a for loop
+              (() => {
+                const num_of_cards = 3;
+                const cards = [];
+                for (let i = 1; i <= num_of_cards; i++) {
+                  cards.push(<ExploreHousesCard page={i.toString()} />);
+                }
+                return cards;
+              })()
+            }
           </div>
 
         </div>
