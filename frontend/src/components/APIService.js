@@ -75,62 +75,62 @@ export default class APIService {
                     filter_param = null
                   ) {
       const body = {};
-      if (list_size !== null) {
-      body['list_size'] = list_size;
+      if (list_size !== null || list_size !== "") {
+        body['list_size'] = list_size;
       }
-      if (page_num !== null) {
-      body['page_num'] = page_num;
+      if (page_num !== null || page_num !== "") {
+        body['page_num'] = page_num;
       }
-      if (town !== null) {
-      body['town'] = town;
+      if (town !== null || town !== "") {
+        body['town'] = town;
       }
-      if (flat_type !== null) {
-      body['flat_type'] = flat_type;
+      if (flat_type !== null || flat_type !== "") {
+        body['flat_type'] = flat_type;
       }
-      if (flat_model !== null) {
-      body['flat_model'] = flat_model;
+      if (flat_model !== null || flat_model !== "") {
+        body['flat_model'] = flat_model;
       }
-      if (floor_area_sqm !== null) {
-      body['floor_area_sqm'] = floor_area_sqm;
+      if (floor_area_sqm !== null || floor_area_sqm !== "") {
+        body['floor_area_sqm'] = floor_area_sqm;
       }
-      if (street_name !== null) {
-      body['street_name'] = street_name;
+      if (street_name !== null || street_name !== "") {
+        body['street_name'] = street_name;
       }
-      if (resale_price !== null) {
-      body['resale_price'] = resale_price;
+      if (resale_price !== null || resale_price !== "") {
+        body['resale_price'] = resale_price;
       }
-      if (min_resale_price !== null) {
-      body['min_resale_price'] = min_resale_price;
+      if (min_resale_price !== null || min_resale_price !== "") {
+        body['min_resale_price'] = min_resale_price;
       }
-      if (max_resale_price !== null) {
-      body['max_resale_price'] = max_resale_price;
+      if (max_resale_price !== null || max_resale_price !== "") {
+        body['max_resale_price'] = max_resale_price;
       }
-      if (month !== null) {
-      body['month'] = month;
+      if (month !== null || month !== "") {
+        body['month'] = month;
       }
-      if (remaining_lease !== null) {
-      body['remaining_lease'] = remaining_lease;
+      if (remaining_lease !== null || remaining_lease !== "") {
+        body['remaining_lease'] = remaining_lease;
       }
-      if (lease_commence_date !== null) {
-      body['lease_commence_date'] = lease_commence_date;
+      if (lease_commence_date !== null || lease_commence_date !== "") {
+        body['lease_commence_date'] = lease_commence_date;
       }
-      if (storey_range !== null) {
-      body['storey_range'] = storey_range;
+      if (storey_range !== null || storey_range !== "") {
+        body['storey_range'] = storey_range;
       }
-      if (id_str !== null) {
-      body['id_str'] = id_str;
+      if (id_str !== null || id_str !== "") {
+        body['id_str'] = id_str;
       }
-      if (block !== null) {
-      body['block'] = block;
+      if (block !== null || block !== "") {
+        body['block'] = block;
       }
-      if (filter_param !== null) {
-      body['filter_param'] = filter_param;
+      if (filter_param !== null || filter_param !== "") {
+        body['filter_param'] = filter_param;
       }
 
       return fetch(`http://127.0.0.1:8000/api/hdbflat/filter_using_post/`, {
         method: 'POST',
         headers: {
-        'Content-Type': 'application/json'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(body)
       }).then(response => response.json());
