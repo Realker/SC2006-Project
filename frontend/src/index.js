@@ -19,9 +19,6 @@ import Search from './components/Search';
 import SearchHouses from './components/SearchHouses';
 import TNC from './components/TNC';
 import TNCWriteup from './components/TNCWriteup';
-import Testt from './components/Testt';
-import Testing from './components/Testing';
-
 import FilterByParameters from './components/FilterByParameters';
 import ProfilePicChanger from './components/ProfilePicChanger';
 import ChangePassword from './components/ChangePassword';
@@ -50,8 +47,6 @@ function Router(){
       <Route path='/TNC' element = {<TNC />}/>
       <Route path='/TNCWriteup' element = {<TNCWriteup />} />
       <Route path='/FilterByParameters' element = {<FilterByParameters />} />
-      <Route path='/Testt' element = {<Testt />} />
-      <Route path='/Testing' element = {<Testing />} />
       <Route path='/ProfilePicChanger' element = {<ProfilePicChanger />} />
       <Route path='/ChangePassword' element = {<ChangePassword />}/>
       <Route path='/AUP' element = {<AUP />}/>

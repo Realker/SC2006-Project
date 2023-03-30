@@ -13,7 +13,6 @@ export default function Search() {
   const [pricing, setPricing] = useState("");
   const [noofbedroom, setNoofBedroom] = useState("");
 
-
   const search = () => {
     // Filter search results based on selected filter values
     // ...

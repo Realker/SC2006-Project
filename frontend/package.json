@@ -15,6 +15,7 @@
     "bootstrap": "^5.2.3",
     "fa-icons": "^0.2.0",
     "font-awesome-icons": "^1.6.0",
+    "framer-motion": "^10.10.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-cookie": "^4.1.1",
