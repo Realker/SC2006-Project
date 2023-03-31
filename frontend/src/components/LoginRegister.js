@@ -36,6 +36,35 @@ function Login() {
     setAgree(!agree);
   }
 
+  function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.startsWith(name + '=')) {
+        return cookie.substring(name.length + 1);
+      }
+    }
+    return null;
+  }
+  const userToken = getCookie('token');
+
+  APIService.RetrieveUserFavourite(userToken)
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+  // fetch(`http://127.0.0.1:8000/api/favouriteshdb/favouriteshdb/6/`, {
+  //         method: 'DELETE',
+  //         headers: {
+  //           Authorization: `Token ${token0}`
+  //         },
+  //       }).then(response => response.json());
+
+
+
   const loginBtn = () => {
     setIsBadEmail(false);
     setIsNoCred(false);

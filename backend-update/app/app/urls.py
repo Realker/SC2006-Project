@@ -30,4 +30,5 @@ urlpatterns = [
     ),
     path('api/user/', include('user.urls')),
     path('api/hdbflat/', include('hdbflat.urls')),
+    path('api/favouriteshdb/', include('favouriteshdb.urls')),
 ]

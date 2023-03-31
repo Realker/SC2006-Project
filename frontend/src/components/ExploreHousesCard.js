@@ -4,10 +4,11 @@ import btoBuilding from "../images/HDBMainpage1.jpg";
 import {AiOutlineHeart}  from 'react-icons/ai';
 import '../css/HouseCard.css';
 import { NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import SaveHousesToFavourites from './SaveHousesToFavourites';
-import APIService from './APIService'
-import {useState} from 'react'
-
+import APIService from './APIService';
+import {useState} from 'react';
+import {useEffect} from 'react';
 export default function ExploreHousesCard(page) {
   var pageNum = page.page;
   const [streetName, setstreetName] = useState("LOADING...");
@@ -17,6 +18,7 @@ export default function ExploreHousesCard(page) {
   const [remainingLease, setremainingLease] = useState("LOADING...");
   const [block, setblock] = useState("LOADING...");
   const [price, setPrice] = useState("LOADING...");
+  const [idStr, setIdStr] = useState("");
 
 
   APIService.RetrieveLatestHDB("1", pageNum)
@@ -28,6 +30,7 @@ export default function ExploreHousesCard(page) {
     setremainingLease(response[0].remaining_lease);
     setblock(response[0].block);
     setPrice(response[0].resale_price);
+    setIdStr(response[0].id_str);
   })
   .catch((error) => {
     console.log(error);
@@ -39,9 +42,12 @@ export default function ExploreHousesCard(page) {
             <img src={btoBuilding} className='Housecard__img'></img>
             <div className='Housecard__content'>
               <div className='Housecard__content__icons'>
-              <NavLink to="/SaveHousesToFavourites" className="">
+              <Link to={{
+                pathname: '/SaveHousesToFavourites',
+                search: `?id_str=${idStr}`
+                }}>
                 <div className='Housecard__content__icons__heart'> <AiOutlineHeart/></div>
-              </NavLink>
+              </Link>
 
               </div>
               <p className='Housecard__content__street'>{streetName}</p>

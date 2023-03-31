@@ -72,19 +72,19 @@ const FilterByParametersBar = () => {
               <label htmlFor="max-price">Max. Floor Area (sqm):</label>
               <input type="number" className="form-control" id="max-sqm" value={maxSqm} onChange={(e) => setMaxSqm(e.target.value)} />
             </div>
-            <div className="form-group col-md-3" style={{ marginTop: '15px' }}>
-              <label htmlFor="transaction-date" style={{ marginBottom: '10px'}}>Date of Transaction:</label>
-                <DatePicker 
+            <div className="form-group col-md-3">
+              <label htmlFor="transaction-date">Date of Transaction:</label>
+                <DatePicker
                   id="transaction-date"
                   selected={transactionDate}
                   onChange={handleTransactionDateChange}
                   dateFormat="yyyy-MM"
                   showMonthYearPicker
-                  className="form-control" 
+                  className="form-control"
                 />
             </div>
-            <div className="form-group col-md-2" style={{ marginTop: '15px' }}>
-              <label htmlFor="town" style={{ marginBottom: '10px'}}>Town:</label>
+            <div className="form-group col-md-2">
+              <label htmlFor="town">Town:</label>
               <select id="town" className="form-control" value={town} onChange={handleTownChange}>
                 <option value="">Choose...</option>
                 <option value="ANG MO KIO">ANG MO KIO</option>
@@ -108,15 +108,15 @@ const FilterByParametersBar = () => {
                 <option value="QUEENSTOWN">QUEENSTOWN</option>
                 <option value="SEMBAWANG">SEMBAWANG</option>
                 <option value="SENGKANG">SENGKANG</option>
-                <option value="SERANGOON">SERANGOOM</option>
+                <option value="SERANGOOM">SERANGOOM</option>
                 <option value="TAMPINES">TAMPINES</option>
                 <option value="TOA PAYOH">TOA PAYOH</option>
                 <option value="WOODLANDS">WOODLANDS</option>
                 <option value="YISHUN">YISHUN</option>
               </select>
             </div>
-            <div className="form-group col-md-2" style={{ marginTop: '15px' }}>
-              <label htmlFor="flat-type" style={{ marginBottom: '10px' }}>Flat Type:</label>
+            <div className="form-group col-md-2">
+              <label htmlFor="flat-type">Flat Type:</label>
               <select id="flat-type" className="form-control" value={flatType} onChange={handleFlatTypeChange}>
                 <option value="">Choose...</option>
                 <option value="1 ROOM">1 ROOM</option>
@@ -128,7 +128,7 @@ const FilterByParametersBar = () => {
                 <option value="MULTI-GENERATION">MULTI-GENERATION</option>
               </select>
             </div>
-            <div className="form-group" style={{ marginTop: '-2px' }}>
+            <div className="form-group">
           <label htmlFor="flat-model">Flat Model:</label>
           <select id="flat-model" className="form-control" value={flatModel} onChange={handleFlatModelChange}>
             <option value="">Select</option>
@@ -155,8 +155,8 @@ const FilterByParametersBar = () => {
             <option value="Type S2">Type S2</option>
           </select>
         </div>
-        <div className="form-group" style={{ marginTop: '15px' }}>
-          <label htmlFor="block" style={{ marginBottom: '10px' }}>Block:</label>
+        <div className="form-group">
+          <label htmlFor="block">Block:</label>
           <input type="text" className="form-control" id="block" placeholder="Enter block" value={block} onChange={handleBlockChange} />
         </div>
       </div>
@@ -166,7 +166,7 @@ const FilterByParametersBar = () => {
           pathname: '/SearchHouses',
           search: `?town=${town}&flatModel=${flatModel}&minPrice=${minPrice}&maxPrice=${maxPrice}&flatType=${flatType}&block=${block}&month=${formattedDate}&minSqm=${minSqm}&maxSqm=${maxSqm}`
         }}>
-        <button className="applyFilter-btn" style={{ fontSize: '13px', width: '60px'}} onClick>Apply Filter(s)</button>
+        <button onClick>Apply Filter(s)</button>
         </Link>
     </div>
   </div>

@@ -75,7 +75,7 @@ export default function Search() {
         <option value="Type S1">Type S1</option>
         <option value="Type S2">Type S2</option>
       </select>
-      <select className="anyPricing" value={pricing} onChange={(e) => setPricing(e.target.value)}>
+      <select className="pricing" value={pricing} onChange={(e) => setPricing(e.target.value)}>
         <option className='searchPricingType' value="">Any Price</option>
         <option value="range1">0 - 500,000</option>
         <option value="range2">500,000 - 1,000,000</option>

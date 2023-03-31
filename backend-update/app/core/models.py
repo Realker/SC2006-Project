@@ -67,3 +67,16 @@ class HDBFlat(models.Model):
 
     def __str__(self):
         return self.id_str
+
+
+class FavouritesHDB(models.Model):
+    """FavouritesHDB object."""
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+    )
+    email = models.CharField(max_length=255)
+    id_str_hdb = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.id_str_hdb + " - " + self.email
