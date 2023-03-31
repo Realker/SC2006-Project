@@ -28,28 +28,28 @@
     margin: 0;
 
     position:absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
 }
 
-.table {
-    border-collapse: collapse;
-    width: 100%;
+.table-container {
+    display: flex;
+    overflow-x: auto;
   }
 
-.table th,
-.table td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
+  .table {
+    flex: 1 1 auto;
+    min-width: 100%;
+    white-space: nowrap;
+  }
 
-.table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
+  .table th,
+  .table td {
+    padding: 0.5rem;
+    text-align: left;
+  }
 
 .page-num-container {
     margin-top: 16px;

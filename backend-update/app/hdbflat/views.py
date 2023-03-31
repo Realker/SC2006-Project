@@ -158,6 +158,8 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
         page_num = request.data.get('page_num')
         min_resale_price = request.data.get('min_resale_price')
         max_resale_price = request.data.get('max_resale_price')
+        min_sqm = request.data.get('min_sqm')
+        max_sqm = request.data.get('max_sqm')
 
         if filter_param:
             default_filter = filter_param
@@ -177,6 +179,12 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(flat_model=flat_model)
         if floor_area_sqm:
             queryset = queryset.filter(floor_area_sqm=floor_area_sqm)
+        if min_sqm and max_sqm:
+            queryset = queryset.filter(floor_area_sqm__range=(min_sqm, max_sqm))
+        elif min_sqm:
+            queryset = queryset.filter(floor_area_sqm__gte=min_sqm)
+        elif max_sqm:
+            queryset = queryset.filter(floor_area_sqm__lte=max_sqm)
         if street_name:
             queryset = queryset.filter(street_name=street_name)
         if resale_price:

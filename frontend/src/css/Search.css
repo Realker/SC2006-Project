@@ -24,7 +24,7 @@
   width: 467px;
   top: 184px;
   left: 130px;
-  
+
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -35,7 +35,7 @@
   width: 100px;
   border: none;
   border-radius: 30px;
-  
+
 }
 
 .searchbox-dropdownRow {
@@ -68,13 +68,13 @@ input {
   display: flex;
   justify-content: center;
   padding: 1rem 4rem;
-  height: 7em; 
+  height: 7em;
   width: 700px;
   position: absolute;
   top: 30%;
   border-radius: 10px;
 
-  
+
 }
 
 .location-input {
@@ -120,7 +120,7 @@ input {
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
   top: 40px;
-  
+
 }
 
 .icon1 {
@@ -145,23 +145,23 @@ input {
 .proCount{
   position: absolute;
   text-align: center;
-  border: none; 
-  outline: none; 
+  border: none;
+  outline: none;
   background-color: transparent;
   color: white;
   z-index: 1000;
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  margin-top: 110px;    
+  margin-top: 110px;
   left: 150px;
   }
 
   .pricing {
     position: absolute;
     text-align: center;
-    border: none; 
-    outline: none; 
+    border: none;
+    outline: none;
     background-color: transparent;
     color: white;
     z-index: 1000;
@@ -169,22 +169,22 @@ input {
     width: 100px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    margin-top: 110px;    
+    margin-top: 110px;
     left: 300px;
   }
 
   .bedroomCount{
     position: absolute;
     text-align: center;
-    border: none; 
-    outline: none; 
+    border: none;
+    outline: none;
     background-color: transparent;
     color: white;
     z-index: 1000;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    margin-top: 110px;    
+    margin-top: 110px;
     left: 450px;
   }
 
@@ -194,7 +194,7 @@ input {
 
   .ddown-parameters option {
     color: black;
-    
+
   }
 
 

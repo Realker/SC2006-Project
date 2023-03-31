@@ -1,0 +1,105 @@
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .filter-by-parameters-card {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #ccc;
+    padding: 10px 20px;
+  }
+
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .form-group {
+    margin-right: 10px;
+  }
+
+  .form-group:last-child {
+    margin-right: 0px;
+  }
+
+  .form-group.col-md-2 {
+    flex-basis: 20%;
+  }
+
+  .form-group.col-md-3 {
+    flex-basis: 30%;
+  }
+
+  .form-group.col-md-1 {
+    flex-basis: 10%;
+  }
+
+  .form-group.col-md-2:nth-child(4) {
+    margin-right: 20px;
+  }
+
+  .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+
+  select.form-control {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 4 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 0l2 2H0l2-2z' fill='%23808080'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 8px);
+    background-position-y: 50%;
+    padding-right: 20px;
+  }
+
+  input[type="text"].form-control {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 4 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 0l2 2H0l2-2z' fill='%23808080'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 8px);
+    background-position-y: 50%;
+    padding-right: 20px;
+  }
+
+  input[type="number"].form-control {
+    -moz-appearance: textfield;
+  }
+
+  input[type="number"].form-control::-webkit-outer-spin-button,
+  input[type="number"].form-control::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .apply-button {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .apply-button:hover {
+    background-color: #3e8e41;
+  }
+
+
