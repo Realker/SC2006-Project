@@ -55,6 +55,9 @@
     width: 100%;
     height: 40px;
     background-color: rgb(146, 146, 146);
+    background-position-y: 60%;
+    background-size: 20px;
+
   }
 
   select.form-control {
