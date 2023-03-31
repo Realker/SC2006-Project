@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { useState, Component} from 'react';
 import NavBar from './NavBar'
 import HDB from '../images/HDBFAQ.jpg'
 import '../css/MyAccount.css';
@@ -30,7 +30,6 @@ handleImageChange = (profileImage) => {
     profileImage
   })
 }
-
   render(){
     return (
       <div className="MyAccountBackground">
@@ -51,11 +50,12 @@ handleImageChange = (profileImage) => {
       pic4={Pic4} pic5={Pic5} pic6={Pic6} pic7={Pic7} pic8={Pic8}/>
 
       <h2>
-      <button className="profileCancel"
-          //onClick={() => setLogin(true)}
+      <button id="cancelProfile" className="profileCancel" 
+      //value={profilecancel} onChange={handleCancelProfile}
             >Cancel</button> 
-      <button className="profileSave"
-          //onClick={() => setLogin(true)}
+
+      <button id="saveProfile" className="profileSave" 
+      //value={profilesave} onChange={handleSaveProfile}
             >Save</button> 
       </h2>
 
