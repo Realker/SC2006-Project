@@ -9,6 +9,13 @@
     justify-content: center;
 }
 
+.SearchHousesPageBg h1{
+    margin-top: 20px;
+    font-size: 2rem;
+    text-align: center;
+    padding: 1.5rem 0rem;
+}
+
 .SearchHousesCard{
     display:flex;
     justify-content: center;

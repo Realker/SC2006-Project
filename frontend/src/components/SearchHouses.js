@@ -9,6 +9,8 @@ import FilterByParametersBar from './FilterByParametersBar';
 import '../css/SearchHouses.css';
 import {useLocation} from 'react-router-dom';
 import {AiOutlineHeart}  from 'react-icons/ai';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 //import Homepage from './components/Homepage';
 //import Search from './components/Search';
@@ -87,6 +89,12 @@ const SearchHouses = () => {
   return (
     <div className="SearchHousesPageBg">
       <NavBar/>
+
+      <div className="second-nav" style={{ position: 'absolute'}}>
+            <a href="/Homepage"><FontAwesomeIcon icon={faHome} className="homeicon"/></a>&nbsp;&nbsp;
+            <FontAwesomeIcon icon={faChevronRight} className="arrow-right"/>&nbsp;&nbsp;Search Houses
+      </div>
+
       <h1>Search Houses results</h1>
       <FilterByParametersBar/>
       <div className='SearchHousesCard'>
