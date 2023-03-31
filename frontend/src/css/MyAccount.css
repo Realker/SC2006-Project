@@ -68,21 +68,21 @@
     font-size: 20px;
     text-align: left;
     position: relative;
-    right: 300px;
+  
 }
 
 .uEmail {
  font-size: 20px;
  text-align: left;
  position: relative;
- right: 300px;
+ 
 }
 
 .shortBio {
     font-size: 20px;
     text-align: left;
     position: relative;
-    right: 300px;
+    
 }
 
 .displayName {
@@ -109,7 +109,7 @@
     background-color: rgb(20, 255, 71);
     height: 4vh;
     position: relative;
-    right: 300px;
+   
 }
 
 .cancelEdit {
@@ -117,5 +117,5 @@
     background-color: rgb(206, 206, 206);
     height: 4vh;
     position: relative;
-    right: 300px;
+   
 }
