@@ -161,6 +161,7 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = [
     "content-type",
     "x-csrftoken",
+    "authorization"
 ]
 
 keys_file = os.path.join(BASE_DIR, 'aws_keys.txt')

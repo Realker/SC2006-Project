@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../css/SaveHousesToFavourites.css';
 import APIService from './APIService'
 import { NavLink } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
 const DeleteFromFavourites = () => {
-
+  const [email, setEmail] = useState('');
   const location = useLocation();
   const id_true = new URLSearchParams(location.search).get('id_true') || "";
 
@@ -21,14 +21,22 @@ const DeleteFromFavourites = () => {
   }
   const userToken = getCookie('token');
 
+  APIService.RetrieveUserDetails(userToken)
+  .then((response) => {
+    setEmail(response.email);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
   const confirmDelete = () => {
     APIService.DeleteUserFavourite(userToken, id_true)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    .then((response) => {
+      console.log("Resource deleted successfully:", response);
+    })
+    .catch((error) => {
+      console.error("Error deleting the resource:", error);
+    });
     }
 
   return (

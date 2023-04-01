@@ -153,13 +153,24 @@ export default class APIService {
         }).then(response => response.json());
     }
 
-    static DeleteUserFavourite(cookieToken, id){
+    static DeleteUserFavourite(cookieToken, id) {
       return fetch(`http://127.0.0.1:8000/api/favouriteshdb/favouriteshdb/${id}/`, {
-          method: 'DELETE',
-          headers: {
-            Authorization: `Token ${cookieToken}`
-          },
-        }).then(response => response.json());
+        method: 'DELETE',
+        headers: {
+          Authorization: `Token ${cookieToken}`,
+        },
+      })
+        .then((response) => {
+          // Check if the response is ok (status code 200-299)
+          if (!response.ok) {
+            throw new Error(`HTTP error ${response.status}`);
+          }
+          return response;
+        })
+        .catch((error) => {
+          console.error('Error deleting the resource:', error);
+          throw error; // You can rethrow the error if you want to handle it further up the chain
+        });
     }
 
     static AddUserFavourite(cookieToken, id, email){
