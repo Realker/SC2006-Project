@@ -1,11 +1,13 @@
 import React, {useState,useEffect} from 'react'
 import {useCookies} from 'react-cookie';
+import {useNavigate} from 'react-router-dom'
 import { NavLink, Link } from 'react-router-dom'
 import { NavDropdown } from 'react-bootstrap';
 import '../css/NavBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faUser} from '@fortawesome/free-solid-svg-icons';
 import '../css/FilterByParameters.css'
+import APIService from './APIService';
 
 const currentTab = ({ isActive }) => {
     return isActive
@@ -16,6 +18,31 @@ const currentTab = ({ isActive }) => {
   export default function NavBar() {
     const [cookies, setCookie, removeCookie] = useCookies(['token']);
     const isAuthenticated = !!cookies.token;
+
+    function getCookie(name) {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.startsWith(name + '=')) {
+          return cookie.substring(name.length + 1);
+        }
+      }
+      return null;
+    }
+    const userToken = getCookie('token');
+
+    const navigate = useNavigate();
+    APIService.RetrieveUserDetails(userToken)
+    .then((response) => {
+      console.log(response);
+      if (response.detail == "Invalid token.")
+      {
+        navigate('/InvalidUserSessionPage'); // Redirect to homepage
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 
     // Notification Bar
     const [isShowing, setIsShowing] = useState(false);

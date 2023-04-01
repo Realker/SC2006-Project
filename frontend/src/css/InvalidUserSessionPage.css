@@ -1,0 +1,54 @@
+.SaveHousesToFavourites__bg {
+    width: 100vw;
+    height: 100vh;
+    background-color: #9DC0DE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SaveHousesToFavourites__content {
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 60vw;
+    border-radius: 10px;
+
+}
+
+.SaveHousesToFavourites__content h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1.5rem 0rem;
+}
+
+.SaveHousesToFavourites__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2rem 3rem;
+    border-radius: 10px;
+
+
+}
+
+.btn-cancel, .btn-confirm {
+    cursor: pointer;
+    border: none;
+    width: 20vw;
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+
+
+}
+
+.btn-cancel {
+    background-color: lightgray;
+}
+
+.btn-confirm {
+    background-color: #2ecc71;
+}
