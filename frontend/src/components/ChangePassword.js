@@ -49,6 +49,7 @@ const ChangePassword = () => {
     const [newEmail, setNewEmail] = useState(oldEmail);
 
     const confirmChange = () => {
+        setValidOldPassword(false);
         APIService.LoginUser(oldEmail, oldPassword)
         .then((response) => {
             if (response.non_field_errors) {
@@ -59,6 +60,8 @@ const ChangePassword = () => {
             console.log("Correct Old Password");
             setValidOldPassword(true);
             }
+            else {setChanged(false);
+            setValidOldPassword(false);}
         })
         .catch((error) => {
             console.log(error);
@@ -71,6 +74,7 @@ const ChangePassword = () => {
               console.log(response.email);
               console.log(response.name);
               setChanged(true);
+              setValidOldPassword(false);
             })
             .catch((error) => {
               console.log(error);
@@ -78,6 +82,8 @@ const ChangePassword = () => {
         }
         else if (newPassword != newConfPassword)
         {
+            setChanged(false);
+            setValidOldPassword(false);
             console.log("Passwords do not match. Reconfirm.")
         }
 
