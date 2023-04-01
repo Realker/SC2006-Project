@@ -1,5 +1,6 @@
 import React, { useState, Component} from 'react';
 import NavBar from './NavBar'
+import APIService from './APIService'
 import HDB from '../images/HDBFAQ.jpg'
 import '../css/MyAccount.css';
 import 'antd/dist/antd.css';
@@ -18,26 +19,76 @@ import Pic19 from './pics/avatar19.png'; import Pic20 from './pics/avatar20.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Nav } from 'react-bootstrap';
-//import DivisionNavBar from './DivisionNavBar';
+import DivisionNavBar from './DivisionNavBar';
 
 
-class MyAccount extends Component {
 
-  //Profile Picture Changer Function
-  constructor(props){
-    super(props);
-    this.state={
-      profileImage: ''
+const MyAccount = () => {
+  const [changed, setChanged] = useState(false);
+
+  const [profileImage, setProfileImage] = useState('');
+
+  const handleImageChange = (profileImage) => {
+    setProfileImage(profileImage);
+  };
+
+  const [oldName, setOldName] = useState('');
+  const [oldPassword, setOldPassword] = useState('');
+  const [oldEmail, setOldEmail] = useState('');
+
+  function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.startsWith(name + '=')) {
+        return cookie.substring(name.length + 1);
+      }
     }
+    return null;
   }
+  const userToken = getCookie('token');
 
-handleImageChange = (profileImage) => {
-  this.setState({
-    profileImage
+  APIService.RetrieveUserDetails(userToken)
+  .then((response) => {
+    setOldName(response.name);
+    setOldEmail(response.email);
+    console.log(response.email);
+    console.log(response.name);
   })
-}
-  render(){
-    return (
+  .catch((error) => {
+    console.log(error);
+  });
+
+  const [newName, setNewName] = useState(oldName);
+  const [newPassword, setNewPassword] = useState(oldPassword);
+  const [newEmail, setNewEmail] = useState(oldEmail);
+
+  const confirmChange = () => {
+    APIService.UpdateUserDetails(userToken, newName, newEmail)
+      .then((response) => {
+        console.log(response);
+        if (newName == response.name)
+        {
+          setChanged(true);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+      APIService.RetrieveUserDetails(userToken)
+    .then((response) => {
+      setOldName(response.name);
+      setOldEmail(response.email);
+      console.log(response.email);
+      console.log(response.name);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+    }
+
+  return (
       <div className="MyAccountBackground">
         <NavBar/>
 
@@ -51,57 +102,227 @@ handleImageChange = (profileImage) => {
       <h1>My Personal Profile</h1>
 
       {/* Allows user to choose profile picture */}
-      <Avatar size={150} icon="user" className="avatar-pop-up" src={this.state.profileImage}></Avatar> 
-      <ProfilePicChanger handleImageChange={this.handleImageChange} pic1={Pic1} pic2={Pic2} pic3={Pic3}
+      <Avatar size={150} icon="user" className="avatar-pop-up" src={profileImage}></Avatar>
+      <ProfilePicChanger handleImageChange={handleImageChange} pic1={Pic1} pic2={Pic2} pic3={Pic3}
       pic4={Pic4} pic5={Pic5} pic6={Pic6} pic7={Pic7} pic8={Pic8} pic9={Pic9} pic10={Pic10}
       pic11={Pic11} pic12={Pic12} pic13={Pic13} pic114={Pic14} pic15={Pic15} pic16={Pic16}
       pic17={Pic17} pic18={Pic18} pic19={Pic19} pic20={Pic20}/>
 
       <h2>
-      <button id="cancelProfile" className="profileCancel" 
+      <button id="cancelProfile" className="profileCancel"
       //value={profilecancel} onChange={handleCancelProfile}
-            >Cancel</button> 
+            >Cancel</button>
 
-      <button id="saveProfile" className="profileSave" 
+      <button id="saveProfile" className="profileSave"
       //value={profilesave} onChange={handleSaveProfile}
-            >Save</button> 
+            >Save</button>
       </h2>
 
       <div className = 'MyAccountCard'>
-
-        <h3 class = 'uName'>Username: <br></br>
+      <table style={{ borderCollapse: 'collapse', border: 'none' }}>
+        <tbody>
+          <tr style={{ borderBottom: 'none' }}>
+            <td style={{ border: 'none', paddingRight: '20px', textAlign: 'left' }}>
+              Current Username    :
+            </td>
+            <td style={{ border: 'none', textAlign: 'right' }}>
+              {oldName}
+            </td>
+          </tr>
+          <tr style={{ borderBottom: 'none' }}>
+            <td style={{ border: 'none', paddingRight: '20px', textAlign: 'left' }}>
+              Current Email   :
+            </td>
+            <td style={{ border: 'none', textAlign: 'right' }}>
+              {oldEmail}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+        <h3 class = 'uName'>New Username: <br></br>
         <input
-              type="text" className="displayName" placeholder="Your Username"  
-              //value={email}
-              //onChange={(e) => displayName(e.target.value)}
+              type="text" className="displayName" placeholder="Your Username"
+              value={newName}
+              onChange={(e) => setNewName(e.target.value)}
         /></h3>
 
-        <h3 class = 'uEmail'>Email address: <br></br>
+        <h3 class = 'uEmail'>New Email: <br></br>
         <input
-              type="email" className="displayEmail" placeholder="Your Email"  
-              //value={email}
-              //onChange={(e) => displayName(e.target.value)}
-        /></h3> 
-        
-        <h3 class = 'shortBio'>Short Bio <br></br>
+              type="email" className="displayEmail" placeholder="Your Email"
+              value={newEmail}
+              onChange={(e) => setNewEmail(e.target.value)}
+        /></h3>
+
+        {/* <h3 class = 'shortBio'>Short Bio <br></br>
         <textarea rows="8" cols="50" className="displayBio" placeholder="Add a short bio..."
               //value={email}
               //onChange={(e) => displayName(e.target.value)}
-        ></textarea></h3> 
+        ></textarea></h3> */}
 
       <h2>
-      <button className="saveEdit"
-          //onClick={() => saveEdit(true)}
-            >Save</button> &nbsp;
       <button className="cancelEdit"
-          //onClick={() => cancelEdit(true)}
-            >Cancel</button> 
-      </h2>         
-          </div>
-        </div>  
+          onClick={() => (setNewEmail(""), setNewName(""), setChanged(false))}
+            >Cancel</button> &nbsp;
+      <button className="saveEdit"
+          onClick={() => confirmChange()}
+            >Save</button>
+      </h2>
+
+      <div className = "changedMessage">
+        {changed ?
+          (
+            <div>
+              User details successfully changed.
+            </div>
+          )
+          :
+          (
+            <div>
+
+            </div>
+          )}
       </div>
-    );
-  }
-}
+
+          </div>
+        </div>
+      </div>
+  );
+};
 
 export default MyAccount;
+
+// const MyyAccount = () => {
+
+// console.log("hello");
+
+// const [oldName, setOldName] = useState('');
+// const [oldPassword, setOldPassword] = useState('');
+// const [oldEmail, setOldEmail] = useState('');
+
+// function getCookie(name) {
+//   const cookies = document.cookie.split(';');
+//   for (let i = 0; i < cookies.length; i++) {
+//     const cookie = cookies[i].trim();
+//     if (cookie.startsWith(name + '=')) {
+//       return cookie.substring(name.length + 1);
+//     }
+//   }
+//   return null;
+// }
+// const userToken = getCookie('token');
+
+// APIService.RetrieveUserDetails(userToken)
+// .then((response) => {
+//   setOldName(response.name);
+//   setOldEmail(response.email);
+// })
+// .catch((error) => {
+//   console.log(error);
+// });
+
+// const [newName, setNewName] = useState(oldName);
+// const [newPassword, setNewPassword] = useState(oldPassword);
+// const [newEmail, setNewEmail] = useState(oldEmail);
+
+// const confirmChange = () => {
+//   APIService.UpdateUserDetails(userToken, newName, newPassword, newEmail)
+//     .then((response) => {
+//       console.log(response);
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+//   }
+
+// }
+
+// //export default MyAccount
+
+
+// class MyAccount extends Component {
+
+//   //Profile Picture Changer Function
+//   constructor(props){
+//     super(props);
+//     this.state={
+//       profileImage: ''
+//     }
+//   }
+
+// handleImageChange = (profileImage) => {
+//   this.setState({
+//     profileImage
+//   })
+// }
+//   render(){
+
+//     console.log("hello");
+
+//     return (
+//       <div className="MyAccountBackground">
+//         <NavBar/>
+
+//       {/* These code are for Home Icon > My Account */}
+//       <div className="second-nav">
+//         <a href="/Homepage"><FontAwesomeIcon icon={faHome} className="homeicon"/></a>&nbsp;&nbsp;
+//         <FontAwesomeIcon icon={faChevronRight} className="arrow-right"/>&nbsp;&nbsp;My Account
+//       </div>
+
+//       <div className='MyAccount__bg'>
+//       <h1>My Personal Profile</h1>
+
+//       {/* Allows user to choose profile picture */}
+//       <Avatar size={150} icon="user" className="avatar-pop-up" src={this.state.profileImage}></Avatar>
+//       <ProfilePicChanger handleImageChange={this.handleImageChange} pic1={Pic1} pic2={Pic2} pic3={Pic3}
+//       pic4={Pic4} pic5={Pic5} pic6={Pic6} pic7={Pic7} pic8={Pic8} pic9={Pic9} pic10={Pic10}
+//       pic11={Pic11} pic12={Pic12} pic13={Pic13} pic114={Pic14} pic15={Pic15} pic16={Pic16}
+//       pic17={Pic17} pic18={Pic18} pic19={Pic19} pic20={Pic20}/>
+
+//       <h2>
+//       <button id="cancelProfile" className="profileCancel"
+//       //value={profilecancel} onChange={handleCancelProfile}
+//             >Cancel</button>
+
+//       <button id="saveProfile" className="profileSave"
+//       //value={profilesave} onChange={handleSaveProfile}
+//             >Save</button>
+//       </h2>
+
+//       <div className = 'MyAccountCard'>
+
+//         <h3 class = 'uName'>Username: <br></br>
+//         <input
+//               type="text" className="displayName" placeholder="Your Username"
+//               //value={email}
+//               //onChange={(e) => displayName(e.target.value)}
+//         /></h3>
+
+//         <h3 class = 'uEmail'>Email address: <br></br>
+//         <input
+//               type="email" className="displayEmail" placeholder="Your Email"
+//               //value={email}
+//               //onChange={(e) => displayName(e.target.value)}
+//         /></h3>
+
+//         <h3 class = 'shortBio'>Short Bio <br></br>
+//         <textarea rows="8" cols="50" className="displayBio" placeholder="Add a short bio..."
+//               //value={email}
+//               //onChange={(e) => displayName(e.target.value)}
+//         ></textarea></h3>
+
+//       <h2>
+//       <button className="saveEdit"
+//           //onClick={() => saveEdit(true)}
+//             >Save</button> &nbsp;
+//       <button className="cancelEdit"
+//           //onClick={() => cancelEdit(true)}
+//             >Cancel</button>
+//       </h2>
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   }
+// }
+
+// export default MyAccount;
