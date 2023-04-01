@@ -4,9 +4,26 @@ import {useCookies} from 'react-cookie'
 import APIService from './APIService'
 import '../css/RegisterPage.css';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
  const ResetPassword = () => {
+
+  const [email, setEmail] = useState("nyanmawhtun@gmail.com");
+  console.log(email);
+
+
+  const confirmReset = () => {
+    APIService.ResetPasswordAPI(email)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    }
+
+
   return (
 
     //<div class = "ResetPasswordBackground">
@@ -14,41 +31,33 @@ import { Link } from 'react-router-dom';
 
         <div className="ResetPassword__content">
         <h1>Reset Password</h1>
-        <p class="short-text"> Enter your username and email address to verify your credentials</p>
+        <p class="short-text"> Enter your email address to verify your credentials.</p>
         <br></br>
 
         <div>
-        <form> 
-          Username
-          <input
-            type="text" 
-            //value={email}
-            className=""
-            placeholder=""
-            //onChange={(e) => setUsername(e.target.value)}
-          />
+        <form>
           Email
           <input
-            type="text" 
-            //value={email}
+            type="text"
+            value={email}
             className=""
-            placeholder=""
-            //onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </form>
         </div>
 
           <div>
-            <button
-              //onClick={loginBtn}
-              className="btn btn-resetPassword-primary"
-            > Continue
-            </button>
+            <NavLink to="/ResetPasswordSent" className="">
+              <button className="btn btn-resetPassword-primary"
+                      onClick={confirmReset}>
+                Continue
+              </button>
+            </NavLink>
           </div>
 
           <br></br><br></br><br></br>
-          <p class="short-text"> 
-             Don't have an account? &nbsp; 
+          <p class="short-text">
+             Don't have an account? &nbsp;
              <Link to="/">Sign up</Link></p>
 
 

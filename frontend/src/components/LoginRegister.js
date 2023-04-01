@@ -214,7 +214,7 @@ function Login() {
                                       setBadPass(false),
                                       setUnfilled(false))}
                   >
-                    <Link to ="/ResetPassword">Forget Password?</Link>
+                    <Link to ="http://127.0.0.1:8000/password-reset/">Forget Password?</Link>
                   </button>
                 </div>
                 <>

@@ -12,6 +12,7 @@ import MyActivities from './components/MyActivities'
 import MyAccount from './components/MyAccount'
 import SaveHousesToFavourites from './components/SaveHousesToFavourites';
 import ResetPassword from './components/ResetPassword';
+import ResetPasswordSent from './components/ResetPasswordSent';
 import DisplayFlat from './components/DisplayFlat';
 import Flat from './components/Flat';
 import Search from './components/Search';
@@ -29,7 +30,7 @@ import DeleteFromFavourites from './components/DeleteFromFavourites';
 
 function Router(){
   return(
-    
+
 <BrowserRouter>
     <Routes>
       <Route exact path="/" element={<LoginRegister />} />
@@ -41,6 +42,7 @@ function Router(){
       <Route path='/MyAccount' element = {<MyAccount/>} />
       <Route path='/SaveHousesToFavourites' element = {<SaveHousesToFavourites/>} />
       <Route path='/ResetPassword' element = {<ResetPassword/>} />
+      <Route path='/ResetPasswordSent' element = {<ResetPasswordSent/>} />
       <Route path='/DisplayFlat' element = {<DisplayFlat/>} />
       <Route path='/Flat' element = {<Flat/>} />
       <Route path='/Search' element = {<Search/>} />

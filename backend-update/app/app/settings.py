@@ -63,7 +63,7 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -143,11 +143,29 @@ AUTH_USER_MODEL = 'core.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ),
 }
 
+CSRF_COOKIE_NAME = 'csrftoken'
+CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = [
     "http://127.0.0.1:3001",
     "http://localhost:3001",
     "http://127.0.0.1:3000",
     "http://localhost:3000"
 ]
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = [
+    "content-type",
+    "x-csrftoken",
+]
+
+LOGIN_REDIRECT_URL = 'http://localhost:3001/'
+EMAIL_BACKEND = 'django_ses.SESBackend'
+DEFAULT_FROM_EMAIL = 'hdbfinder2023ntu@gmail.com'
+AWS_REGION = 'us-east-1'
+AWS_ACCESS_KEY_ID = 'AKIAQKMQAOEF52GS7RFW'
+AWS_SECRET_ACCESS_KEY = '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'

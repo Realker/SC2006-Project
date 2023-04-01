@@ -174,7 +174,7 @@ export default class APIService {
           "email": email,
         })
       }).then(response => response.json());
-}
+    }
 
     static RetrieveUserDetails(cookieToken){
       return fetch(`http://127.0.0.1:8000/api/user/me/`, {
@@ -183,6 +183,19 @@ export default class APIService {
             Authorization: `Token ${cookieToken}`
           },
         }).then(response => response.json());
+    }
+
+    static ResetPasswordAPI(email){
+      return fetch(`http://127.0.0.1:8000/api/user/password-reset/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          "email": email,
+        }),
+        credentials: 'include'
+      }).then(response => response.json());
     }
 }
 
