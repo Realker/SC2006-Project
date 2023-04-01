@@ -72,8 +72,8 @@ const FilterByParametersBar = () => {
               <label htmlFor="max-price">Max. Floor Area (sqm):</label>
               <input type="number" className="form-control" id="max-sqm" value={maxSqm} onChange={(e) => setMaxSqm(e.target.value)} />
             </div>
-            <div className="form-group col-md-3">
-              <label htmlFor="transaction-date">Date of Transaction:</label>
+            <div className="form-group col-md-3" style={{ marginTop: '7px'}}>
+              <label htmlFor="transaction-date" style={{ marginBottom: '20px'}}>Date of Transaction:</label>
                 <DatePicker
                   id="transaction-date"
                   selected={transactionDate}
@@ -83,8 +83,8 @@ const FilterByParametersBar = () => {
                   className="form-control"
                 />
             </div>
-            <div className="form-group col-md-2">
-              <label htmlFor="town">Town:</label>
+            <div className="form-group col-md-2" style={{ marginTop: '7px'}}>
+              <label htmlFor="town" style={{ marginBottom: '20px'}}>Town:</label>
               <select id="town" className="form-control" value={town} onChange={handleTownChange}>
                 <option value="">Choose...</option>
                 <option value="ANG MO KIO">ANG MO KIO</option>
@@ -115,8 +115,8 @@ const FilterByParametersBar = () => {
                 <option value="YISHUN">YISHUN</option>
               </select>
             </div>
-            <div className="form-group col-md-2">
-              <label htmlFor="flat-type">Flat Type:</label>
+            <div className="form-group col-md-2" style={{ marginTop: '7px'}}>
+              <label htmlFor="flat-type" style={{ marginBottom: '20px'}}>Flat Type:</label>
               <select id="flat-type" className="form-control" value={flatType} onChange={handleFlatTypeChange}>
                 <option value="">Choose...</option>
                 <option value="1 ROOM">1 ROOM</option>
@@ -155,8 +155,8 @@ const FilterByParametersBar = () => {
             <option value="Type S2">Type S2</option>
           </select>
         </div>
-        <div className="form-group">
-          <label htmlFor="block">Block:</label>
+        <div className="form-group" style={{ marginTop: '7px'}}>
+          <label htmlFor="block" style={{ marginBottom: '20px'}}>Block:</label>
           <input type="text" className="form-control" id="block" placeholder="Enter block" value={block} onChange={handleBlockChange} />
         </div>
       </div>

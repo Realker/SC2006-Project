@@ -15,7 +15,9 @@ class ProfilePicChanger extends Component {
     super(props);
     this.state={
       visible: false,
-      imagesArray: [props.pic1, props.pic2, props.pic3, props.pic4, props.pic5, props.pic6, props.pic7, props.pic8]
+      imagesArray: [props.pic1, props.pic2, props.pic3, props.pic4, props.pic5, props.pic6, props.pic7, props.pic8,
+        props.pic9, props.pic10, props.pic11, props.pic12, props.pic13, props.pic14, props.pic15, props.pic16,
+        props.pic17, props.pic18, props.pic19, props.pic20]
     };
   }
  
