@@ -6,25 +6,6 @@ import '../css/ExploreHouses.css';
 import '../css/DisplayFlat.css';
 import Flat from './Flat';
 
-/*
-function DisplayFlat() {
-
-  const [showFlat, setShowFlat] = useState(false);
-
-  function handleClick() {
-    setShowFlat(!showFlat);
-  }
-
-  return (
-    <>
-    <NavBar/>
-      <img src={btoBuilding} alt="image" onClick={handleClick} />
-      {showFlat && <Flat />}
-    </>
-  );
-}
-*/
-
 function DisplayFlat() {
   const [buttonFlat, setButtonFlat] = useState(false);
 
