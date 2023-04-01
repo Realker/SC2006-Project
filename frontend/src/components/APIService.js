@@ -58,6 +58,24 @@ export default class APIService {
       }).then(response => response.json());
     }
 
+    static ChangeUserPassword( cookieToken,
+                                password = null,
+                              ) {
+      const body = {};
+      if (password !== null || password !== "") {
+        body['password'] = password;
+      }
+
+      return fetch(`http://127.0.0.1:8000/api/user/me/`, {
+        method: 'PATCH',
+        headers: {
+          Authorization: `Token ${cookieToken}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+        }).then(response => response.json());
+      }
+
   /* Need to create schema for this before authenticating
   static changePassword(password, newpassword, confirmpassword){
     return fetch(`http://127.0.0.1:8000/api/user/changepassword/`, {
