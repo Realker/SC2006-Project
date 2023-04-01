@@ -169,8 +169,6 @@ LOGIN_REDIRECT_URL = 'http://localhost:3001/'
 EMAIL_BACKEND = 'django_ses.SESBackend'
 DEFAULT_FROM_EMAIL = 'hdbfinder2023ntu@gmail.com'
 AWS_REGION = 'us-east-1'
-#AWS_ACCESS_KEY_ID = 'AKIAQKMQAOEF52GS7RFW'
-#AWS_SECRET_ACCESS_KEY = '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'
 with open(keys_file, 'r') as f:
     lines = f.readlines()
     AWS_ACCESS_KEY_ID = lines[0].strip()
