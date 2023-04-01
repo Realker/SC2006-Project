@@ -163,9 +163,15 @@ CORS_ALLOW_HEADERS = [
     "x-csrftoken",
 ]
 
+keys_file = os.path.join(BASE_DIR, 'aws_keys.txt')
+
 LOGIN_REDIRECT_URL = 'http://localhost:3001/'
 EMAIL_BACKEND = 'django_ses.SESBackend'
 DEFAULT_FROM_EMAIL = 'hdbfinder2023ntu@gmail.com'
 AWS_REGION = 'us-east-1'
-AWS_ACCESS_KEY_ID = 'AKIAQKMQAOEF52GS7RFW'
-AWS_SECRET_ACCESS_KEY = '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'
+#AWS_ACCESS_KEY_ID = 'AKIAQKMQAOEF52GS7RFW'
+#AWS_SECRET_ACCESS_KEY = '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'
+with open(keys_file, 'r') as f:
+    lines = f.readlines()
+    AWS_ACCESS_KEY_ID = lines[0].strip()
+    AWS_SECRET_ACCESS_KEY = lines[1].strip()
