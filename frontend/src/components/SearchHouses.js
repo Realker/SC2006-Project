@@ -96,7 +96,7 @@ const SearchHouses = () => {
         <FontAwesomeIcon icon={faChevronRight} className="arrow-right"/>&nbsp;&nbsp;Search Results
     </div>
       
-      <h1>Houses Result</h1>
+      <h1>Search Houses Results</h1>
       <FilterByParametersBar/>
       <div className='SearchHousesCard'>
         <table className="table">

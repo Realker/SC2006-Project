@@ -155,9 +155,9 @@ const FilterByParametersBar = () => {
             <option value="Type S2">Type S2</option>
           </select>
         </div>
-        <div className="form-group" style={{ marginTop: '7px'}}>
+        <div className="form-group" style={{ marginTop: '5px'}}>
           <label htmlFor="block" style={{ marginBottom: '20px'}}>Block:</label>
-          <input type="text" className="form-control" id="block" placeholder="Enter block" value={block} onChange={handleBlockChange} />
+          <input type="text" className="form-control" id="block" placeholder="" value={block} onChange={handleBlockChange} />
         </div>
       </div>
     </form>
@@ -166,7 +166,7 @@ const FilterByParametersBar = () => {
           pathname: '/SearchHouses',
           search: `?town=${town}&flatModel=${flatModel}&minPrice=${minPrice}&maxPrice=${maxPrice}&flatType=${flatType}&block=${block}&month=${formattedDate}&minSqm=${minSqm}&maxSqm=${maxSqm}`
         }}>
-        <button onClick>Apply Filter(s)</button>
+        <button onClick>Apply Filters</button>
         </Link>
     </div>
   </div>

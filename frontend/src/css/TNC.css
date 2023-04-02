@@ -16,11 +16,13 @@
     position: relative;
     padding: 32px;
     width: 90vh;
+    height: 70vh;
     max-width: 100vh;
     background-color: #FFF;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 10px;
+    font-size: x-small;
 }
 
 .tnc-inner .close-tnc {

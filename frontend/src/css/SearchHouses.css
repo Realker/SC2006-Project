@@ -1,9 +1,9 @@
 .SearchHousesPageBg {
-    background-image:url("../images/SearchHousesPage.jpg");
-    min-height: 100vh;
+    background-image:url("../images/HDBExploreHouses.jpg");
+    min-height: 200vh;
     text-align: center;
     height: fill;
-    background-repeat: no-repeat;
+    background-repeat:no-repeat;
     background-size: cover;
     align-items: center;
     justify-content: center;
@@ -35,7 +35,7 @@
     margin: 0;
 
     position:absolute;
-    top: 70%;
+    top: 90%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
