@@ -128,3 +128,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#aws_keys.text
+app/aws_keys.txt

@@ -57,7 +57,6 @@ function Router(){
       <Route path='/TOS' element = {<TOS />}/>
       <Route path='/PrivacyPolicy' element = {<PrivacyPolicy />}/>
       <Route path= '/DeleteFromFavourites' element = {<DeleteFromFavourites />}/>
-      <Route path= '/InvalidUserSessionPage' element = {<InvalidUserSessionPage />}/>
     </Routes>
 </BrowserRouter>
   );
