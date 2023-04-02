@@ -27,6 +27,7 @@ import AUP from './components/AUP';
 import TOS from './components/TOS';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import DeleteFromFavourites from './components/DeleteFromFavourites';
+import InvalidUserSessionPage from './components/InvalidUserSessionPage';
 
 function Router(){
   return(
