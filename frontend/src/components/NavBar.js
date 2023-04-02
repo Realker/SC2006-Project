@@ -31,6 +31,7 @@ const currentTab = ({ isActive }) => {
     }
     const userToken = getCookie('token');
 
+    /* Comment this section to deactivate user authentication */
     const navigate = useNavigate();
     APIService.RetrieveUserDetails(userToken)
     .then((response) => {
@@ -43,6 +44,7 @@ const currentTab = ({ isActive }) => {
     .catch((error) => {
       console.log(error);
     });
+    /* Till here */
 
     // Notification Bar
     const [isShowing, setIsShowing] = useState(false);
