@@ -79,7 +79,7 @@ export default function Search() {
         <option className='searchPricingType' value="">Any Price</option>
         <option value="range1">0 - 500,000</option>
         <option value="range2">500,000 - 1,000,000</option>
-        <option value="range3">1,000,000 - 2,000,000</option>
+        <option value="range3">1,000,000 and above</option>
       </select>
       <select className="bedroomCount" value={noofbedroom} onChange={(e) => setNoofBedroom(e.target.value)}>
         <option className='searchBedRoomType' value="">Bedroom</option>
