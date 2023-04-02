@@ -27,6 +27,7 @@ import AUP from './components/AUP';
 import TOS from './components/TOS';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import DeleteFromFavourites from './components/DeleteFromFavourites';
+import InvalidUserSessionPage from './components/InvalidUserSessionPage';
 
 function Router(){
   return(
@@ -56,6 +57,7 @@ function Router(){
       <Route path='/TOS' element = {<TOS />}/>
       <Route path='/PrivacyPolicy' element = {<PrivacyPolicy />}/>
       <Route path= '/DeleteFromFavourites' element = {<DeleteFromFavourites />}/>
+      <Route path= '/InvalidUserSessionPage' element = {<InvalidUserSessionPage />}/>
     </Routes>
 </BrowserRouter>
   );
