@@ -9,6 +9,7 @@ import SaveHousesToFavourites from './SaveHousesToFavourites';
 import APIService from './APIService';
 import {useState} from 'react';
 import {useEffect} from 'react';
+
 export default function ExploreHousesCard(page) {
   var pageNum = page.page;
   const [streetName, setstreetName] = useState("LOADING...");
@@ -19,8 +20,10 @@ export default function ExploreHousesCard(page) {
   const [block, setblock] = useState("LOADING...");
   const [price, setPrice] = useState("LOADING...");
   const [idStr, setIdStr] = useState("");
+  const [responded, setResponded] = useState(false);
+  const [streetViewUrl, setStreetViewUrl] = useState('');
 
-
+useEffect(() => {
   APIService.RetrieveLatestHDB("1", pageNum)
   .then((response) => {
     setstreetName(response[0].street_name);
@@ -31,15 +34,29 @@ export default function ExploreHousesCard(page) {
     setblock(response[0].block);
     setPrice(response[0].resale_price);
     setIdStr(response[0].id_str);
+    setResponded(true);
   })
   .catch((error) => {
     console.log(error);
   });
+}, [pageNum]);
+
+  /*Google Maps API*/
+  if (responded){
+    APIService.hdb_street_view(block, streetName)
+    .then((response) => {
+      setStreetViewUrl(response.streetViewUrl);
+      setResponded(false);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }
 
   return (
     <>
           <div className='Housecard'>
-            <img src={btoBuilding} className='Housecard__img'></img>
+            <img src={streetViewUrl} className='Housecard__img'></img>
             <div className='Housecard__content'>
               <div className='Housecard__content__icons'>
               <Link to={{
@@ -50,11 +67,10 @@ export default function ExploreHousesCard(page) {
               </Link>
 
               </div>
-              <p className='Housecard__content__street'>{streetName}</p>
+              <p className='Housecard__content__street'>BLK {block} {streetName}</p>
               <p className=''>Resale price: SGD {price}</p>
               <p className=''>Flat model: {flatModel}</p>
               <p className=''>Flat type: {flatType}</p>
-              <p className=''>Block number: {block}</p>
               <p className=''>Floor area: {floorArea} sqm</p>
               <p className=''>Remaining lease: {remainingLease}</p>
             </div>
