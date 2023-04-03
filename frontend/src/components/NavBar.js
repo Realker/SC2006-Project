@@ -35,7 +35,6 @@ const currentTab = ({ isActive }) => {
     const navigate = useNavigate();
     APIService.RetrieveUserDetails(userToken)
     .then((response) => {
-      console.log(response);
       if (response.detail == "Invalid token.")
       {
         navigate('/InvalidUserSessionPage'); // Redirect to homepage

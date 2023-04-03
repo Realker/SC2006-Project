@@ -256,5 +256,14 @@ static FilterHDB( list_size = null,
       }
     }).then(response => response.json());
   }
+
+  static hdb_nearby_facilities(block, streetName, facility, radius){
+    return fetch(`http://127.0.0.1:8000/api/hdbflat/get_nearby_facilities/${block}/${streetName}/${facility}/${radius}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(response => response.json());
+  }
 }
 
