@@ -304,7 +304,7 @@ function Login() {
                   <button
                     className="btn btn-forgetpass"
                     onClick={() => setLogin(false)}>
-                    <Link to ="/ResetPassword">Forget Password?</Link>
+                    <Link to ="http://127.0.0.1:8000/password-reset/">Forget Password?</Link>
                   </button>
                 </div>
                 <>
