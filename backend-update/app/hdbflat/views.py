@@ -224,3 +224,30 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
         url = f"https://maps.googleapis.com/maps/api/streetview?size=640x480&location={block},%20{street_name},%20Singapore&pitch=30&key={api_key}"
         response = requests.get(url)
         return JsonResponse({'streetViewUrl': response.url})
+
+    def get_nearby_facilities(request, block, street_name, facility, radius):
+        #Facility can be either: school, bus station, subway_station
+        #Radius uses metres as units
+        with open('google_maps_api_key.txt', 'r') as f:
+            api_key = f.read().strip()
+        #Generate longitude and latitude
+        url = f'https://maps.googleapis.com/maps/api/geocode/json?address={block},%20{street_name},%20Singapore&key={api_key}'
+        #https://maps.googleapis.com/maps/api/geocode/json?address=517D%20JURONG%20WEST%20STREET%2052,%20Singapore&key=AIzaSyCaBudK_HGitbDwzH2VahhyFeQnazhpEFU
+        response = requests.get(url)
+        location = response['results'][0]['geometry']['location']
+        latitude = location['lat']
+        longitude = location['lng']
+        #Use coordiantes to find nearby facilities
+        url = f'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={latitude},{longitude}&radius={radius}&type={facility}&key={api_key}'
+        response = requests.get(url).json()
+        # Extract relevant information from the response
+        facilities = []
+        for result in response['results']:
+            facilities.append({
+                'name': result['name'],
+                'address': result['vicinity'],
+                'location': result['geometry']['location']
+            })
+
+        # Return the list of nearby schools
+        return JsonResponse({'facilities': facilities})
