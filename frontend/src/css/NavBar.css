@@ -82,9 +82,12 @@ text-decoration-color: #31526b;
 }
 
 .nav-link:hover {
-  background-color: #080808;
-  border-radius: 15px;
+  
+  min-width: 230px;
+  border-radius: 5px;
   border:  none;
+  font-size: xx-large;
+ 
 }
 
 .dropdown-item {
