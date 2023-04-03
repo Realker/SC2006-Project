@@ -51,6 +51,14 @@ useEffect(() => {
     .catch((error) => {
       console.log(error);
     });
+
+    APIService.hdb_nearby_facilities(block, streetName, "school", "100")
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   }
 
   return (

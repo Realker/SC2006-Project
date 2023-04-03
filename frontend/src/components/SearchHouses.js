@@ -12,8 +12,12 @@ import {AiOutlineHeart}  from 'react-icons/ai';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
-//import Homepage from './components/Homepage';
-//import Search from './components/Search';
+import DisplayFlatDetailsCard from './DisplayFlatDetailsCard';
+import '../css/ExploreHouses.css';
+import '../css/DisplayFlat.css';
+import Flat from './Flat';
+import ExploreHousesCard from './ExploreHousesCard';
+import MyActivitiesCard from './MyActivitiesCard';
 
 const SearchHouses = () => {
   const location = useLocation();
@@ -32,6 +36,8 @@ const SearchHouses = () => {
   var maxPriceFilter;
   const [searchResults, setSearchResults] = useState([]);
   const [pageInput, setPageInput] = useState("");
+  const [buttonFlat, setButtonFlat] = useState(false);
+  const [rowIndex, setRowIndex] = useState(0);
 
   switch (priceRangeFilter) {
     case "range1":
@@ -95,7 +101,6 @@ const SearchHouses = () => {
         <a href="/Homepage"><FontAwesomeIcon icon={faHome} className="homeicon"/></a>&nbsp;&nbsp;
         <FontAwesomeIcon icon={faChevronRight} className="arrow-right"/>&nbsp;&nbsp;Search Results
     </div>
-      
       <h1>Search Houses Results</h1>
       <FilterByParametersBar/>
       <div className='SearchHousesCard'>
@@ -118,7 +123,7 @@ const SearchHouses = () => {
             </tr>
           </thead>
           <tbody>
-            {searchResults.map((item) => (
+            {searchResults.map((item,index) => (
             <tr key={item.id}>
               <td>{item.month}</td>
               <td>{item.town}</td>
@@ -131,7 +136,9 @@ const SearchHouses = () => {
               <td>SGD {item.resale_price}</td>
               <td>{item.remaining_lease}</td>
               <td>{item.lease_commence_date}</td>
-              <td><button>Link</button></td>
+              <td>
+              <button onClick={() => (setButtonFlat(true), setRowIndex(index))}>Open Flat</button>
+              </td>
               <td>
                 <Link to={{
                   pathname: '/SaveHousesToFavourites',
@@ -144,6 +151,15 @@ const SearchHouses = () => {
           ))}
           </tbody>
         </table>
+
+      <Flat trigger={buttonFlat} setTrigger={setButtonFlat}>
+        <h3>Resale Flat Details</h3>
+        <p>Scroll down for more information.</p>
+        {searchResults.length > 0 && (<MyActivitiesCard id_hdb={searchResults[rowIndex].id_str} />)}
+        <br></br>
+        {searchResults.length > 0 &&<DisplayFlatDetailsCard block={searchResults[rowIndex].block} street_name={searchResults[rowIndex].street_name}/>}
+      </Flat>
+
       <div className="page-num-container">
         <label htmlFor="page-num">Page number:</label>
         <input type="number" id="page-num" value={pageInput} onChange={(e) => setPageInput(e.target.value)}/>
