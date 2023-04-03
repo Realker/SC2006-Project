@@ -53,13 +53,22 @@
 .profileCancel {
     width: 70px;
     background-color: rgb(206, 206, 206);
+    border: none;
     height: 4vh;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
 }
 
 .profileSave {
     width: 70px;
     background-color: rgb(20, 255, 71);
     height: 4vh;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: none;
+    cursor: pointer;
+
 }
 
 
@@ -108,7 +117,12 @@
     width: 70px;
     background-color: rgb(20, 255, 71);
     height: 4vh;
+    border: none;
     position: relative;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+
 
 }
 
@@ -117,6 +131,11 @@
     background-color: rgb(206, 206, 206);
     height: 4vh;
     position: relative;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: none;
+    cursor: pointer;
+
 
 }
 
