@@ -15,6 +15,8 @@ from django.db.models import Q
 from core.models import HDBFlat
 from hdbflat import serializers
 from .serializers import HDBFlatSerializer
+from django.http import JsonResponse, HttpResponseBadRequest
+import os
 
 
 class HDBFlatViewSet(viewsets.ModelViewSet):
@@ -215,3 +217,10 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
         queryset = queryset.order_by(default_filter)[default_list*(default_page_num-1):default_list*default_page_num]
         serializer = HDBFlatSerializer(queryset, many=True)
         return Response(serializer.data)
+
+    def get_street_view(request, block, street_name):
+        with open('google_maps_api_key.txt', 'r') as f:
+            api_key = f.read().strip()
+        url = f"https://maps.googleapis.com/maps/api/streetview?size=640x480&location={block},%20{street_name},%20Singapore&pitch=30&key={api_key}"
+        response = requests.get(url)
+        return JsonResponse({'streetViewUrl': response.url})

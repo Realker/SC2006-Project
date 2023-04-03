@@ -3,7 +3,6 @@ URL mappings for the HDBFlat app.
 """
 from django.urls import (
     path,
-    re_path,
     include,
 )
 
@@ -25,4 +24,5 @@ urlpatterns = [
     path('filter_using_url/<str:town>/<str:flat_type>/<int:num_results>/', views.HDBFlatViewSet.as_view({'get': 'filter_using_url'}), name='filter_using_url'),
     path('filter_using_query/', views.HDBFlatViewSet.as_view({'get': 'filter_using_query'}), name='filter_using_query'),
     path('filter_using_post/', views.HDBFlatViewSet.filter_using_post, name='filter_using_post'),
+    path('get_street_view/<str:block>/<str:street_name>/', views.HDBFlatViewSet.get_street_view, name='get_street_view'),
 ]

@@ -247,5 +247,14 @@ static FilterHDB( list_size = null,
       credentials: 'include'
     }).then(response => response.json());
   }
+
+  static hdb_street_view(block, streetName){
+    return fetch(`http://127.0.0.1:8000/api/hdbflat/get_street_view/${block}/${streetName}/`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(response => response.json());
+  }
 }
 
