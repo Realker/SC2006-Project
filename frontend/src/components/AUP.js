@@ -12,11 +12,7 @@ const AUP = () => {
     return (
         <div className = "AUPBackground">
             <NavBar/>
-            {/* These code are for Home Icon > FAQ */}
-            <div className="second-nav">
-                    <a href="/Homepage"><FontAwesomeIcon icon={faHome} className="homeicon"/></a>&nbsp;&nbsp;
-                    <FontAwesomeIcon icon={faChevronRight} className="arrow-right"/>&nbsp;&nbsp; Acceptable Use Policy
-                </div>
+         
                 <div className="Div__bg">
                    <h1> Acceptable Use Policy (AUP)</h1>
 

@@ -12,11 +12,7 @@ const PrivacyPolicy = () => {
     return (
         <div className = "PrivacyPolicyBackground">
             <NavBar/>
-            {/* These code are for Home Icon > FAQ */}
-            <div className="second-nav">
-                    <a href="/Homepage"><FontAwesomeIcon icon={faHome} className="homeicon"/></a>&nbsp;&nbsp;
-                    <FontAwesomeIcon icon={faChevronRight} className="arrow-right"/>&nbsp;&nbsp; Privacy Policy
-                </div>
+
                 <div className="Div__bg">
                    <h1>Privacy Policy</h1>
 
