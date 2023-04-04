@@ -76,7 +76,7 @@ useEffect(() => {
               {true_settings ? (
               <Link to={{
                 pathname: '/SaveHousesToFavourites',
-                search: `?id_true=${idStr}`
+                search: `?id_str=${idStr}`
                 }}>
                 <div className='Housecard__content__icons__heart'> <AiOutlineHeart/></div>
               </Link>
