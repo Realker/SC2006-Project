@@ -87,7 +87,7 @@ text-decoration-color: #31526b;
   border-radius: 5px;
   border:  none;
   font-size: xx-large;
- 
+  
 }
 
 .dropdown-item {
@@ -120,6 +120,7 @@ text-decoration-color: #31526b;
     padding-top: 10px;
     margin-bottom: -5px;
     height: 50px;
+    border-radius: 8px;
 
   }
 
@@ -140,6 +141,7 @@ text-decoration-color: #31526b;
   align-items: flex-end;
   height: 4.2vh;
   align-items:right;
+  
 }
 
 .notification-click:hover {

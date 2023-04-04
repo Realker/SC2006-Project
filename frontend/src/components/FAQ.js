@@ -11,11 +11,8 @@ const FAQ = () => {
     <div class = "FAQBackground">
       <NavBar/>
       
-       {/* These code are for Home Icon > FAQ */}
-      <div className="second-nav">
-        <a href="/Homepage"><FontAwesomeIcon icon={faHome} className="homeicon"/></a>&nbsp;&nbsp;
-        <FontAwesomeIcon icon={faChevronRight} className="arrow-right"/>&nbsp;&nbsp; FAQ
-      </div>
+   
+      
 
       <div className='FAQ__bg h1'>
       <h1>Frequently Asked Questions (FAQs):</h1>
