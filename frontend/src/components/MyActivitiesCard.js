@@ -13,6 +13,7 @@ import {useEffect} from 'react';
 export default function MyActivitiesCard(id_hdb) {
   var id_str_hdb = id_hdb.id_hdb;
   var id = id_hdb.id_true;
+  var true_settings = id_hdb.true_settings;
   const [result, setResult] = useState([]);
   const [streetName, setstreetName] = useState("LOADING...");
   const [flatModel, setflatModel] = useState("LOADING...");
@@ -79,12 +80,17 @@ export default function MyActivitiesCard(id_hdb) {
             <div className='Housecard__content'>
               <div className='Housecard__content__icons'>
 
+            {true_settings ? (
               <Link to={{
                 pathname: '/DeleteFromFavourites',
                 search: `?id_true=${id}`
                 }}>
                 <div className='Housecard__content__icons__heart'> <AiFillHeart/></div>
               </Link>
+            )
+            :
+            (<br></br>)
+            }
 
               </div>
               <p className='Housecard__content__street'>BLK {block} {streetName}</p>

@@ -14,8 +14,9 @@ export default function DisplayFlatDetailsCard(address) {
   var block = address.block;
   var street_name = address.street_name;
   const [facility, setFacility] = useState('school');
-  const [radius, setRadius] = useState('1000');
+  const [radius, setRadius] = useState('750');
   const [results, setResults] = useState([]);
+  const [mapViewUrl, setMapviewUrl] = useState();
 
 
   /*Google Maps API*/
@@ -23,11 +24,20 @@ export default function DisplayFlatDetailsCard(address) {
     APIService.hdb_nearby_facilities(block, street_name, facility, radius)
     .then((response) => {
       setResults(response.facilities);
-      console.log(results);
     })
     .catch((error) => {
       console.log(error);
     });
+
+    APIService.hdb_map_view(block, street_name)
+    .then((response) => {
+      setMapviewUrl(response.mapViewUrl);
+      console.log(response.mapViewUrl);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
 }, [block, street_name, facility, radius]);
 
   return (
@@ -36,7 +46,7 @@ export default function DisplayFlatDetailsCard(address) {
             <div className='Housecard__content'>
               <div className='Housecard__content__icons'>
               </div>
-              <p className='Housecard__content__street'>NEARBY FACILITIES</p>
+              <p className='Housecard__content__street'>NEARBY FACILITIES - {radius}m Radius</p>
               <select value={facility} onChange={(e) => setFacility(e.target.value)}>
                 <option value="school">Schools & Other Academic Facilities</option>
                 <option value="subway_station">MRT Stations</option>
@@ -73,6 +83,8 @@ export default function DisplayFlatDetailsCard(address) {
                 </ul>
                 </>
                 )}
+
+                <img src={mapViewUrl} className='Housecard__img'></img>
             </div>
           </div>
     </>
