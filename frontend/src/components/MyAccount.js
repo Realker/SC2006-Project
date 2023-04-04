@@ -92,11 +92,7 @@ const MyAccount = () => {
       <div className="MyAccountBackground">
         <NavBar/>
 
-      {/* These code are for Home Icon > My Account */}
-      <div className="second-nav">
-        <a href="/Homepage"><FontAwesomeIcon icon={faHome} className="homeicon"/></a>&nbsp;&nbsp;
-        <FontAwesomeIcon icon={faChevronRight} className="arrow-right"/>&nbsp;&nbsp;My Account
-      </div>
+      
 
       <div className='MyAccount__bg'>
       <h1>My Personal Profile</h1>
