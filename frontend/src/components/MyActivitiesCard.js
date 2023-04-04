@@ -97,7 +97,7 @@ export default function MyActivitiesCard(id_hdb) {
             }
             {detailsTrue ? (
               <div className="open-flat-container">
-                <button onClick={() => (setButtonFlat(true))}>Open Flat Details</button>
+                <button onClick={() => (setButtonFlat(true))}>Display Flat</button>
               </div>
               )
               :
@@ -115,7 +115,7 @@ export default function MyActivitiesCard(id_hdb) {
 
           </div>
           <Flat trigger={buttonFlat} setTrigger={setButtonFlat}>
-            <h3>Resale Flat Details</h3>
+            <h3>Display Flat</h3>
             <p>Scroll down for more information.</p>
             {(<MyActivitiesCard id_hdb={id_str_hdb}  true_settings={false} />)}
             <br></br>
