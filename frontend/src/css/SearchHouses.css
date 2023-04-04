@@ -21,7 +21,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-
+    font-size: small;
     flex-direction: column;
     background-color:white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
