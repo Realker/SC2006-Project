@@ -93,11 +93,7 @@ const ChangePassword = () => {
         <div className="ChangePasswordBackground">
             <NavBar/>
 
-            {/* These code are for Home Icon > FAQ */}
-            <div className="second-nav">
-                <a href="/Homepage"><FontAwesomeIcon icon={faHome} className="homeicon"/></a>&nbsp;&nbsp;
-                <FontAwesomeIcon icon={faChevronRight} className="arrow-right"/>&nbsp;&nbsp;Change Password
-            </div>
+         
 
             <div className='ChangePassword__bg'>
                 <h1>Change Password</h1>
