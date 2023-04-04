@@ -32,7 +32,6 @@ export default function DisplayFlatDetailsCard(address) {
     APIService.hdb_map_view(block, street_name)
     .then((response) => {
       setMapviewUrl(response.mapViewUrl);
-      console.log(response.mapViewUrl);
     })
     .catch((error) => {
       console.log(error);
