@@ -35,3 +35,29 @@
     background-color: #9DC0DE;
     height: 100vh;
 }
+
+.close-flat-container {
+    margin-left: 10px;
+}
+
+.close-flat-container label {
+    margin-right: 8px;
+}
+
+.close-flat-container input {
+    width: 50px;
+    margin-right: 8px;
+}
+
+.close-flat-container button {
+    padding: 8px;
+    background-color: #cf1232;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.close-flat-container button:hover {
+    background-color: #8b0c28;
+}

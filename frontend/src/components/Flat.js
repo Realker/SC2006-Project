@@ -12,7 +12,7 @@ function Flat() {
         <p>Address: </p>
         <p>Postal Code: </p>
         <p>123</p>
-     
+
       </div>
     );
   }
@@ -22,8 +22,9 @@ function Flat(props) {
   return (props.trigger) ? (
     <div className="flat">
       <div className="flat-inner">
+        <div className="close-flat-container">
         <button className="close-flat" onClick={() => props.setTrigger(false)}
-        >close</button>
+        >X</button></div>
         { props.children }
       </div>
     </div>
