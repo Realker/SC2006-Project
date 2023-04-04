@@ -11,10 +11,7 @@ export default function ExploreHouses() {
     <>
         <div class = "Explorehouses__bg">
           <NavBar/>
-          <div className="second-nav">
-            <a href="/Homepage"><FontAwesomeIcon icon={faHome} className="homeicon"/></a>&nbsp;&nbsp;
-            <FontAwesomeIcon icon={faChevronRight} className="arrow-right"/>&nbsp;&nbsp;Explore Houses
-          </div>
+          
 
           <h1> Explore Top 3 Houses</h1>
           <div className='Housecards'>

@@ -5,12 +5,17 @@
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+    
     color: #273c52;
+    text-align: justify;
+    text-overflow:unset;
+    
 }
 .Explorehouses__bg h1{
     font-size: 2rem;
     text-align: center;
     padding: 1.5rem 0rem;
+    
 }
 
 .Housecards {
