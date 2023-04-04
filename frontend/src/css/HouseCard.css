@@ -35,3 +35,29 @@
 .Housecard__content__street{
     font-weight: bold;
 }
+
+.open-flat-container {
+    margin-left: 10px;
+}
+
+.open-flat-container label {
+    margin-right: 8px;
+}
+
+.open-flat-container input {
+    width: 50px;
+    margin-right: 8px;
+}
+
+.open-flat-container button {
+    padding: 8px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.open-flat-container button:hover {
+    background-color: #3e8e41;
+}

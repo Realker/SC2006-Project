@@ -24,7 +24,7 @@ export default function ExploreHouses() {
                 const num_of_cards = 3;
                 const cards = [];
                 for (let i = 1; i <= num_of_cards; i++) {
-                  cards.push(<ExploreHousesCard page={i.toString()} />);
+                  cards.push(<ExploreHousesCard page={i.toString()} detailsTrue={true} true_settings={true}/>);
                 }
                 return cards;
               })()
