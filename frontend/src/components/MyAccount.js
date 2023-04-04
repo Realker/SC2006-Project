@@ -52,8 +52,6 @@ const MyAccount = () => {
   .then((response) => {
     setOldName(response.name);
     setOldEmail(response.email);
-    console.log(response.email);
-    console.log(response.name);
   })
   .catch((error) => {
     console.log(error);
@@ -92,7 +90,7 @@ const MyAccount = () => {
       <div className="MyAccountBackground">
         <NavBar/>
 
-      
+
 
       <div className='MyAccount__bg'>
       <h1>My Personal Profile</h1>
