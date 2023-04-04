@@ -16,7 +16,7 @@ function DisplayFlat() {
       <main>
         <h1>Display Flat Details</h1>
         <br/><br/>
-        <button onClick={() => setButtonFlat(true)}>Open Flat</button>
+        <button onClick={() => setButtonFlat(true)}>Display Flat</button>
         </main>
 
         <Flat trigger={buttonFlat} setTrigger={setButtonFlat}>

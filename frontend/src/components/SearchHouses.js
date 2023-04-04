@@ -138,7 +138,7 @@ const SearchHouses = () => {
               <td>{item.lease_commence_date}</td>
               <td>
                 <div className="page-num-container">
-                  <button onClick={() => (setButtonFlat(true), setRowIndex(index))}>Open Flat</button>
+                  <button onClick={() => (setButtonFlat(true), setRowIndex(index))}>Display Flat</button>
                 </div>
               </td>
               <td>

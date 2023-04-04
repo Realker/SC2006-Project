@@ -12,11 +12,7 @@ const TOS = () => {
     return (
         <div className = "TOSBackground">
             <NavBar/>
-            {/* These code are for Home Icon > FAQ */}
-            <div className="second-nav">
-                    <a href="/Homepage"><FontAwesomeIcon icon={faHome} className="homeicon"/></a>&nbsp;&nbsp;
-                    <FontAwesomeIcon icon={faChevronRight} className="arrow-right"/>&nbsp;&nbsp; Terms of Service
-                </div>
+          
                 <div className="Div__bg">
                    <h1> Terms of Service (TOS)</h1>
 

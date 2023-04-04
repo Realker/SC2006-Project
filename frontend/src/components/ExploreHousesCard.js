@@ -87,7 +87,7 @@ useEffect(() => {
 
               {detailsTrue ? (
               <div className="open-flat-container">
-                <button onClick={() => (setButtonFlat(true))}>Open Flat Details</button>
+                <button onClick={() => (setButtonFlat(true))}>Display Flat</button>
               </div>
               )
               :
