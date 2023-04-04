@@ -58,9 +58,10 @@ const MyActivities = () => {
               })()
             }
           </div>
-
+      
 
     </div>
+    
     <div className= "DivisionBackGround">
     <DivisionNavBar />
 
