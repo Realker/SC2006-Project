@@ -58,7 +58,7 @@ const MyActivities = () => {
               })()
             }
           </div>
-
+      <br />
 
     </div>
     
