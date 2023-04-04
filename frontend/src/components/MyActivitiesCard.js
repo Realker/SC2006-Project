@@ -9,10 +9,14 @@ import DeleteFromFavourites from './DeleteFromFavourites';
 import APIService from './APIService';
 import {useState} from 'react';
 import {useEffect} from 'react';
+import Flat from './Flat';
+import DisplayFlatDetailsCard from './DisplayFlatDetailsCard';
 
 export default function MyActivitiesCard(id_hdb) {
   var id_str_hdb = id_hdb.id_hdb;
   var id = id_hdb.id_true;
+  var true_settings = id_hdb.true_settings;
+  var detailsTrue = id_hdb.detailsTrue;
   const [result, setResult] = useState([]);
   const [streetName, setstreetName] = useState("LOADING...");
   const [flatModel, setflatModel] = useState("LOADING...");
@@ -23,6 +27,7 @@ export default function MyActivitiesCard(id_hdb) {
   const [price, setPrice] = useState("LOADING...");
   const [responded, setResponded] = useState(false);
   const [streetViewUrl, setStreetViewUrl] = useState('');
+  const [buttonFlat, setButtonFlat] = useState(false);
 
   useEffect(() => {
     APIService.FilterHDB( null, //list_size
@@ -79,12 +84,25 @@ export default function MyActivitiesCard(id_hdb) {
             <div className='Housecard__content'>
               <div className='Housecard__content__icons'>
 
+            {true_settings ? (
               <Link to={{
                 pathname: '/DeleteFromFavourites',
                 search: `?id_true=${id}`
                 }}>
                 <div className='Housecard__content__icons__heart'> <AiFillHeart/></div>
               </Link>
+            )
+            :
+            (<br></br>)
+            }
+            {detailsTrue ? (
+              <div className="open-flat-container">
+                <button onClick={() => (setButtonFlat(true))}>Open Flat Details</button>
+              </div>
+              )
+              :
+                (<br></br>)
+            }
 
               </div>
               <p className='Housecard__content__street'>BLK {block} {streetName}</p>
@@ -96,6 +114,13 @@ export default function MyActivitiesCard(id_hdb) {
             </div>
 
           </div>
+          <Flat trigger={buttonFlat} setTrigger={setButtonFlat}>
+            <h3>Resale Flat Details</h3>
+            <p>Scroll down for more information.</p>
+            {(<MyActivitiesCard id_hdb={id_str_hdb}  true_settings={false} />)}
+            <br></br>
+            {<DisplayFlatDetailsCard block={block} street_name={streetName}/>}
+          </Flat>
     </>
   );
 }

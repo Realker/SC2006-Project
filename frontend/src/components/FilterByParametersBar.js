@@ -161,7 +161,7 @@ const FilterByParametersBar = () => {
         </div>
       </div>
     </form>
-    <div className="apply-button">
+    <div className="page-num-container">
         <Link to={{
           pathname: '/SearchHouses',
           search: `?town=${town}&flatModel=${flatModel}&minPrice=${minPrice}&maxPrice=${maxPrice}&flatType=${flatType}&block=${block}&month=${formattedDate}&minSqm=${minSqm}&maxSqm=${maxSqm}`

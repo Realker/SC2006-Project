@@ -9,9 +9,14 @@ import SaveHousesToFavourites from './SaveHousesToFavourites';
 import APIService from './APIService';
 import {useState} from 'react';
 import {useEffect} from 'react';
+import Flat from './Flat';
+import MyActivitiesCard from './MyActivitiesCard';
+import DisplayFlatDetailsCard from './DisplayFlatDetailsCard';
 
 export default function ExploreHousesCard(page) {
   var pageNum = page.page;
+  var detailsTrue = page.detailsTrue;
+  var true_settings = page.true_settings;
   const [streetName, setstreetName] = useState("LOADING...");
   const [flatModel, setflatModel] = useState("LOADING...");
   const [flatType, setflatType] = useState("LOADING...");
@@ -22,6 +27,7 @@ export default function ExploreHousesCard(page) {
   const [idStr, setIdStr] = useState("");
   const [responded, setResponded] = useState(false);
   const [streetViewUrl, setStreetViewUrl] = useState('');
+  const [buttonFlat, setButtonFlat] = useState(false);
 
 useEffect(() => {
   APIService.RetrieveLatestHDB("1", pageNum)
@@ -67,13 +73,26 @@ useEffect(() => {
             <img src={streetViewUrl} className='Housecard__img'></img>
             <div className='Housecard__content'>
               <div className='Housecard__content__icons'>
+              {true_settings ? (
               <Link to={{
                 pathname: '/SaveHousesToFavourites',
-                search: `?id_str=${idStr}`
+                search: `?id_true=${idStr}`
                 }}>
                 <div className='Housecard__content__icons__heart'> <AiOutlineHeart/></div>
               </Link>
+            )
+            :
+            (<br></br>)
+            }
 
+              {detailsTrue ? (
+              <div className="open-flat-container">
+                <button onClick={() => (setButtonFlat(true))}>Open Flat Details</button>
+              </div>
+              )
+              :
+                (<br></br>)
+              }
               </div>
               <p className='Housecard__content__street'>BLK {block} {streetName}</p>
               <p className=''>Resale price: SGD {price}</p>
@@ -84,6 +103,14 @@ useEffect(() => {
             </div>
 
           </div>
+
+          <Flat trigger={buttonFlat} setTrigger={setButtonFlat}>
+            <h3>Resale Flat Details</h3>
+            <p>Scroll down for more information.</p>
+            {(<MyActivitiesCard id_hdb={idStr}  true_settings={false} />)}
+            <br></br>
+            {<DisplayFlatDetailsCard block={block} street_name={streetName}/>}
+          </Flat>
     </>
   );
 }

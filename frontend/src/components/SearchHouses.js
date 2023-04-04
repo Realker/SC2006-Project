@@ -137,7 +137,9 @@ const SearchHouses = () => {
               <td>{item.remaining_lease}</td>
               <td>{item.lease_commence_date}</td>
               <td>
-              <button onClick={() => (setButtonFlat(true), setRowIndex(index))}>Open Flat</button>
+                <div className="page-num-container">
+                  <button onClick={() => (setButtonFlat(true), setRowIndex(index))}>Open Flat</button>
+                </div>
               </td>
               <td>
                 <Link to={{
@@ -155,7 +157,7 @@ const SearchHouses = () => {
       <Flat trigger={buttonFlat} setTrigger={setButtonFlat}>
         <h3>Resale Flat Details</h3>
         <p>Scroll down for more information.</p>
-        {searchResults.length > 0 && (<MyActivitiesCard id_hdb={searchResults[rowIndex].id_str} />)}
+        {searchResults.length > 0 && (<MyActivitiesCard id_hdb={searchResults[rowIndex].id_str}  true_settings={false} />)}
         <br></br>
         {searchResults.length > 0 &&<DisplayFlatDetailsCard block={searchResults[rowIndex].block} street_name={searchResults[rowIndex].street_name}/>}
       </Flat>

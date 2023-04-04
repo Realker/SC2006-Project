@@ -251,3 +251,20 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
 
         # Return the list of nearby schools
         return JsonResponse({'facilities': facilities})
+
+    def get_static_map_view(request, block, street_name):
+        #Facility can be either: school, bus station, subway_station
+        #Radius uses metres as units
+        with open('google_maps_api_key.txt', 'r') as f:
+            api_key = f.read().strip()
+        #Generate longitude and latitude
+        url = f'https://maps.googleapis.com/maps/api/geocode/json?address={block},%20{street_name},%20Singapore&key={api_key}'
+        #https://maps.googleapis.com/maps/api/geocode/json?address=517D%20JURONG%20WEST%20STREET%2052,%20Singapore&key=AIzaSyCaBudK_HGitbDwzH2VahhyFeQnazhpEFU
+        response = requests.get(url).json()
+        location = response['results'][0]['geometry']['location']
+        latitude = location['lat']
+        longitude = location['lng']
+        #Use coordiantes to find nearby facilities
+        url = f'https://maps.googleapis.com/maps/api/staticmap?center={latitude},{longitude}&zoom=13&size=600x300&maptype=roadmap&key={api_key}&markers=color:red%7Clabel:O%7C{latitude},{longitude}'
+        response = requests.get(url)
+        return JsonResponse({'mapViewUrl': response.url})

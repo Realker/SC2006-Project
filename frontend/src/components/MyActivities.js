@@ -52,7 +52,7 @@ const MyActivities = () => {
               (() => {
                 const cards = [];
                 for (let i = 1; i <= responseLength; i++) {
-                  cards.push(<MyActivitiesCard id_hdb={listOfFav[i-1].id_str_hdb} id_true={listOfFav[0].id}/>);
+                  cards.push(<MyActivitiesCard id_hdb={listOfFav[i-1].id_str_hdb} id_true={listOfFav[0].id} true_settings={true} detailsTrue={true}/>);
                 }
                 return cards;
               })()
