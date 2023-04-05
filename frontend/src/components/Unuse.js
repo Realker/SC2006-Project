@@ -1,3 +1,5 @@
+
+/*
 import React, {Component} from 'react';
 //import NavBar from './NavBar'
 //import HDB from '../images/HDBFAQ.jpg'
@@ -72,3 +74,5 @@ render() {
 }
 
 export default ProfilePicChanger;
+
+*/

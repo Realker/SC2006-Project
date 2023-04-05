@@ -21,13 +21,14 @@ import SearchHouses from './components/SearchHouses';
 import TNC from './components/TNC';
 import TNCWriteup from './components/TNCWriteup';
 import FilterByParameters from './components/FilterByParameters';
-import ProfilePicChanger from './components/ProfilePicChanger';
 import ChangePassword from './components/ChangePassword';
 import AUP from './components/AUP';
 import TOS from './components/TOS';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import DeleteFromFavourites from './components/DeleteFromFavourites';
 import InvalidUserSessionPage from './components/InvalidUserSessionPage';
+//import ProfilePicChanger from './components/ProfilePicChanger';
+//<Route path='/ProfilePicChanger' element = {<ProfilePicChanger />} />
 
 function Router(){
   return(
@@ -51,7 +52,6 @@ function Router(){
       <Route path='/TNC' element = {<TNC />}/>
       <Route path='/TNCWriteup' element = {<TNCWriteup />} />
       <Route path='/FilterByParameters' element = {<FilterByParameters />} />
-      <Route path='/ProfilePicChanger' element = {<ProfilePicChanger />} />
       <Route path='/ChangePassword' element = {<ChangePassword />}/>
       <Route path='/AUP' element = {<AUP />}/>
       <Route path='/TOS' element = {<TOS />}/>
