@@ -22,18 +22,21 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 10px;
     overflow: auto;
+    
 }
 
 .flat-inner .close-flat {
     position: absolute;
     top: 16px;
     right: 16px;
+    border-radius: 4px;
 }
 
 .DisplayFlat{
     padding-bottom: 2rem;
     background-color: #9DC0DE;
     height: 100vh;
+    
 }
 
 .close-flat-container {
@@ -42,16 +45,18 @@
 
 .close-flat-container label {
     margin-right: 8px;
+    border-radius: 4px;
 }
 
 .close-flat-container input {
     width: 50px;
     margin-right: 8px;
+    border-radius: 4px;
 }
 
 .close-flat-container button {
     padding: 8px;
-    background-color: #cf1232;
+    background-color:  #b53369;
     color: white;
     border: none;
     cursor: pointer;
@@ -59,5 +64,5 @@
 }
 
 .close-flat-container button:hover {
-    background-color: #8b0c28;
+    background-color:  #b53369;
 }
