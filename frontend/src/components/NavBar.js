@@ -47,6 +47,11 @@ const currentTab = ({ isActive }) => {
 
     // Notification Bar
     const [isShowing, setIsShowing] = useState(false);
+    //Dropdown Bar
+    const [showDropdown, setShowDropdown] = useState(false);
+    const handleToggle = () => {
+      setShowDropdown(!showDropdown);
+    };
 
     const handleClick = () => {
       setIsShowing(true);
@@ -103,7 +108,12 @@ const currentTab = ({ isActive }) => {
             }
             className="dropdown-main"
             id="basic-nav-dropdown"
+            show={showDropdown}
+            onMouseEnter={handleToggle}
+            onMouseLeave={handleToggle}
           >
+            {showDropdown ? (
+              <>
             <NavDropdown.Item className="dropdown-item" as={NavLink} to="/MyAccount">
               Profile
             </NavDropdown.Item>
@@ -123,6 +133,8 @@ const currentTab = ({ isActive }) => {
             <NavDropdown.Item className="dropdown-item" as={NavLink} to="/" onClick={handleLogout}>
               Logout
             </NavDropdown.Item>
+            </>
+          ) : null}
           </NavDropdown>
         </nav>
       </div>
