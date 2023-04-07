@@ -126,10 +126,6 @@ const currentTab = ({ isActive }) => {
               Change Password
             </NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item className="dropdown-item" as={NavLink} to="/Articles">
-              Articles
-            </NavDropdown.Item>
-            <NavDropdown.Divider />
             <NavDropdown.Item className="dropdown-item" as={NavLink} to="/" onClick={handleLogout}>
               Logout
             </NavDropdown.Item>
