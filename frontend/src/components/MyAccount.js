@@ -25,6 +25,9 @@ import Pic19 from './pics/avatar19.png'; import Pic20 from './pics/avatar20.png'
 
 const MyAccount = () => {
   const [changed, setChanged] = useState(false);
+  const [error1, setError1] = useState(false);
+  const [error2, setError2] = useState(false);
+  const [error3, setError3] = useState(false);
 
   const [oldName, setOldName] = useState('');
   const [oldPassword, setOldPassword] = useState('');
@@ -58,10 +61,33 @@ const MyAccount = () => {
   const confirmChange = () => {
     APIService.UpdateUserDetails(userToken, newName, newEmail)
       .then((response) => {
-        console.log(response);
         if (newName == response.name)
         {
           setChanged(true);
+          setError1(false);
+          setError2(false);
+          setError3(false);
+        }
+        else
+        {
+          setChanged(false);
+          setError1(false);
+          setError2(true);
+          setError3(false);
+        }
+        if (newName == "" && newEmail == "")
+        {
+          setChanged(false);
+          setError1(true);
+          setError2(false);
+          setError3(false);
+        }
+        if (response.email == "user with this email already exists.")
+        {
+          setChanged(false);
+          setError1(false);
+          setError2(false);
+          setError3(true);
         }
       })
       .catch((error) => {
@@ -72,8 +98,6 @@ const MyAccount = () => {
     .then((response) => {
       setOldName(response.name);
       setOldEmail(response.email);
-      console.log(response.email);
-      console.log(response.name);
     })
     .catch((error) => {
       console.log(error);
@@ -124,7 +148,7 @@ const MyAccount = () => {
 
       <h2>
       <button className="cancelEdit"
-          onClick={() => (setNewEmail(""), setNewName(""), setChanged(false))}
+          onClick={() => (setNewEmail(""), setNewName(""), setChanged(false), setError1(false), setError2(false), setError3(false))}
             >Cancel</button> &nbsp;
       <button className="saveEdit"
           onClick={() => confirmChange()}
@@ -140,9 +164,45 @@ const MyAccount = () => {
           )
           :
           (
-            <div>
+            <p />
+          )}
+      </div>
 
+      <div className = "errorMessage">
+        {error1 ?
+          (
+            <div>
+              Both fields need to be filled to confirm profile updates.
             </div>
+          )
+          :
+          (
+            <p />
+          )}
+      </div>
+
+      <div className = "errorMessage">
+        {error2 ?
+          (
+            <div>
+              Enter a valid email address.
+            </div>
+          )
+          :
+          (
+            <p />
+          )}
+      </div>
+      <div className = "errorMessage">
+        {error3 ?
+          (
+            <div>
+              Another user with this email already exists.
+            </div>
+          )
+          :
+          (
+            <p />
           )}
       </div>
 
@@ -162,12 +222,12 @@ export default MyAccount;
               //onChange={(e) => displayName(e.target.value)}
         ></textarea></h3> */}
 
- {/* Allows user to choose profile picture 
+ {/* Allows user to choose profile picture
       <Avatar size={150} icon="user" className="avatar-pop-up" src={profileImage}></Avatar>
       <ProfilePicChanger handleImageChange={handleImageChange} pic1={Pic1} pic2={Pic2} pic3={Pic3}
       pic4={Pic4} pic5={Pic5} pic6={Pic6} pic7={Pic7} pic8={Pic8} pic9={Pic9} pic10={Pic10}
       pic11={Pic11} pic12={Pic12} pic13={Pic13} pic114={Pic14} pic15={Pic15} pic16={Pic16}
-      pic17={Pic17} pic18={Pic18} pic19={Pic19} pic20={Pic20}/> 
+      pic17={Pic17} pic18={Pic18} pic19={Pic19} pic20={Pic20}/>
 
       <h2>
       <button id="cancelProfile" className="profileCancel"
@@ -182,4 +242,4 @@ export default MyAccount;
       //const [profileImage, setProfileImage] = useState('');
 
       //const handleImageChange = (profileImage) => {
-      //setProfileImage(profileImage); }; 
+      //setProfileImage(profileImage); };
