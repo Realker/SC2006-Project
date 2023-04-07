@@ -1,21 +1,21 @@
 # HDBFinder Backend - Getting Started with Django and Docker
 
 - This backend component was made with [Django](https://www.djangoproject.com/).
-- The databse of choice is [PostgrSQL](https://www.postgresql.org/).
+- The databse of choice is [PostgreSQL](https://www.postgresql.org/).
 - The backend and databse is containerised with [Docker Desktop](https://docs.docker.com/desktop/) for ease of collaborative use.
 
 ### Setting up
-The following steps only needs to be done once, or upon every update to the project's [libraries/requirements](https://github.com/Realker/SC2006-Project/blob/main/backend-update/requirements.txt).
+The following steps only needs to be done once, or upon every update to the project's [libraries/requirements](https://github.com/Realker/SC2006-Project/blob/main/Server/requirements.txt).
 
 1. Install Docker-Desktop [here](https://www.docker.com/products/docker-desktop/).
 2. Open your terminal and navigate to the "backend" folder (same folder as the README.md file).
 3. Type the following command:
     `docker-compose build`
-    - This will install the relevant backend [libraries/requirements](https://github.com/Realker/SC2006-Project/blob/main/backend-update/requirements.txt) and build your project within a new Docker container. This step might take a while.
+    - This will install the relevant backend [libraries/requirements](https://github.com/Realker/SC2006-Project/blob/main/Server/requirements.txt) and build your project within a new Docker container. This step might take a while.
 4. Type the following command:
     `docker-compose run --rm app sh -c "python manage.py makemigrations"`
-    - This command is used to check if there are any pending updates/changes within the [models.py](https://github.com/Realker/SC2006-Project/blob/main/backend-update/app/core/models.py) file to make a migration for.
-    - This step only needs to be done whenever there are updates/changes within the [models.py](https://github.com/Realker/SC2006-Project/blob/main/backend-update/app/core/models.py).
+    - This command is used to check if there are any pending updates/changes within the [models.py](https://github.com/Realker/SC2006-Project/blob/main/Server/app/core/models.py) file to make a migration for.
+    - This step only needs to be done whenever there are updates/changes within the [models.py](https://github.com/Realker/SC2006-Project/blob/main/Server/app/core/models.py).
 
 ### Creating a super user (admin account)
 Type the following command:
