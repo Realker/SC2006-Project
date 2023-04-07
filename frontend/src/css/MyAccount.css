@@ -144,3 +144,10 @@
     color: #9ea99f; /* Sage green color */
     font-weight: bold;
   }
+
+.errorMessage {
+    font-size: 14px;
+    color: red; /* Sage green color */
+    font-weight: bold;
+  }
+
