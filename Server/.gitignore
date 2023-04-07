@@ -132,3 +132,5 @@ dmypy.json
 
 # Aws_Key 
 app/aws_keys.txt
+
+app/google_maps_api_key
