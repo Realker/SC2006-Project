@@ -38,6 +38,7 @@ const SearchHouses = () => {
   const [pageInput, setPageInput] = useState("");
   const [buttonFlat, setButtonFlat] = useState(false);
   const [rowIndex, setRowIndex] = useState(0);
+  const [resultsAvail, setResultsAvail] = useState(true);
 
   switch (priceRangeFilter) {
     case "range1":
@@ -84,6 +85,14 @@ const SearchHouses = () => {
                           null) //filter_param
       .then((response) => {
         setSearchResults(response);
+        if (response.length == 0)
+        {
+          setResultsAvail(false);
+        }
+        else
+        {
+          setResultsAvail(true);
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -103,76 +112,85 @@ const SearchHouses = () => {
     </div>
       <h1>Search Houses Results</h1>
       <FilterByParametersBar/>
-      <div className='SearchHousesCard'>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Month</th>
-              <th>Town</th>
-              <th>Block</th>
-              <th>Street Name</th>
-              <th>Storey Range</th>
-              <th>Flat Type</th>
-              <th>Flat Model</th>
-              <th>Floor Area</th>
-              <th>Resale Price</th>
-              <th>Remaining Lease</th>
-              <th>Lease Commence</th>
-              <th>View Details</th>
-              <th>Favourite</th>
-            </tr>
-          </thead>
-          <tbody>
-            {searchResults.map((item,index) => (
-            <tr key={item.id}>
-              <td>{item.month}</td>
-              <td>{item.town}</td>
-              <td>{item.block}</td>
-              <td>{item.street_name}</td>
-              <td>{item.storey_range}</td>
-              <td>{item.flat_type}</td>
-              <td>{item.flat_model}</td>
-              <td>{item.floor_area_sqm} sqm</td>
-              <td>SGD {item.resale_price}</td>
-              <td>{item.remaining_lease}</td>
-              <td>{item.lease_commence_date}</td>
-              <td>
-                <div className="page-num-container">
-                  <button onClick={() => (setButtonFlat(true), setRowIndex(index))}>Display Flat</button>
-                </div>
-              </td>
-              <td>
-                <Link to={{
-                  pathname: '/SaveHousesToFavourites',
-                  search: `?id_str=${item.id_str}`
-                  }}>
-                  <div className='Housecard__content__icons__heart'> <AiOutlineHeart/></div>
-                </Link>
-              </td>
-            </tr>
-          ))}
-          </tbody>
-        </table>
+      {resultsAvail ?
+                      (
+                        <div className='SearchHousesCard'>
+                        <table className="table">
+                          <thead>
+                            <tr>
+                              <th>Month</th>
+                              <th>Town</th>
+                              <th>Block</th>
+                              <th>Street Name</th>
+                              <th>Storey Range</th>
+                              <th>Flat Type</th>
+                              <th>Flat Model</th>
+                              <th>Floor Area</th>
+                              <th>Resale Price</th>
+                              <th>Remaining Lease</th>
+                              <th>Lease Commence</th>
+                              <th>View Details</th>
+                              <th>Favourite</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {searchResults.map((item,index) => (
+                            <tr key={item.id}>
+                              <td>{item.month}</td>
+                              <td>{item.town}</td>
+                              <td>{item.block}</td>
+                              <td>{item.street_name}</td>
+                              <td>{item.storey_range}</td>
+                              <td>{item.flat_type}</td>
+                              <td>{item.flat_model}</td>
+                              <td>{item.floor_area_sqm} sqm</td>
+                              <td>SGD {item.resale_price}</td>
+                              <td>{item.remaining_lease}</td>
+                              <td>{item.lease_commence_date}</td>
+                              <td>
+                                <div className="page-num-container">
+                                  <button onClick={() => (setButtonFlat(true), setRowIndex(index))}>Display Flat</button>
+                                </div>
+                              </td>
+                              <td>
+                                <Link to={{
+                                  pathname: '/SaveHousesToFavourites',
+                                  search: `?id_str=${item.id_str}`
+                                  }}>
+                                  <div className='Housecard__content__icons__heart'> <AiOutlineHeart/></div>
+                                </Link>
+                              </td>
+                            </tr>
+                          ))}
+                          </tbody>
+                        </table>
 
-      <Flat trigger={buttonFlat} setTrigger={setButtonFlat}>
-        <h3>Resale Flat Details</h3>
-        <p>Scroll down for more information.</p>
-        {searchResults.length > 0 && (<MyActivitiesCard id_hdb={searchResults[rowIndex].id_str}  true_settings={false} />)}
-        <br></br>
-        {searchResults.length > 0 &&<DisplayFlatDetailsCard block={searchResults[rowIndex].block} street_name={searchResults[rowIndex].street_name}/>}
-      </Flat>
+                      <Flat trigger={buttonFlat} setTrigger={setButtonFlat}>
+                        <h3>Resale Flat Details</h3>
+                        <p>Scroll down for more information.</p>
+                        {searchResults.length > 0 && (<MyActivitiesCard id_hdb={searchResults[rowIndex].id_str}  true_settings={false} />)}
+                        <br></br>
+                        {searchResults.length > 0 &&<DisplayFlatDetailsCard block={searchResults[rowIndex].block} street_name={searchResults[rowIndex].street_name}/>}
+                      </Flat>
 
-      <div className="page-num-container">
-        <label htmlFor="page-num">Page number:</label>
-        <input type="number" id="page-num" value={pageInput} onChange={(e) => setPageInput(e.target.value)}/>
-        <Link to={{
-          pathname: '/SearchHouses',
-          search: `?town=${townFilter}&flatModel=${flatModelFilter}&priceRange=${priceRangeFilter}&flatType=${flatTypeFilter}&pageNum=${pageInput}&minPrice=${minPriceTrue}&maxPrice=${maxPriceTrue}&month=${monthFilter}&block=${blockFilter}&minSqm=${minSqmFilter}&maxSqm=${maxSqmFilter}`
-        }}>
-        <button onClick>Go</button>
-        </Link>
-      </div>
-    </div>
+                      <div className="page-num-container">
+                        <label htmlFor="page-num">Page number:</label>
+                        <input type="number" id="page-num" value={pageInput} onChange={(e) => setPageInput(e.target.value)}/>
+                        <Link to={{
+                          pathname: '/SearchHouses',
+                          search: `?town=${townFilter}&flatModel=${flatModelFilter}&priceRange=${priceRangeFilter}&flatType=${flatTypeFilter}&pageNum=${pageInput}&minPrice=${minPriceTrue}&maxPrice=${maxPriceTrue}&month=${monthFilter}&block=${blockFilter}&minSqm=${minSqmFilter}&maxSqm=${maxSqmFilter}`
+                        }}>
+                        <button onClick>Go</button>
+                        </Link>
+                      </div>
+                    </div>
+                      )
+                      :
+                      (
+                        <div className="no-results-card">
+                          No search results available. Please input a new set of filters.
+                        </div>
+                      )}
   </div>
 );
 };

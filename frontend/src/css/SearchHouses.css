@@ -33,7 +33,7 @@
     gap: 2.5rem;
     text-align: center;
     margin: 0;
-    
+
     position:absolute;
     top: 90%;
     left: 50%;
@@ -60,12 +60,12 @@
 
 .page-num-container {
     margin-top: 16px;
-    
+
 }
 
 .page-num-container label {
     margin-right: 8px;
-    
+
 }
 
 .page-num-container input {
@@ -87,3 +87,28 @@
     background-color: #3e8e41;
 }
 
+.no-results-card{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: small;
+    font-weight: bold;
+    flex-direction: column;
+    background-color:white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    width: 40vw;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2.5rem;
+    text-align: center;
+    margin: 0;
+
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -40%)
+}
