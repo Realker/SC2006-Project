@@ -13,8 +13,9 @@ import { Link } from 'react-router-dom';
 const ChangePassword = () => {
 
     const [changed, setChanged] = useState(false);
+    const [error1, setError1] = useState(false);
 
-    const [validOldPassword, setValidOldPassword] = useState(false);
+    const [validOldPassword, setValidOldPassword] = useState(true);
 
     const [oldName, setOldName] = useState('');
     const [oldPassword, setOldPassword] = useState('');
@@ -47,30 +48,35 @@ const ChangePassword = () => {
     const [newEmail, setNewEmail] = useState(oldEmail);
 
     const confirmChange = () => {
-        setValidOldPassword(false);
         APIService.LoginUser(oldEmail, oldPassword)
         .then((response) => {
             if (response.non_field_errors) {
             console.log("Unable to authenticate with provided credentials.");
+            setValidOldPassword(false);
             //setIsNoCred(true);
             }
             if (response.token) {
             console.log("Correct Old Password");
             setValidOldPassword(true);
             }
-            else {setChanged(false);
-            setValidOldPassword(false);}
+            else {setChanged(false);}
         })
         .catch((error) => {
             console.log(error);
         });
+
+        if (oldPassword == "" || newPassword == "" || newConfPassword == "")
+        {
+          setChanged(false);
+          setError1(true);
+        }
 
         if (validOldPassword && newPassword == newConfPassword && newPassword)
         {
             APIService.ChangeUserPassword(userToken, newPassword)
             .then((response) => {
               setChanged(true);
-              setValidOldPassword(false);
+              setError1(false);
             })
             .catch((error) => {
               console.log(error);
@@ -148,6 +154,32 @@ const ChangePassword = () => {
                     (
                         <div>
 
+                        </div>
+                    )}
+                </div>
+                <div className = "errorMessage">
+                    {error1 ?
+                    (
+                        <div>
+                        All fields need to be filled to confirm profile updates.
+                        </div>
+                    )
+                    :
+                    (
+                        <p />
+                    )}
+                </div>
+                <div className = "errorMessage">
+                    {validOldPassword ?
+                    (
+                        <div>
+
+                        </div>
+                    )
+                    :
+                    (
+                        <div>
+                        Incorrect old password. Please re-enter.
                         </div>
                     )}
                 </div>
