@@ -13,18 +13,15 @@ import MyAccount from './components/MyAccount'
 import SaveHousesToFavourites from './components/SaveHousesToFavourites';
 import ResetPassword from './components/ResetPassword';
 import ResetPasswordSent from './components/ResetPasswordSent';
-import DisplayFlat from './components/DisplayFlat';
+
 import Flat from './components/Flat';
 import Search from './components/Search';
-//import FilterByParameters from './components/FilterByParameters';
+
 import SearchHouses from './components/SearchHouses';
 import TNC from './components/TNC';
 import TNCWriteup from './components/TNCWriteup';
-import FilterByParameters from './components/FilterByParameters';
+
 import ChangePassword from './components/ChangePassword';
-import AUP from './components/AUP';
-import TOS from './components/TOS';
-import PrivacyPolicy from './components/PrivacyPolicy';
 import DeleteFromFavourites from './components/DeleteFromFavourites';
 import InvalidUserSessionPage from './components/InvalidUserSessionPage';
 //import ProfilePicChanger from './components/ProfilePicChanger';
@@ -45,17 +42,17 @@ function Router(){
       <Route path='/SaveHousesToFavourites' element = {<SaveHousesToFavourites/>} />
       <Route path='/ResetPassword' element = {<ResetPassword/>} />
       <Route path='/ResetPasswordSent' element = {<ResetPasswordSent/>} />
-      <Route path='/DisplayFlat' element = {<DisplayFlat/>} />
+     
       <Route path='/Flat' element = {<Flat/>} />
       <Route path='/Search' element = {<Search/>} />
       <Route path='/SearchHouses' element = {<SearchHouses />}/>
       <Route path='/TNC' element = {<TNC />}/>
       <Route path='/TNCWriteup' element = {<TNCWriteup />} />
-      <Route path='/FilterByParameters' element = {<FilterByParameters />} />
+      
       <Route path='/ChangePassword' element = {<ChangePassword />}/>
-      <Route path='/AUP' element = {<AUP />}/>
-      <Route path='/TOS' element = {<TOS />}/>
-      <Route path='/PrivacyPolicy' element = {<PrivacyPolicy />}/>
+      
+      
+      
       <Route path= '/DeleteFromFavourites' element = {<DeleteFromFavourites />}/>
       <Route path= '/InvalidUserSessionPage' element = {<InvalidUserSessionPage />}/>
     </Routes>
