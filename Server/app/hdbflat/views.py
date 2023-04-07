@@ -175,14 +175,18 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
         serializer = HDBFlatSerializer(queryset, many=True)
         return Response(serializer.data)
 
+    @api_view(['GET'])
     def get_street_view(request, block, street_name):
+        """Uses Google Map API to retrieve a static street view of the address input. Key is hidden in a text file.."""
         with open('google_maps_api_key.txt', 'r') as f:
             api_key = f.read().strip()
         url = f"https://maps.googleapis.com/maps/api/streetview?size=640x480&location={block},%20{street_name},%20Singapore&pitch=30&key={api_key}"
         response = requests.get(url)
         return JsonResponse({'streetViewUrl': response.url})
 
+    @api_view(['GET'])
     def get_nearby_facilities(request, block, street_name, facility, radius):
+        """Uses Google Map API to retrieve a list of nearby facilities based on the address input. Key is hidden in a text file.."""
         #Facility can be either: school, bus station, subway_station
         #Radius uses metres as units
         with open('google_maps_api_key.txt', 'r') as f:
@@ -209,7 +213,9 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
         # Return the list of nearby schools
         return JsonResponse({'facilities': facilities})
 
+    @api_view(['GET'])
     def get_static_map_view(request, block, street_name):
+        """Uses Google Map API to retrieve a static map view of the address input. Key is hidden in a text file.."""
         #Facility can be either: school, bus station, subway_station
         #Radius uses metres as units
         with open('google_maps_api_key.txt', 'r') as f:
@@ -226,46 +232,3 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
         response = requests.get(url)
         return JsonResponse({'mapViewUrl': response.url})
 
-
-    # def retrieve_hdb_by_id(self, request, id_str):
-    #     """Retrieve HDBFlats by id."""
-    #     queryset = self.get_queryset().filter(id_str=id_str).order_by('-id')[:10]
-    #     serializer = self.get_serializer(queryset, many=True)
-    #     return Response(serializer.data)
-
-    # def filter_by_town(self, request, town):
-    #     """Filter HDBFlats by town and return the latest 10 results."""
-    #     queryset = self.get_queryset().filter(town=town).order_by('-id')[:10]
-    #     serializer = self.get_serializer(queryset, many=True)
-    #     return Response(serializer.data)
-
-    # def filter_using_url(self, request, town=None, flat_type=None, num_results=10):
-    #     """Filter HDBFlats by passing parameters in a fixed format via URL."""
-    #     queryset = self.get_queryset()
-    #     if town:
-    #         queryset = self.get_queryset().filter(town=town)
-    #     if flat_type:
-    #         queryset = queryset.filter(flat_type=flat_type)
-    #     queryset = queryset.order_by('-id')[:num_results]
-    #     serializer = self.get_serializer(queryset, many=True)
-    #     return Response(serializer.data)
-
-    # def filter_using_query(self, request):
-    #     """Filter HDBFlats by passing parameters in a non-fixed query format via URL."""
-    #     queryset = self.get_queryset()
-    #     list_size = 10
-    #     town = request.query_params.get('town', None)
-    #     flat_type = request.query_params.get('flat_type', None)
-    #     num_results = request.query_params.get('num_results', None)
-
-    #     if num_results:
-    #         num_results = int(num_results)
-    #         list_size = num_results
-    #     if town:
-    #         queryset = queryset.filter(town=town)
-    #     if flat_type:
-    #         queryset = queryset.filter(flat_type=flat_type)
-
-    #     queryset = queryset.order_by('-id')[:list_size]
-    #     serializer = self.get_serializer(queryset, many=True)
-    #     return Response(serializer.data)
