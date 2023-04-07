@@ -5,92 +5,47 @@ The databse of choice is [PostgrSQL](https://www.postgresql.org/).
 The backend and databse is containerised with [Docker Desktop](https://docs.docker.com/desktop/) for ease of collaborative use.
 
 ## Setting up
+The following steps only needs to be done once, or upon every update to the project's [libraries/requirements](https://github.com/Realker/SC2006-Project/blob/main/backend-update/requirements.txt).
 
-Install Docker-Desktop [here](https://www.docker.com/products/docker-desktop/).
-- Ensure
+1. Install Docker-Desktop [here](https://www.docker.com/products/docker-desktop/).
+2. Open your terminal and navigate to the "backend" folder (same folder as the README.md file).
+3. Type the following command:
+    code(docker-compose build)
+    - This will install the relevant backend [libraries/requirements](https://github.com/Realker/SC2006-Project/blob/main/backend-update/requirements.txt) and build your project within a new Docker container. This step might take a while.
+4. Type the following command:
+    code(docker-compose run --rm app sh -c "python manage.py makemigrations")
+    - This command is used to check if there are any pending updates/changes within the [models.py](https://github.com/Realker/SC2006-Project/blob/main/backend-update/app/core/models.py) file to make a migration for.
+    - This step only needs to be done whenever there are updates/changes within the [models.py](https://github.com/Realker/SC2006-Project/blob/main/backend-update/app/core/models.py).
 
-## Starting the backend
+## Creating a super user (admin account)
+Type the following command:
+    code(docker-compose run --rm app sh -c "python manage.py createsuperuser")
+    This command is used to create a superuser/admin account to view the Django administration page. Fill in the details accordingly.
 
-### `npm start`
+## Starting the backend server and database
+1. Type the following command:
+    code(docker-compose up)
+    - This command will do the following:
+        - *migrate*: Migrations.
+        - *wait_for_db*: Wait for the databse to be running and available before running the server.
+        - *runserver*: Run the Django backend application on [127.0.0.1:8000](127.0.0.1:8000).
+2. Open google-chrome and proceed to [127.0.0.1:8000](127.0.0.1:8000).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Populating the database with HDB Resale Flat price info from [data.gov.sg](https://data.gov.sg/dataset/resale-flat-prices)
+Ensure that the backend server and database has started and is running. Ensure a superuser account has been created.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Go to the backend API documentation webpage created using [Swagger](https://swagger.io/) at [http://127.0.0.1:8000/api/docs/](http://127.0.0.1:8000/api/docs/).
+2. Locate the following endpoint: [/api/user/token/](http://127.0.0.1:8000/api/docs/#/user/user_token_create)
+3. Click on "Try it out" and enter the superuser email and password. Click "Execute"
+4. If successful, there will a response.
+    code(   {
+            "token": "<your_admin_token_here>"
+            })
+5. Copy your admin token excluding the quotation marks.
+6. Proceed to the top of the page and locate the "Authorize" button. Click on it and a pop-up should appear.
+7. Within the tokenAuth (apiKey) value field, type "Token <your_admin_token_here>".
+8. Press "Authorize" and then "Close".
+9. Locate the following endpoint: [/api/hdbflat/populate_from_datagovsg/](http://127.0.0.1:8000/api/docs/#/hdbflat/hdbflat_populate_from_datagovsg_retrieve)
+10. Click on "Try it out". Click "Execute" only ONCE.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-# hdbfinder-app-api
-Stock market API project
-
-docker build .
-
-docker-compose build
-
-To start the backend, go to the backend directory, and type in your console "docker-compose up"
-
-To type in a relevant command, go to the backend directory, and type in your console "docker-compose run --rm app sh -c "abcde" "
-
-"abcde" can be starting a project "django-admin startproject name_of_app ."
-"abcde" can be starting an app "python manage.py startapp name_of_app"
-"abcde" can make migrations when a new model is created "python manage.py makemigrations && python manage.py wait_for_db && python manage.py migrate"
-"abcde" can create superuser "python manage.py createsuperuser"
-
-To view the APIs, go to http://127.0.0.1:8000/api/docs/#/ in a common web browser (e.g. google chrome)
-
-To view the admin page, go to http://127.0.0.1:8000/admin/login/?next=/admin/
+The hdbflat within the PostgresQL database will populate.
