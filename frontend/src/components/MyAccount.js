@@ -27,6 +27,7 @@ const MyAccount = () => {
   const [changed, setChanged] = useState(false);
   const [error1, setError1] = useState(false);
   const [error2, setError2] = useState(false);
+  const [error3, setError3] = useState(false);
 
   const [oldName, setOldName] = useState('');
   const [oldPassword, setOldPassword] = useState('');
@@ -66,18 +67,29 @@ const MyAccount = () => {
           setChanged(true);
           setError1(false);
           setError2(false);
+          setError3(false);
         }
         else
         {
           setChanged(false);
           setError1(false);
           setError2(true);
+          setError3(false);
         }
         if (newName == "" && newEmail == "")
         {
           setChanged(false);
           setError1(true);
           setError2(false);
+          setError3(false);
+        }
+        console.log(response.email);
+        if (response.email == "user with this email already exists.")
+        {
+          setChanged(false);
+          setError1(false);
+          setError2(false);
+          setError3(true);
         }
       })
       .catch((error) => {
@@ -156,7 +168,7 @@ const MyAccount = () => {
           )
           :
           (
-            <div></div>
+            <p />
           )}
       </div>
 
@@ -169,7 +181,7 @@ const MyAccount = () => {
           )
           :
           (
-            <div></div>
+            <p />
           )}
       </div>
 
@@ -182,7 +194,19 @@ const MyAccount = () => {
           )
           :
           (
-            <div></div>
+            <p />
+          )}
+      </div>
+      <div className = "errorMessage">
+        {error3 ?
+          (
+            <div>
+              Another user with this email already exists.
+            </div>
+          )
+          :
+          (
+            <p />
           )}
       </div>
 
