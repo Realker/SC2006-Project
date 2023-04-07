@@ -14,6 +14,7 @@ const ChangePassword = () => {
 
     const [changed, setChanged] = useState(false);
     const [error1, setError1] = useState(false);
+    const [error2, setError2] = useState(false);
 
     const [validOldPassword, setValidOldPassword] = useState(true);
 
@@ -69,6 +70,7 @@ const ChangePassword = () => {
         {
           setChanged(false);
           setError1(true);
+          setError2(false);
         }
 
         if (validOldPassword && newPassword == newConfPassword && newPassword)
@@ -77,6 +79,7 @@ const ChangePassword = () => {
             .then((response) => {
               setChanged(true);
               setError1(false);
+              setError2(false);
             })
             .catch((error) => {
               console.log(error);
@@ -85,7 +88,8 @@ const ChangePassword = () => {
         else if (newPassword != newConfPassword)
         {
             setChanged(false);
-            setValidOldPassword(false);
+            setError1(false);
+            setError2(true);
             console.log("Passwords do not match. Reconfirm.")
         }
 
@@ -181,6 +185,18 @@ const ChangePassword = () => {
                         <div>
                         Incorrect old password. Please re-enter.
                         </div>
+                    )}
+                </div>
+                <div className = "errorMessage">
+                    {error2 ?
+                    (
+                        <div>
+                        New passwords do not match.
+                        </div>
+                    )
+                    :
+                    (
+                        <p />
                     )}
                 </div>
 
