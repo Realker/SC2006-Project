@@ -36,8 +36,6 @@ const ChangePassword = () => {
     .then((response) => {
       setOldName(response.name);
       setOldEmail(response.email);
-      console.log(response.email);
-      console.log(response.name);
     })
     .catch((error) => {
       console.log(error);
@@ -71,8 +69,6 @@ const ChangePassword = () => {
         {
             APIService.ChangeUserPassword(userToken, newPassword)
             .then((response) => {
-              console.log(response.email);
-              console.log(response.name);
               setChanged(true);
               setValidOldPassword(false);
             })
@@ -93,14 +89,14 @@ const ChangePassword = () => {
         <div className="ChangePasswordBackground">
             <NavBar/>
 
-         
+
 
             <div className='ChangePassword__bg'>
                 <h1>Change Password</h1>
 
                 <div className='ChangePasswordCard'>
                 <div className='ChangePassword-container'>
-                <p class="short-text">Enter a new password (longer than 5 characters) into the fields below. Do not reuse any old passwords.</p>
+                <p class="short-text">Enter a new password (longer than 5 characters) into the fields below.</p>
                 <br />
                 <div>
                 <form>

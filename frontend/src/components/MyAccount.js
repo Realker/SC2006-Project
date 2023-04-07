@@ -61,7 +61,6 @@ const MyAccount = () => {
   const confirmChange = () => {
     APIService.UpdateUserDetails(userToken, newName, newEmail)
       .then((response) => {
-        console.log(response);
         if (newName == response.name)
         {
           setChanged(true);
@@ -83,7 +82,6 @@ const MyAccount = () => {
           setError2(false);
           setError3(false);
         }
-        console.log(response.email);
         if (response.email == "user with this email already exists.")
         {
           setChanged(false);
@@ -100,8 +98,6 @@ const MyAccount = () => {
     .then((response) => {
       setOldName(response.name);
       setOldEmail(response.email);
-      console.log(response.email);
-      console.log(response.name);
     })
     .catch((error) => {
       console.log(error);
@@ -152,7 +148,7 @@ const MyAccount = () => {
 
       <h2>
       <button className="cancelEdit"
-          onClick={() => (setNewEmail(""), setNewName(""), setChanged(false), setError1(false),  setError2(false))}
+          onClick={() => (setNewEmail(""), setNewName(""), setChanged(false), setError1(false), setError2(false), setError3(false))}
             >Cancel</button> &nbsp;
       <button className="saveEdit"
           onClick={() => confirmChange()}
