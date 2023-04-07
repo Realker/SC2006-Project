@@ -1,7 +1,7 @@
 # HDBFinder Backend - Getting Started with Django and Docker
 
 - This backend component was made with [Django](https://www.djangoproject.com/).
-- The databse of choice is [PostgrSQL](https://www.postgresql.org/).
+- The databse of choice is [PostgreSQL](https://www.postgresql.org/).
 - The backend and databse is containerised with [Docker Desktop](https://docs.docker.com/desktop/) for ease of collaborative use.
 
 ### Setting up
