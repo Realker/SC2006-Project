@@ -175,14 +175,18 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
         serializer = HDBFlatSerializer(queryset, many=True)
         return Response(serializer.data)
 
+    @api_view(['GET'])
     def get_street_view(request, block, street_name):
+        """Uses Google Map API to retrieve a static street view of the address input. Key is hidden in a text file.."""
         with open('google_maps_api_key.txt', 'r') as f:
             api_key = f.read().strip()
         url = f"https://maps.googleapis.com/maps/api/streetview?size=640x480&location={block},%20{street_name},%20Singapore&pitch=30&key={api_key}"
         response = requests.get(url)
         return JsonResponse({'streetViewUrl': response.url})
 
+    @api_view(['GET'])
     def get_nearby_facilities(request, block, street_name, facility, radius):
+        """Uses Google Map API to retrieve a list of nearby facilities based on the address input. Key is hidden in a text file.."""
         #Facility can be either: school, bus station, subway_station
         #Radius uses metres as units
         with open('google_maps_api_key.txt', 'r') as f:
@@ -209,7 +213,9 @@ class HDBFlatViewSet(viewsets.ModelViewSet):
         # Return the list of nearby schools
         return JsonResponse({'facilities': facilities})
 
+    @api_view(['GET'])
     def get_static_map_view(request, block, street_name):
+        """Uses Google Map API to retrieve a static map view of the address input. Key is hidden in a text file.."""
         #Facility can be either: school, bus station, subway_station
         #Radius uses metres as units
         with open('google_maps_api_key.txt', 'r') as f:
