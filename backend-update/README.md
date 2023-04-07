@@ -1,4 +1,4 @@
-# Getting Started with Django and Docker
+# HDBFinder Backend - Getting Started with Django and Docker
 
 - This backend component was made with [Django](https://www.djangoproject.com/).
 - The databse of choice is [PostgrSQL](https://www.postgresql.org/).
@@ -37,7 +37,7 @@ Ensure that the backend server and database has started and is running. Ensure a
 1. Go to the backend API documentation webpage created using [Swagger](https://swagger.io/) at [http://127.0.0.1:8000/api/docs/](http://127.0.0.1:8000/api/docs/).
 2. Locate the following endpoint: [/api/user/token/](http://127.0.0.1:8000/api/docs/#/user/user_token_create)
 3. Click on "Try it out" and enter the superuser email and password. Click "Execute"
-4. If successful, there will a response:
+4. If successful, there will be a response:
 `{ "token": "<your_admin_token_here>" }`
 5. Copy your admin token excluding the quotation marks.
 6. Proceed to the top of the page and locate the "Authorize" button. Click on it and a pop-up should appear.
