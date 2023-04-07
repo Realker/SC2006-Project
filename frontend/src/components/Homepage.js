@@ -28,10 +28,6 @@ const Homepage = () => {
             <NavBar / > 
             <Search>
             </Search>
-          </div>
-
-          <div class= "DivisionBackGround">
-           <DivisionNavBar />
          
           </div>
       </>

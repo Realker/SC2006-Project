@@ -44,10 +44,7 @@ Does this website show prices of new HDB flats and/or private housing units?</h1
         </div>
       </div>
       </div>
-      <div class= "DivisionBackGround">
-           <DivisionNavBar />
-         
-          </div>
+    
     </div>
 
     

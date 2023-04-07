@@ -62,11 +62,7 @@ const MyActivities = () => {
 
     </div>
     
-    <div className= "DivisionBackGround">
-    <DivisionNavBar />
-
-    </div>
-
+   
 
 </>
 
